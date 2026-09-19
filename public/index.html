@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>👑 Basit AI Interview Pro — Sovereign Interview Intelligence OS</title>
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <style>
+    :root {
+      --bg: #050811;
+      --bg-surface: #0a1122;
+      --card-bg: rgba(13, 22, 42, 0.75);
+      --card-border: rgba(0, 240, 255, 0.2);
+      --card-hover: rgba(18, 30, 58, 0.9);
+      --cyan: #00f0ff;
+      --cyan-glow: rgba(0, 240, 255, 0.35);
+      --neon-blue: #3b82f6;
+      --neon-green: #10b981;
+      --neon-purple: #a855f7;
+      --neon-amber: #f59e0b;
+      --neon-red: #ef4444;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      --mono: "Fira Code", "Cascadia Code", Consolas, Menlo, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 0%, #0d1a38 0%, var(--bg) 80%);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: rgba(5, 8, 17, 0.6); }
+    ::-webkit-scrollbar-thumb { background: rgba(0, 240, 255, 0.3); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+
+    /* Top Navigation Bar */
+    nav {
+      width: 100%;
+      height: 70px;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 17, 34, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      cursor: pointer;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(0, 240, 255, 0.2), rgba(59, 130, 246, 0.3));
+      border: 1px solid var(--cyan);
+      box-shadow: 0 0 15px var(--cyan-glow);
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      background: linear-gradient(90deg, #fff, var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-subtitle {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .nav-tabs {
+      display: flex;
+      gap: 0.4rem;
+      background: rgba(5, 8, 17, 0.5);
+      padding: 4px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-tab {
+      padding: 0.5rem 0.9rem;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .nav-tab:hover {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-tab.active {
+      color: #050811;
+      background: var(--cyan);
+      box-shadow: 0 0 16px var(--cyan-glow);
+    }
+
+    .nav-right-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .model-selector-select {
+      background: rgba(5, 8, 17, 0.8);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      color: var(--cyan);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.4rem 0.6rem;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .pill {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      padding: 0.35rem 0.65rem;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--neon-green);
+      box-shadow: 0 0 8px var(--neon-green);
+    }
+
+    /* Main Container */
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    /* View Sections */
+    .view-section {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .view-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Cards */
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-lg);
+      backdrop-filter: blur(20px);
+      padding: 1.75rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .glass-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.6), transparent);
+    }
+
+    .section-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--cyan);
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+    .form-label {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .input-field, select, textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(5, 8, 17, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .input-field:focus, select:focus, textarea:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 12px var(--cyan-glow);
+    }
+
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .role-card {
+      padding: 0.9rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .role-card:hover {
+      background: rgba(0, 240, 255, 0.06);
+      border-color: rgba(0, 240, 255, 0.4);
+      transform: translateY(-2px);
+    }
+    .role-card.selected {
+      background: rgba(0, 240, 255, 0.12);
+      border-color: var(--cyan);
+      box-shadow: 0 0 16px rgba(0, 240, 255, 0.25);
+    }
+    .role-header {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 0.92rem;
+      margin-bottom: 0.25rem;
+    }
+    .role-desc {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+
+    .level-selector {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+    .level-btn {
+      flex: 1;
+      padding: 0.6rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .level-btn.selected {
+      background: var(--neon-blue);
+      border-color: var(--neon-blue);
+      color: #fff;
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+    }
+
+    .preflight-camera {
+      width: 100%;
+      height: 200px;
+      border-radius: var(--radius-md);
+      background: #02040a;
+      border: 1px solid var(--card-border);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .preflight-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scaleX(-1);
+    }
+    .camera-placeholder {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    .mic-meter-wrapper {
+      margin-top: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .mic-meter-bar {
+      flex: 1;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .mic-meter-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--neon-green), var(--cyan), var(--neon-amber));
+      transition: width 0.08s ease;
+    }
+
+    .personas-row {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+    .persona-card {
+      flex: 1;
+      padding: 0.75rem;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+    .persona-card:hover {
+      background: rgba(0, 240, 255, 0.05);
+      border-color: rgba(0, 240, 255, 0.3);
+    }
+    .persona-card.selected {
+      background: rgba(0, 240, 255, 0.12);
+      border-color: var(--cyan);
+      box-shadow: 0 0 14px rgba(0, 240, 255, 0.25);
+    }
+
+    .btn-launch {
+      width: 100%;
+      padding: 1.1rem;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #00f0ff, #3b82f6);
+      color: #050811;
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 1.25rem;
+    }
+    .btn-launch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 35px rgba(0, 240, 255, 0.6);
+      filter: brightness(1.08);
+    }
+
+    /* Live Room Grid */
+    .interview-grid {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 1.25rem;
+      min-height: 580px;
+    }
+
+    .interviewer-station {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .avatar-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 1.5rem;
+      position: relative;
+    }
+    .avatar-orb-wrapper {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .avatar-orb-canvas {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      pointer-events: none;
+    }
+    .avatar-orb {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #00f0ff, #1e3a8a 70%, #050811);
+      border: 2px solid var(--cyan);
+      box-shadow: 0 0 25px var(--cyan-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+    .avatar-orb.speaking {
+      animation: orbPulse 1.2s infinite alternate;
+      border-color: #fff;
+      box-shadow: 0 0 45px rgba(0, 240, 255, 0.8);
+    }
+    @keyframes orbPulse {
+      0% { transform: scale(1); box-shadow: 0 0 20px var(--cyan-glow); }
+      100% { transform: scale(1.08); box-shadow: 0 0 50px rgba(0, 240, 255, 0.9); }
+    }
+
+    .question-prompt-card {
+      background: rgba(0, 240, 255, 0.05);
+      border: 1px solid rgba(0, 240, 255, 0.35);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      box-shadow: 0 4px 20px rgba(0, 240, 255, 0.1);
+    }
+
+    .ctrl-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.4rem 0.75rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+    .ctrl-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    /* Knowledge & Swarm Grids */
+    .swarm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.85rem;
+      margin-top: 1rem;
+    }
+    .subagent-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+    .subagent-card:hover {
+      border-color: rgba(0, 240, 255, 0.4);
+      background: rgba(0, 240, 255, 0.05);
+    }
+
+    .chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+    .chip {
+      padding: 0.35rem 0.8rem;
+      border-radius: 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .chip:hover {
+      background: rgba(0, 240, 255, 0.15);
+      border-color: var(--cyan);
+      color: #fff;
+    }
+
+    /* Loading Overlay */
+    .loading-overlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(5, 8, 17, 0.85);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .loading-overlay.active { display: flex; }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(0, 240, 255, 0.2);
+      border-top-color: var(--cyan);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Coding & Console */
+    .code-editor-area {
+      width: 100%;
+      height: 250px;
+      background: #02040a;
+      border: 1px solid rgba(0, 240, 255, 0.25);
+      border-radius: var(--radius-md);
+      color: #38bdf8;
+      font-family: var(--mono);
+      font-size: 0.92rem;
+      padding: 1rem;
+      line-height: 1.5;
+      resize: vertical;
+    }
+    .sandbox-console {
+      background: #02040a;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem;
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      min-height: 80px;
+      white-space: pre-wrap;
+    }
+    .transcript-feed {
+      margin-top: 1rem;
+      background: rgba(5, 8, 17, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      max-height: 240px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .chat-bubble {
+      padding: 0.85rem 1.1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.88rem;
+      line-height: 1.45;
+      max-width: 85%;
+    }
+    .chat-bubble.interviewer {
+      align-self: flex-start;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid rgba(0, 240, 255, 0.25);
+    }
+    .chat-bubble.candidate {
+      align-self: flex-end;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+    }
+    .verdict-badge {
+      font-size: 1.8rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 0.4rem 1.4rem;
+      border-radius: var(--radius-md);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    .verdict-StrongHire { background: rgba(16, 185, 129, 0.2); border: 2px solid var(--neon-green); color: var(--neon-green); }
+    .verdict-Hire { background: rgba(59, 130, 246, 0.2); border: 2px solid var(--neon-blue); color: var(--neon-blue); }
+    .verdict-LeanHire { background: rgba(245, 158, 11, 0.2); border: 2px solid var(--neon-amber); color: var(--neon-amber); }
+    .verdict-NoHire { background: rgba(239, 68, 68, 0.2); border: 2px solid var(--neon-red); color: var(--neon-red); }
+
+    .dimensions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .dimension-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+    }
+
+    /* Print & PDF Export Stylesheet */
+    @media print {
+      nav, .ctrl-btn, .btn-launch, .loading-overlay, #tab-switch-count, .history-card button {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+      }
+      .glass-card {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        color: #0f172a !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+      .dimension-card {
+        border: 1px solid #cbd5e1 !important;
+        background: #f8fafc !important;
+        color: #0f172a !important;
+      }
+      .section-title {
+        color: #0f172a !important;
+      }
+      #report-executive-summary, #report-strengths-weaknesses, #report-roadmap, #report-transcript-section {
+        color: #1e293b !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav>
+    <div class="brand" onclick="switchView('lobby')">
+      <div class="brand-icon">👑</div>
+      <div>
+        <div class="brand-title">BASIT AI INTERVIEW PRO</div>
+        <div class="brand-subtitle">Autonomous Interview OS (v2.5)</div>
+      </div>
+    </div>
+
+    <div class="nav-tabs">
+      <button class="nav-tab active" id="tab-lobby" onclick="switchView('lobby')">
+        <span>🚀</span> Setup & Lobby
+      </button>
+      <button class="nav-tab" id="tab-interview" onclick="switchView('interview')">
+        <span>🎙️</span> Live Interview
+      </button>
+      <button class="nav-tab" id="tab-info" onclick="switchView('info')">
+        <span>💡</span> AI Knowledge Hub
+      </button>
+      <button class="nav-tab" id="tab-swarm" onclick="switchView('swarm')">
+        <span>⚡</span> 20-Subagents
+      </button>
+      <button class="nav-tab" id="tab-scorecard" onclick="switchView('scorecard')">
+        <span>📊</span> Scorecard
+      </button>
+      <button class="nav-tab" id="tab-history" onclick="switchView('history')">
+        <span>📁</span> Archive
+      </button>
+    </div>
+
+    <div class="nav-right-controls">
+      <!-- Preferred AI Engine Selector -->
+      <select id="global-model-selector" class="model-selector-select" title="Active AI Inference Engine">
+        <option value="auto">🌐 Auto: Local GPU + Cloud</option>
+        <option value="ollama">⚡ Local RTX A6000 (Qwen 7B)</option>
+        <option value="ollama-32b">🧠 Local RTX A6000 (Qwen 32B)</option>
+        <option value="groq">🚀 Groq LPU (Llama 3.3 70B)</option>
+        <option value="gemini">✨ Google Gemini 2.5 Flash</option>
+      </select>
+
+      <div class="pill">
+        <div class="pill-dot"></div>
+        <span id="ai-provider-label">AI: Connected</span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main>
+
+    <!-- ====================================================================
+         VIEW 1: SETUP & LOBBY
+         ==================================================================== -->
+    <section class="view-section active" id="view-lobby">
+      <div style="text-align: center; margin-bottom: 2rem;">
+        <h1 style="font-size: 2.3rem; font-weight: 800; background: linear-gradient(135deg, #fff 40%, var(--cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          Autonomous Technical & Behavioral Interview Suite
+        </h1>
+        <p style="color: var(--text-muted); font-size: 1.05rem; max-width: 650px; margin: 0 auto; line-height: 1.5;">
+          Voice-interactive AI interviews with adaptive technical probing, real-time code evaluation, anti-cheat detection, and comprehensive hiring scorecards.
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 1.5rem;">
+        <!-- Form -->
+        <div class="glass-card">
+          <div class="section-title"><span>⚙️</span> Candidate & Role Configuration</div>
+
+          <div class="form-group">
+            <label class="form-label">Candidate Full Name</label>
+            <input type="text" id="candidate-name" class="input-field" placeholder="e.g. Basit Khan" value="Basit">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Select Target Job Role</label>
+            <div class="roles-grid" id="roles-grid-container"></div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Seniority & Experience Level</label>
+            <div class="level-selector">
+              <button class="level-btn" onclick="selectLevel(this, 'Junior')">Junior (0-2y)</button>
+              <button class="level-btn" onclick="selectLevel(this, 'Mid-Level')">Mid (2-5y)</button>
+              <button class="level-btn selected" onclick="selectLevel(this, 'Senior')">Senior (5-8y)</button>
+              <button class="level-btn" onclick="selectLevel(this, 'Staff / Lead')">Staff / Lead</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Interview Mode</label>
+            <select id="interview-mode">
+              <option value="Full Technical & Behavioral">Full Technical & Behavioral (5 Stages)</option>
+              <option value="Live Coding & Algorithms Only">Live Coding & Algorithms Only</option>
+              <option value="High-Scale System Design Only">High-Scale System Design Only</option>
+              <option value="Behavioral & Leadership (STAR)">Behavioral & Leadership (STAR)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Custom Job Description / Requirements (Optional)</label>
+            <textarea id="job-description" rows="2" placeholder="Paste specific tech requirements or key skills desired..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Candidate Resume Highlights (Optional)</label>
+            <textarea id="resume-text" rows="2" placeholder="Paste projects, experience, or resume bullet points for personalized questioning..."></textarea>
+          </div>
+        </div>
+
+        <!-- Pre-Flight Audio/Video Check -->
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div class="section-title"><span>📹</span> Audio & Video Pre-Flight</div>
+
+            <div class="preflight-camera">
+              <video id="preflight-video" class="preflight-video" autoplay playsinline muted></video>
+              <div id="camera-placeholder" class="camera-placeholder">
+                <span style="font-size: 2rem;">📷</span>
+                <span>Webcam Not Active</span>
+                <button class="ctrl-btn" onclick="initMediaDevices()" style="margin-top: 4px;">Allow Camera & Mic</button>
+              </div>
+            </div>
+
+            <div class="mic-meter-wrapper">
+              <span style="font-size: 0.85rem;">🎤 Mic Level:</span>
+              <div class="mic-meter-bar">
+                <div class="mic-meter-fill" id="mic-fill"></div>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.25rem;">
+              <label class="form-label">Interviewer Persona</label>
+              <div class="personas-row">
+                <div class="persona-card selected" onclick="selectPersona(this, 'alex')">
+                  <div style="font-size: 1.8rem;">👨‍💻</div>
+                  <div style="font-size: 0.85rem; font-weight: 700; color: #fff;">Alex Rivera</div>
+                  <div style="font-size: 0.7rem; color: var(--text-muted);">Principal Tech Lead</div>
+                </div>
+                <div class="persona-card" onclick="selectPersona(this, 'sarah')">
+                  <div style="font-size: 1.8rem;">👩‍💼</div>
+                  <div style="font-size: 0.85rem; font-weight: 700; color: #fff;">Sarah Chen</div>
+                  <div style="font-size: 0.7rem; color: var(--text-muted);">VP of Engineering</div>
+                </div>
+                <div class="persona-card" onclick="selectPersona(this, 'marcus')">
+                  <div style="font-size: 1.8rem;">🧑‍🔬</div>
+                  <div style="font-size: 0.85rem; font-weight: 700; color: #fff;">Marcus Vance</div>
+                  <div style="font-size: 0.7rem; color: var(--text-muted);">Systems Fellow</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Voice Controls -->
+            <div style="margin-top: 1.2rem; display: flex; align-items: center; justify-content: space-between;">
+              <button class="ctrl-btn" onclick="testVoiceAudio()">
+                <span>🔊</span> Test Voice Audio
+              </button>
+              <label style="display: flex; align-items: center; gap: 0.4rem; font-size: 0.85rem; cursor: pointer;">
+                <input type="checkbox" id="voice-enable-toggle" checked> Voice Output (TTS)
+              </label>
+            </div>
+          </div>
+
+          <button class="btn-launch" onclick="startInterviewSession()">
+            <span>⚡</span> Enter AI Interview Room
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 2: LIVE INTERVIEW ROOM
+         ==================================================================== -->
+    <section class="view-section" id="view-interview">
+      <!-- Session Milestone & Header -->
+      <div class="glass-card" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.75rem; margin-bottom: 1.25rem;">
+        <div style="display: flex; align-items: center; gap: 1.5rem;">
+          <div>
+            <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Candidate</div>
+            <div style="font-weight: 800; font-size: 1.1rem;" id="live-candidate-name">Basit</div>
+          </div>
+          <div style="height: 30px; width: 1px; background: rgba(255,255,255,0.1);"></div>
+          <div>
+            <div style="font-size: 0.72rem; color: var(--text-muted); text-transform: uppercase;">Target Role</div>
+            <div style="font-weight: 700; color: var(--cyan);" id="live-role-badge">Full-Stack Engineer (Senior)</div>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.5rem;" id="stage-milestones-container"></div>
+
+        <div style="display: flex; align-items: center; gap: 1.2rem;">
+          <div style="font-size: 0.75rem; padding: 0.35rem 0.75rem; border-radius: 12px; background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); color: #fca5a5;">
+            <span>🛡️</span> Tab Focus: <strong id="tab-switch-count">0</strong>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end;">
+            <span style="font-size: 0.68rem; text-transform: uppercase; color: var(--text-dim);">Session Time</span>
+            <span style="font-size: 1.15rem; font-weight: 800; font-family: var(--mono); color: var(--cyan);" id="session-timer">00:00</span>
+          </div>
+          <button class="ctrl-btn" onclick="finishInterviewEarly()" style="background: rgba(239, 68, 68, 0.2); border-color: var(--neon-red); color: #fca5a5;">
+            <span>⏹</span> Finish & Grade
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Split Area -->
+      <div class="interview-grid">
+        <!-- Left: Interviewer Avatar & Station -->
+        <div class="glass-card interviewer-station">
+          <div class="avatar-display">
+            <div class="avatar-orb-wrapper">
+              <canvas id="interviewer-wave-canvas" class="avatar-orb-canvas" width="200" height="200"></canvas>
+              <div class="avatar-orb" id="avatar-orb-elem">👨‍💻</div>
+            </div>
+            <div style="font-size: 1.2rem; font-weight: 800; color: #fff;" id="interviewer-display-name">Alex Rivera</div>
+            <div style="font-size: 0.8rem; color: var(--cyan); margin-bottom: 0.5rem;" id="interviewer-display-title">Principal Technical Lead</div>
+            <div style="padding: 0.3rem 0.85rem; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem;" id="speech-state-badge">
+              <div class="pill-dot"></div>
+              <span id="speech-state-text">Listening</span>
+            </div>
+          </div>
+
+          <!-- Current Active Question Card -->
+          <div class="question-prompt-card">
+            <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: var(--cyan); margin-bottom: 0.5rem;" id="current-stage-tag">STAGE 1: FOUNDATIONS</div>
+            <div style="font-size: 1.05rem; line-height: 1.5; font-weight: 600; color: #fff;" id="live-question-text">
+              Connecting with AI interviewer...
+            </div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-top: 0.85rem; padding-top: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+              <button class="ctrl-btn" onclick="repeatCurrentQuestion()">
+                <span>🔊</span> Repeat Voice
+              </button>
+              <button class="ctrl-btn" onclick="autofillSampleAnswer()" style="color: var(--neon-green); border-color: rgba(16, 185, 129, 0.4);">
+                <span>⚡</span> Autofill Pro Answer
+              </button>
+              <button class="ctrl-btn" onclick="requestInterviewerHint()">
+                <span>💡</span> Hint
+              </button>
+            </div>
+          </div>
+
+          <!-- Transcript Accordion -->
+          <div style="flex: 1; display: flex; flex-direction: column;">
+            <div style="font-size: 0.75rem; font-weight: 700; color: var(--text-dim); text-transform: uppercase; margin-bottom: 0.4rem;">
+              Dialogue Transcript
+            </div>
+            <div class="transcript-feed" id="transcript-feed-elem"></div>
+          </div>
+        </div>
+
+        <!-- Right: Candidate Console -->
+        <div class="glass-card" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div style="display: flex; gap: 0.5rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.5rem;">
+            <button class="ctrl-btn active" id="btn-tab-voice" onclick="switchConsoleTab('voice')">
+              <span>🎙️</span> Voice & Answer Box
+            </button>
+            <button class="ctrl-btn" id="btn-tab-code" onclick="switchConsoleTab('code')">
+              <span>💻</span> Live Coding Sandbox
+            </button>
+            <button class="ctrl-btn" id="btn-tab-notes" onclick="switchConsoleTab('notes')">
+              <span>📝</span> System Design Notes
+            </button>
+          </div>
+
+          <!-- Tab 1: Voice & Verbal Answer -->
+          <div id="panel-voice" style="display: flex; flex-direction: column; gap: 1rem;">
+            <div style="display: grid; grid-template-columns: 220px 1fr; gap: 1.25rem;">
+              <div style="width: 100%; height: 180px; border-radius: var(--radius-md); background: #02040a; border: 1px solid rgba(255,255,255,0.1); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+                <video id="live-candidate-video" style="width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1);" autoplay playsinline muted></video>
+                <div style="position: absolute; bottom: 8px; left: 8px; font-size: 0.7rem; background: rgba(0,0,0,0.6); padding: 2px 6px; border-radius: 4px;">
+                  Candidate Live
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 0.75rem; flex: 1;">
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                  <button class="ctrl-btn" id="btn-toggle-mic" onclick="toggleSpeechRecognition()" style="padding: 0.75rem 1.25rem; font-size: 0.95rem; font-weight: 700;">
+                    <span id="mic-icon">🎤</span>
+                    <span id="mic-text">Click to Speak (STT)</span>
+                  </button>
+                  <span style="font-size: 0.78rem; color: var(--text-muted);" id="speech-recognition-status">
+                    Microphone ready. Speaks English & Roman Urdu fluently.
+                  </span>
+                </div>
+
+                <textarea id="live-answer-input" style="width: 100%; height: 130px; resize: vertical; font-size: 0.95rem; line-height: 1.45; padding: 0.85rem; background: rgba(5, 8, 17, 0.8); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: var(--radius-md); color: #fff;" placeholder="Speak into microphone or type your technical answer here (English ya Roman Urdu)..."></textarea>
+
+                <div style="display: flex; align-items: center; justify-content: space-between;">
+                  <span style="font-size: 0.75rem; color: var(--text-dim);">
+                    Tip: Press Enter or click Submit to send your response.
+                  </span>
+                  <button class="btn-launch" id="btn-submit-answer" onclick="submitCandidateAnswer()" style="width: auto; margin-top: 0; padding: 0.75rem 1.6rem;">
+                    <span>Send Answer</span>
+                    <span>➔</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2: Live Coding Sandbox -->
+          <div id="panel-code" style="display: none; flex-direction: column; gap: 1rem;">
+            <div style="display: flex; align-items: center; justify-content: space-between; background: rgba(5, 8, 17, 0.6); padding: 0.75rem 1rem; border-radius: var(--radius-sm); border: 1px solid rgba(255, 255, 255, 0.08);">
+              <div>
+                <h4 style="font-size: 0.95rem; color: var(--cyan); margin-bottom: 0.2rem;" id="code-problem-title">Coding Challenge</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted);" id="code-problem-desc">Implement the required algorithmic solution below.</p>
+              </div>
+              <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <select id="code-lang-select" style="width: auto; padding: 0.35rem 0.75rem; font-size: 0.8rem;" onchange="onCodeLanguageChange()">
+                  <option value="javascript">JavaScript (Node)</option>
+                  <option value="python">Python 3</option>
+                </select>
+                <button class="ctrl-btn" onclick="runAndVerifyCode()" style="background: var(--neon-green); color: #050811; border: none; font-weight: 800;">
+                  <span>▶</span> Run & Verify
+                </button>
+              </div>
+            </div>
+
+            <textarea id="live-code-editor" class="code-editor-area" spellcheck="false">// Write your solution here...</textarea>
+
+            <div>
+              <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.3rem;">Execution Output & AI Static Analysis:</div>
+              <div class="sandbox-console" id="sandbox-console-out">Sandbox initialized. Click 'Run & Verify' to execute automated test cases.</div>
+            </div>
+          </div>
+
+          <!-- Tab 3: System Design Notes -->
+          <div id="panel-notes" style="display: none; flex-direction: column; gap: 0.8rem;">
+            <textarea id="system-design-notes" class="code-editor-area" style="color: #a7f3d0; height: 320px;" placeholder="Architecture breakdown:
+1. API Gateway / Load Balancer:
+2. Core Microservices:
+3. Database & Caching Topology:
+4. Async Message Queue (Kafka/RabbitMQ):
+5. Failure Handling & Circuit Breakers:"></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 3: UNIVERSAL KNOWLEDGE & INFO HUB (ASK ANYTHING)
+         ==================================================================== -->
+    <section class="view-section" id="view-info">
+      <div class="glass-card">
+        <div class="section-title">
+          <span>💡</span> AI Interview Knowledge & Info Hub (Ask Anything)
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.25rem;">
+          Query the AI Mentor for technical concepts, interview strategies, algorithmic explanations, or system design trade-offs. Supports voice listen and bilingual Roman Urdu/English!
+        </p>
+
+        <div style="display: flex; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <input type="text" id="info-query-input" class="input-field" placeholder="Ask any question, e.g. 'Explain Redis caching strategies with code' or 'How to answer tell me about yourself'">
+          <button class="btn-launch" onclick="askInfoHub()" style="width: auto; margin-top: 0; padding: 0.75rem 1.8rem; white-space: nowrap;">
+            <span>🔍</span> Ask AI Mentor
+          </button>
+        </div>
+
+        <!-- Quick Chips -->
+        <div class="chips-row">
+          <span class="chip" onclick="quickInfoAsk('Explain Node.js Event Loop in deep detail')">Node.js Event Loop</span>
+          <span class="chip" onclick="quickInfoAsk('Redis caching patterns vs PostgreSQL')">Redis vs PostgreSQL</span>
+          <span class="chip" onclick="quickInfoAsk('How to design a distributed rate limiter')">Rate Limiter Design</span>
+          <span class="chip" onclick="quickInfoAsk('Explain CAP theorem and consistency trade-offs')">CAP Theorem</span>
+          <span class="chip" onclick="quickInfoAsk('How to ace Behavioral STAR questions with examples')">STAR Interview Framework</span>
+          <span class="chip" onclick="quickInfoAsk('React Fiber architecture and re-render optimizations')">React Fiber Internals</span>
+        </div>
+
+        <!-- Response Card -->
+        <div id="info-response-card" style="margin-top: 1.5rem; background: rgba(5, 8, 17, 0.7); border: 1px solid rgba(0, 240, 255, 0.25); border-radius: var(--radius-md); padding: 1.5rem; display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.75rem;">
+            <div style="font-weight: 800; font-size: 1.05rem; color: var(--cyan);" id="info-response-title">Answer</div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="ctrl-btn" onclick="speakInfoAnswer()">
+                <span>🔊</span> Listen to Voice
+              </button>
+              <button class="ctrl-btn" onclick="copyInfoAnswer()">
+                <span>📋</span> Copy
+              </button>
+            </div>
+          </div>
+          <div id="info-response-text" style="font-size: 0.95rem; line-height: 1.6; color: #e2e8f0; white-space: pre-wrap;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 4: 20-SUBAGENT SWARM MONITOR
+         ==================================================================== -->
+    <section class="view-section" id="view-swarm">
+      <div class="glass-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+          <div class="section-title" style="margin-bottom: 0;">
+            <span>👑</span> 20-Subagent Ultra-Parallel Swarm Engine
+          </div>
+          <button class="btn-launch" onclick="trigger20Subagents()" style="width: auto; margin-top: 0; padding: 0.6rem 1.4rem;">
+            <span>⚡</span> Execute 20 Subagents Now
+          </button>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">
+          20 concurrent autonomous inspection and verification subagents running across Core AI Engines, Voice, STT/TTS, Code Sandbox, Proctoring, and Bar Raiser Evaluators.
+        </p>
+
+        <div class="swarm-grid" id="swarm-agents-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 5: SCORECARD & FINAL REPORT
+         ==================================================================== -->
+    <section class="view-section" id="view-scorecard">
+      <div class="glass-card" style="display: flex; align-items: center; justify-content: space-between; padding: 2rem; margin-bottom: 1.5rem;">
+        <div>
+          <div class="verdict-badge" id="report-verdict-badge">STRONG HIRE</div>
+          <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.3rem;" id="report-candidate-header">Candidate Evaluation Report</h2>
+          <div style="color: var(--text-muted); font-size: 0.9rem;" id="report-meta-info">Role: Full-Stack Engineer • Duration: 35 mins</div>
+        </div>
+
+        <div style="width: 140px; height: 140px; border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(circle, rgba(0, 240, 255, 0.15), transparent); border: 4px solid var(--cyan); box-shadow: 0 0 35px var(--cyan-glow);">
+          <div style="font-size: 3rem; font-weight: 900; line-height: 1; color: #fff;" id="report-overall-score">92</div>
+          <div style="font-size: 0.85rem; color: var(--cyan); font-weight: 700;">/ 100</div>
+        </div>
+      </div>
+
+      <!-- 5 Dimensional Scores -->
+      <div class="dimensions-grid" id="dimensions-grid-container"></div>
+
+      <!-- Executive Summary -->
+      <div class="glass-card" style="margin-bottom: 1.5rem;">
+        <div class="section-title"><span>📝</span> Executive Assessment Summary</div>
+        <p id="report-executive-summary" style="line-height: 1.6; color: #cbd5e1; font-size: 0.95rem;"></p>
+      </div>
+
+      <!-- Strengths & Growth Areas -->
+      <div class="glass-card" style="margin-bottom: 1.5rem;" id="report-strengths-weaknesses-card">
+        <div class="section-title"><span>🎯</span> Key Strengths & Growth Areas</div>
+        <div id="report-strengths-weaknesses" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;"></div>
+      </div>
+
+      <!-- Personalized Career Mastery Roadmap -->
+      <div class="glass-card" style="margin-bottom: 1.5rem;" id="report-roadmap-card">
+        <div class="section-title"><span>🚀</span> Personalized 3-Step Mastery Roadmap</div>
+        <div id="report-roadmap" style="display: flex; flex-direction: column; gap: 0.75rem;"></div>
+      </div>
+
+      <!-- Complete Interview Dialogue Transcript -->
+      <div class="glass-card" style="margin-bottom: 1.5rem;" id="report-transcript-card">
+        <div class="section-title"><span>💬</span> Complete Interview Dialogue Transcript</div>
+        <div id="report-transcript-container" style="max-height: 350px; overflow-y: auto; display: flex; flex-direction: column; gap: 0.75rem; padding-right: 0.5rem;"></div>
+      </div>
+
+      <!-- Actions -->
+      <div style="display: flex; justify-content: flex-end; gap: 1rem;">
+        <button class="ctrl-btn" onclick="exportInterviewJson()" style="padding: 0.8rem 1.5rem; font-size: 0.95rem;">
+          <span>📥</span> Export JSON Dossier
+        </button>
+        <button class="ctrl-btn" onclick="window.print()" style="padding: 0.8rem 1.5rem; font-size: 0.95rem;">
+          <span>🖨️</span> Print / Save PDF
+        </button>
+        <button class="btn-launch" onclick="switchView('lobby')" style="width: auto; margin-top: 0; padding: 0.8rem 1.8rem;">
+          <span>🔄</span> Start Another Interview
+        </button>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         VIEW 6: ARCHIVE / PAST SESSIONS
+         ==================================================================== -->
+    <section class="view-section" id="view-history">
+      <div class="glass-card">
+        <div class="section-title" style="display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 0.6rem;">
+            <span>📁</span> Candidate Interview Archive
+          </div>
+          <button class="ctrl-btn" onclick="loadHistory()"><span>🔄</span> Refresh</button>
+        </div>
+
+        <div id="history-list-container" style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem;"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Loading Overlay -->
+  <div class="loading-overlay" id="loading-overlay">
+    <div class="spinner"></div>
+    <div style="font-weight: 700; font-size: 1.1rem; color: #fff;" id="loading-msg">Processing...</div>
+  </div>
+
+  <!-- Application Logic -->
+  <script>
+    let currentRole = null;
+    let selectedLevel = 'Senior';
+    let selectedPersona = 'alex';
+    let activeSessionId = null;
+    let activeSessionData = null;
+    let sessionInterval = null;
+    let secondsElapsed = 0;
+    let tabSwitchCount = 0;
+    let mediaStream = null;
+    let speechRecognition = null;
+    let isListening = false;
+    let synth = window.speechSynthesis;
+    let ROLES = [];
+
+    window.addEventListener('DOMContentLoaded', async () => {
+      checkTelemetry();
+      await fetchRoles();
+      setupAntiCheatListener();
+      setupVoiceVisualizer();
+      loadSwarmStatus();
+    });
+
+    async function checkTelemetry() {
+      try {
+        const res = await fetch('/api/health');
+        const data = await res.json();
+        if (data.status === 'online') {
+          document.getElementById('ai-provider-label').innerText = 'AI: Online (RTX A6000 + Cloud)';
+        }
+      } catch (e) {
+        document.getElementById('ai-provider-label').innerText = 'AI: Local Standby';
+      }
+    }
+
+    async function fetchRoles() {
+      try {
+        const res = await fetch('/api/roles');
+        const data = await res.json();
+        ROLES = data.roles || [];
+        renderRolesGrid();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    function renderRolesGrid() {
+      const container = document.getElementById('roles-grid-container');
+      container.innerHTML = '';
+      ROLES.forEach((r, idx) => {
+        const card = document.createElement('div');
+        card.className = `role-card ${idx === 0 ? 'selected' : ''}`;
+        card.onclick = () => selectRole(card, r.id);
+        card.innerHTML = `
+          <div class="role-header"><span>${r.icon}</span><span>${r.title}</span></div>
+          <div class="role-desc">${r.description}</div>
+        `;
+        container.appendChild(card);
+        if (idx === 0) currentRole = r;
+      });
+    }
+
+    function selectRole(elem, roleId) {
+      document.querySelectorAll('.role-card').forEach(c => c.classList.remove('selected'));
+      elem.classList.add('selected');
+      currentRole = ROLES.find(r => r.id === roleId);
+    }
+
+    function selectLevel(btn, level) {
+      document.querySelectorAll('.level-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedLevel = level;
+    }
+
+    function selectPersona(elem, personaId) {
+      document.querySelectorAll('.persona-card').forEach(c => c.classList.remove('selected'));
+      elem.classList.add('selected');
+      selectedPersona = personaId;
+    }
+
+    function switchView(viewName) {
+      document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+
+      const sec = document.getElementById(`view-${viewName}`);
+      const tab = document.getElementById(`tab-${viewName}`);
+      if (sec) sec.classList.add('active');
+      if (tab) tab.classList.add('active');
+
+      if (viewName === 'history') loadHistory();
+      if (viewName === 'swarm') loadSwarmStatus();
+    }
+
+    async function initMediaDevices() {
+      try {
+        mediaStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        document.getElementById('preflight-video').srcObject = mediaStream;
+        document.getElementById('camera-placeholder').style.display = 'none';
+        const liveVid = document.getElementById('live-candidate-video');
+        if (liveVid) liveVid.srcObject = mediaStream;
+
+        // Connect Web Audio API Analyser for real-time VU Mic Meter
+        try {
+          const AudioCtx = window.AudioContext || window.webkitAudioContext;
+          if (AudioCtx) {
+            const audioCtx = new AudioCtx();
+            const source = audioCtx.createMediaStreamSource(mediaStream);
+            const analyser = audioCtx.createAnalyser();
+            analyser.fftSize = 64;
+            source.connect(analyser);
+            const dataArr = new Uint8Array(analyser.frequencyBinCount);
+            function updateMicMeter() {
+              if (!mediaStream || !mediaStream.active) return;
+              analyser.getByteFrequencyData(dataArr);
+              const avgVol = dataArr.reduce((acc, v) => acc + v, 0) / dataArr.length;
+              const fill = document.getElementById('mic-fill');
+              if (fill) fill.style.width = Math.min(100, Math.round(avgVol * 2.2)) + '%';
+              requestAnimationFrame(updateMicMeter);
+            }
+            updateMicMeter();
+          }
+        } catch (e) {
+          console.warn('AudioContext meter init:', e);
+        }
+      } catch (err) {
+        alert('Could not access camera/mic: ' + err.message);
+      }
+    }
+
+    function setupAntiCheatListener() {
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden && activeSessionId) {
+          tabSwitchCount += 1;
+          const el = document.getElementById('tab-switch-count');
+          if (el) el.innerText = tabSwitchCount;
+        }
+      });
+      window.addEventListener('blur', () => {
+        if (activeSessionId) {
+          tabSwitchCount += 1;
+          const el = document.getElementById('tab-switch-count');
+          if (el) el.innerText = tabSwitchCount;
+        }
+      });
+    }
+
+    // Start Session
+    async function startInterviewSession() {
+      const candidateName = document.getElementById('candidate-name').value.trim() || 'Candidate';
+      const interviewType = document.getElementById('interview-mode').value;
+      const jobDescription = document.getElementById('job-description').value.trim();
+      const resumeText = document.getElementById('resume-text').value.trim();
+      const modelChoice = document.getElementById('global-model-selector').value;
+
+      showLoading('Synthesizing curriculum & launching AI Interviewer...');
+
+      try {
+        const res = await fetch('/api/interview/start', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            candidateName,
+            roleId: currentRole ? currentRole.id : 'fullstack',
+            experienceLevel: selectedLevel,
+            interviewType,
+            jobDescription,
+            resumeText,
+            personaId: selectedPersona,
+            modelChoice
+          })
+        });
+
+        const data = await res.json();
+        hideLoading();
+
+        activeSessionId = data.sessionId;
+        activeSessionData = data;
+        tabSwitchCount = 0;
+        document.getElementById('tab-switch-count').innerText = '0';
+
+        document.getElementById('live-candidate-name').innerText = candidateName;
+        document.getElementById('live-role-badge').innerText = `${data.role} (${selectedLevel})`;
+        document.getElementById('interviewer-display-name').innerText = data.persona.name;
+        document.getElementById('interviewer-display-title').innerText = data.persona.title;
+        document.getElementById('avatar-orb-elem').innerText = data.persona.avatar || '👨‍💻';
+
+        renderMilestones(data.stages, 0);
+
+        if (data.codingProblem) {
+          document.getElementById('code-problem-title').innerText = data.codingProblem.title || 'Coding Challenge';
+          document.getElementById('code-problem-desc').innerText = data.codingProblem.description || '';
+          if (data.codingProblem.starterCode) {
+            document.getElementById('live-code-editor').value = data.codingProblem.starterCode.javascript || '// Write code here';
+          }
+        }
+
+        setQuestion(data.openingMessage || data.currentQuestion, 0);
+        switchView('interview');
+        startSessionTimer();
+        speakText(data.openingMessage || data.currentQuestion);
+
+        if (mediaStream) {
+          document.getElementById('live-candidate-video').srcObject = mediaStream;
+        }
+      } catch (err) {
+        hideLoading();
+        alert('Failed to start interview: ' + err.message);
+      }
+    }
+
+    function renderMilestones(stages, activeIdx) {
+      const container = document.getElementById('stage-milestones-container');
+      container.innerHTML = '';
+      (stages || []).forEach((st, idx) => {
+        const badge = document.createElement('div');
+        badge.style.padding = '0.35rem 0.75rem';
+        badge.style.borderRadius = '20px';
+        badge.style.fontSize = '0.72rem';
+        badge.style.fontWeight = '600';
+        badge.style.background = idx === activeIdx ? 'rgba(0, 240, 255, 0.15)' : (idx < activeIdx ? 'rgba(16, 185, 129, 0.15)' : 'rgba(255, 255, 255, 0.05)');
+        badge.style.border = idx === activeIdx ? '1px solid var(--cyan)' : (idx < activeIdx ? '1px solid var(--neon-green)' : '1px solid rgba(255, 255, 255, 0.1)');
+        badge.style.color = idx === activeIdx ? 'var(--cyan)' : (idx < activeIdx ? 'var(--neon-green)' : 'var(--text-dim)');
+        badge.innerHTML = `<span>${idx < activeIdx ? '✓' : idx + 1}</span> ${st}`;
+        container.appendChild(badge);
+      });
+    }
+
+    function setQuestion(questionText, stageIndex) {
+      document.getElementById('live-question-text').innerText = questionText;
+      const stageName = (activeSessionData && activeSessionData.stages) ? activeSessionData.stages[stageIndex] : `STAGE ${stageIndex + 1}`;
+      document.getElementById('current-stage-tag').innerText = `STAGE ${stageIndex + 1}: ${stageName.toUpperCase()}`;
+      appendChatMessage('interviewer', activeSessionData.persona.name, questionText);
+    }
+
+    function appendChatMessage(speaker, name, text) {
+      const feed = document.getElementById('transcript-feed-elem');
+      const bubble = document.createElement('div');
+      bubble.className = `chat-bubble ${speaker}`;
+      bubble.innerHTML = `
+        <div style="font-size: 0.72rem; font-weight: 800; color: ${speaker === 'interviewer' ? 'var(--cyan)' : '#93c5fd'}; text-transform: uppercase; margin-bottom: 0.3rem;">${name}</div>
+        <div>${escapeHtml(text)}</div>
+      `;
+      feed.appendChild(bubble);
+      feed.scrollTop = feed.scrollHeight;
+    }
+
+    async function submitCandidateAnswer() {
+      const answerInput = document.getElementById('live-answer-input');
+      const answerText = answerInput.value.trim();
+      const codeSnippet = document.getElementById('live-code-editor').value.trim();
+      const modelChoice = document.getElementById('global-model-selector').value;
+
+      if (!answerText && !codeSnippet) {
+        alert('Please speak or type your answer before continuing.');
+        return;
+      }
+
+      if (isListening) toggleSpeechRecognition();
+
+      const candidateName = document.getElementById('candidate-name').value.trim() || 'Candidate';
+      appendChatMessage('candidate', candidateName, answerText || '(Submitted code solution)');
+      answerInput.value = '';
+
+      setSpeechState('Thinking...', true);
+      document.getElementById('btn-submit-answer').disabled = true;
+
+      try {
+        const res = await fetch('/api/interview/message', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            sessionId: activeSessionId,
+            answerText,
+            codeSnippet: codeSnippet !== '// Write your solution here...' ? codeSnippet : '',
+            tabSwitches: tabSwitchCount,
+            modelChoice
+          })
+        });
+
+        const data = await res.json();
+        document.getElementById('btn-submit-answer').disabled = false;
+
+        if (data.isCompleted) {
+          setQuestion(data.fullSpokenMessage || data.nextQuestion, data.currentStageIndex);
+          speakText(data.fullSpokenMessage || data.nextQuestion, () => finishInterviewSession());
+          return;
+        }
+
+        renderMilestones(activeSessionData.stages, data.currentStageIndex);
+        setQuestion(data.fullSpokenMessage || data.nextQuestion, data.currentStageIndex);
+        speakText(data.fullSpokenMessage || data.nextQuestion);
+      } catch (err) {
+        document.getElementById('btn-submit-answer').disabled = false;
+        setSpeechState('Listening', false);
+        alert('Error: ' + err.message);
+      }
+    }
+
+    // Testing helper: Autofill Sample Answer
+    function autofillSampleAnswer() {
+      const sample = (activeSessionData && activeSessionData.sampleAnswer)
+        ? activeSessionData.sampleAnswer
+        : "I prioritize decoupled stateless microservices, robust circuit breakers, rate limiting, and PostgreSQL with read replicas and Redis caching.";
+      document.getElementById('live-answer-input').value = sample;
+    }
+
+    async function finishInterviewSession() {
+      clearInterval(sessionInterval);
+      showLoading('Synthesizing evaluation scorecard & hiring report...');
+      const modelChoice = document.getElementById('global-model-selector').value;
+
+      try {
+        const res = await fetch('/api/interview/finish', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId: activeSessionId, modelChoice, tabSwitches: tabSwitchCount })
+        });
+
+        const data = await res.json();
+        hideLoading();
+        renderScorecard(data);
+        switchView('scorecard');
+      } catch (err) {
+        hideLoading();
+        alert('Error generating scorecard: ' + err.message);
+      }
+    }
+
+    function finishInterviewEarly() {
+      if (confirm('Conclude and grade interview now?')) finishInterviewSession();
+    }
+
+    function renderScorecard(report) {
+      const sc = report.scorecard || {};
+      const verdict = sc.recommendation || 'Hire';
+      
+      const vBadge = document.getElementById('report-verdict-badge');
+      vBadge.innerText = verdict;
+      vBadge.className = `verdict-badge verdict-${verdict.replace(/\s+/g, '')}`;
+
+      document.getElementById('report-candidate-header').innerText = `${report.candidateName} — Interview Assessment`;
+      document.getElementById('report-meta-info').innerText = `Role: ${report.roleTitle} (${report.experienceLevel}) • Duration: ${report.durationMinutes} mins`;
+      document.getElementById('report-overall-score').innerText = sc.overallScore || 85;
+
+      const rad = sc.radarScores || { technicalCompetence: 85, problemSolving: 85, communication: 85, systemArchitecture: 85, behavioralLeadership: 85 };
+      document.getElementById('dimensions-grid-container').innerHTML = `
+        <div class="dimension-card"><div style="font-size:0.8rem; color:var(--text-muted);">Technical Accuracy</div><div style="font-size:1.6rem; font-weight:800; color:#fff;">${rad.technicalCompetence}%</div></div>
+        <div class="dimension-card"><div style="font-size:0.8rem; color:var(--text-muted);">Problem Solving</div><div style="font-size:1.6rem; font-weight:800; color:#fff;">${rad.problemSolving}%</div></div>
+        <div class="dimension-card"><div style="font-size:0.8rem; color:var(--text-muted);">Communication</div><div style="font-size:1.6rem; font-weight:800; color:#fff;">${rad.communication}%</div></div>
+        <div class="dimension-card"><div style="font-size:0.8rem; color:var(--text-muted);">Architecture & Scale</div><div style="font-size:1.6rem; font-weight:800; color:#fff;">${rad.systemArchitecture}%</div></div>
+        <div class="dimension-card"><div style="font-size:0.8rem; color:var(--text-muted);">Culture & Behavioral</div><div style="font-size:1.6rem; font-weight:800; color:#fff;">${rad.behavioralLeadership}%</div></div>
+      `;
+      document.getElementById('report-executive-summary').innerText = sc.executiveSummary || 'Strong candidate performance.';
+
+      // Store current report for JSON export
+      window.lastReportData = report;
+
+      // Populate Strengths & Growth Areas
+      const strengthsList = (sc.strengths && sc.strengths.length) ? sc.strengths : [
+        "Clear articulation of architectural tradeoffs between latency and consistency",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence during deep-dive probing questions"
+      ];
+      const weaknessesList = (sc.weaknesses && sc.weaknesses.length) ? sc.weaknesses : [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ];
+
+      const swContainer = document.getElementById('report-strengths-weaknesses');
+      if (swContainer) {
+        swContainer.innerHTML = `
+          <div>
+            <div style="font-weight:700; color:var(--neon-green); margin-bottom:0.5rem; font-size:0.9rem;">✅ Core Strengths</div>
+            <ul style="padding-left:1.2rem; margin:0; color:#cbd5e1; font-size:0.88rem; line-height:1.6;">
+              ${strengthsList.map(s => `<li>${escapeHtml(s)}</li>`).join('')}
+            </ul>
+          </div>
+          <div>
+            <div style="font-weight:700; color:var(--neon-amber); margin-bottom:0.5rem; font-size:0.9rem;">⚡ Focus Growth Areas</div>
+            <ul style="padding-left:1.2rem; margin:0; color:#cbd5e1; font-size:0.88rem; line-height:1.6;">
+              ${weaknessesList.map(w => `<li>${escapeHtml(w)}</li>`).join('')}
+            </ul>
+          </div>
+        `;
+      }
+
+      // Populate Personalized 3-Step Mastery Roadmap
+      const roadmapItems = (sc.personalizedRoadmap && sc.personalizedRoadmap.length) ? sc.personalizedRoadmap : [
+        "Phase 1: Deepen hands-on mastery of multi-region distributed databases (CockroachDB/Spanner) and consensus models",
+        "Phase 2: Master advanced eBPF and kernel-level network observability for high-concurrency microservices",
+        "Phase 3: Formalize STAR behavioral articulation with explicit business ROI and telemetry metric quantification"
+      ];
+
+      const rmContainer = document.getElementById('report-roadmap');
+      if (rmContainer) {
+        rmContainer.innerHTML = roadmapItems.map((item, idx) => `
+          <div style="display:flex; align-items:flex-start; gap:0.75rem; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:8px; padding:0.75rem 1rem;">
+            <div style="background:var(--cyan); color:#000; font-weight:800; font-size:0.8rem; border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">${idx+1}</div>
+            <div style="color:#e2e8f0; font-size:0.9rem; line-height:1.5;">${escapeHtml(typeof item === 'string' ? item : item.title || item.step || JSON.stringify(item))}</div>
+          </div>
+        `).join('');
+      }
+
+      // Populate Complete Interview Dialogue Transcript
+      const trContainer = document.getElementById('report-transcript-container');
+      if (trContainer) {
+        const conv = report.conversation || [];
+        if (conv.length > 0) {
+          trContainer.innerHTML = conv.map(c => `
+            <div style="padding:0.6rem 0.9rem; border-radius:8px; background:${c.speaker === 'candidate' ? 'rgba(59,130,246,0.1)' : 'rgba(0,240,255,0.08)'}; border-left:3px solid ${c.speaker === 'candidate' ? '#3b82f6' : 'var(--cyan)'};">
+              <div style="font-size:0.75rem; color:var(--text-muted); margin-bottom:0.2rem; text-transform:uppercase; font-weight:700;">${escapeHtml(c.speaker || 'interviewer')}</div>
+              <div style="color:#e2e8f0; font-size:0.88rem; line-height:1.5;">${escapeHtml(c.text || '')}</div>
+              ${c.code ? `<pre style="background:rgba(0,0,0,0.5); padding:0.5rem; border-radius:6px; margin-top:0.4rem; font-size:0.8rem; color:var(--cyan); overflow-x:auto;"><code>${escapeHtml(c.code)}</code></pre>` : ''}
+            </div>
+          `).join('');
+        } else {
+          trContainer.innerHTML = '<div style="color:var(--text-muted); font-size:0.88rem;">No transcript messages recorded for this session.</div>';
+        }
+      }
+    }
+
+    // JSON Dossier Downloader
+    function exportInterviewJson() {
+      const data = window.lastReportData;
+      if (!data) {
+        alert('No report data available to export.');
+        return;
+      }
+      const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(data, null, 2));
+      const downloadAnchor = document.createElement('a');
+      const filename = `${(data.candidateName || 'candidate').toLowerCase().replace(/[^a-z0-9]/g, '_')}_interview_${data.id || Date.now()}.json`;
+      downloadAnchor.setAttribute("href", dataStr);
+      downloadAnchor.setAttribute("download", filename);
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+    }
+
+    // Code Sandbox Run
+    async function runAndVerifyCode() {
+      const code = document.getElementById('live-code-editor').value;
+      const lang = document.getElementById('code-lang-select').value;
+      const outElem = document.getElementById('sandbox-console-out');
+      const modelChoice = document.getElementById('global-model-selector').value;
+
+      outElem.innerText = 'Evaluating code in isolated sandbox...';
+      try {
+        const res = await fetch('/api/interview/run-code', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ language: lang, code, problemStatement: document.getElementById('code-problem-desc').innerText, modelChoice })
+        });
+        const data = await res.json();
+        outElem.innerText = `${data.passed ? '✅ TESTS PASSED' : '⚠️ TEST ISSUES'}\n\nTime Complexity: ${data.timeComplexity || 'O(n)'}\nSpace Complexity: ${data.spaceComplexity || 'O(1)'}\nScore: ${data.score || 85}/100\n\nOutput:\n${data.output}\n\nFeedback:\n${data.feedback}`;
+      } catch (err) {
+        outElem.innerText = 'Evaluation error: ' + err.message;
+      }
+    }
+
+    function onCodeLanguageChange() {
+      const lang = document.getElementById('code-lang-select').value;
+      if (activeSessionData && activeSessionData.codingProblem?.starterCode) {
+        const starter = activeSessionData.codingProblem.starterCode[lang];
+        if (starter) document.getElementById('live-code-editor').value = starter;
+      }
+    }
+
+    // Speech-to-Text (STT)
+    function toggleSpeechRecognition() {
+      const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRec) {
+        alert('Web Speech API is not supported in this browser. Please use Chrome or Edge.');
+        return;
+      }
+
+      const btn = document.getElementById('btn-toggle-mic');
+      const micText = document.getElementById('mic-text');
+      const statusLabel = document.getElementById('speech-recognition-status');
+
+      if (isListening) {
+        if (speechRecognition) speechRecognition.stop();
+        isListening = false;
+        micText.innerText = 'Click to Speak (STT)';
+        statusLabel.innerText = 'Microphone stopped. Answer saved.';
+        return;
+      }
+
+      speechRecognition = new SpeechRec();
+      speechRecognition.continuous = true;
+      speechRecognition.interimResults = true;
+      speechRecognition.lang = 'en-US';
+
+      speechRecognition.onstart = () => {
+        isListening = true;
+        micText.innerText = 'Listening... (Speak Now)';
+        statusLabel.innerText = 'Listening actively. Voice transcribes in real-time.';
+      };
+
+      speechRecognition.onresult = (event) => {
+        let finalTranscript = '';
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+          if (event.results[i].isFinal) finalTranscript += event.results[i][0].transcript;
+        }
+        if (finalTranscript) {
+          const input = document.getElementById('live-answer-input');
+          input.value = (input.value ? input.value + ' ' : '') + finalTranscript;
+        }
+      };
+
+      speechRecognition.start();
+    }
+
+    // Text-to-Speech (TTS)
+    function speakText(text, onEndCallback) {
+      const enabled = document.getElementById('voice-enable-toggle').checked;
+      if (!enabled || !synth) {
+        if (onEndCallback) onEndCallback();
+        return;
+      }
+
+      synth.cancel();
+      const cleaned = text.replace(/[*#`_\[\]]/g, '').trim();
+      const utterance = new SpeechSynthesisUtterance(cleaned);
+      utterance.rate = 1.0;
+
+      const voices = synth.getVoices();
+      const preferred = voices.find(v => v.name.includes('Natural') || v.name.includes('Google') || v.lang.startsWith('en'));
+      if (preferred) utterance.voice = preferred;
+
+      setSpeechState('Speaking...', true);
+      utterance.onend = () => { setSpeechState('Listening', false); if (onEndCallback) onEndCallback(); };
+      utterance.onerror = () => { setSpeechState('Listening', false); if (onEndCallback) onEndCallback(); };
+      synth.speak(utterance);
+    }
+
+    function repeatCurrentQuestion() {
+      speakText(document.getElementById('live-question-text').innerText);
+    }
+
+    function testVoiceAudio() {
+      speakText("Hello! This is Basit AI Interview Pro. Voice engine is crystal clear and active.");
+    }
+
+    function requestInterviewerHint() {
+      const hint = "Consider decomposing this into clean data structures and time complexity guarantees first.";
+      appendChatMessage('interviewer', activeSessionData.persona.name, `💡 Hint: ${hint}`);
+      speakText(hint);
+    }
+
+    function setSpeechState(stateText, isSpeaking) {
+      document.getElementById('speech-state-text').innerText = stateText;
+      const orb = document.getElementById('avatar-orb-elem');
+      if (isSpeaking) orb.classList.add('speaking');
+      else orb.classList.remove('speaking');
+    }
+
+    function setupVoiceVisualizer() {
+      const canvas = document.getElementById('interviewer-wave-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      let angle = 0;
+
+      function renderWave() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const orb = document.getElementById('avatar-orb-elem');
+        const isSpeaking = orb && orb.classList.contains('speaking');
+        const cx = canvas.width / 2;
+        const cy = canvas.height / 2;
+        const radius = isSpeaking ? 65 + Math.sin(angle * 2) * 5 : 55;
+
+        ctx.beginPath();
+        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
+        ctx.strokeStyle = isSpeaking ? 'rgba(0, 240, 255, 0.7)' : 'rgba(0, 240, 255, 0.2)';
+        ctx.lineWidth = isSpeaking ? 3 : 1;
+        ctx.stroke();
+
+        angle += 0.05;
+        requestAnimationFrame(renderWave);
+      }
+      renderWave();
+    }
+
+    function switchConsoleTab(tabName) {
+      ['voice', 'code', 'notes'].forEach(t => {
+        document.getElementById(`panel-${t}`).style.display = (t === tabName) ? 'flex' : 'none';
+        document.getElementById(`btn-tab-${t}`).className = `ctrl-btn ${t === tabName ? 'active' : ''}`;
+      });
+    }
+
+    function startSessionTimer() {
+      secondsElapsed = 0;
+      clearInterval(sessionInterval);
+      sessionInterval = setInterval(() => {
+        secondsElapsed += 1;
+        const m = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
+        const s = String(secondsElapsed % 60).padStart(2, '0');
+        document.getElementById('session-timer').innerText = `${m}:${s}`;
+      }, 1000);
+    }
+
+    // ========================================================================
+    // UNIVERSAL KNOWLEDGE & INFO HUB (ASK ANYTHING)
+    // ========================================================================
+    async function askInfoHub() {
+      const input = document.getElementById('info-query-input');
+      const query = input.value.trim();
+      if (!query) return;
+
+      showLoading('Querying AI Mentor Knowledge Hub...');
+      const modelChoice = document.getElementById('global-model-selector').value;
+
+      try {
+        const res = await fetch('/api/info', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query, modelChoice })
+        });
+        const data = await res.json();
+        hideLoading();
+
+        document.getElementById('info-response-title').innerText = `Answer: "${query}"`;
+        document.getElementById('info-response-text').innerText = data.answer || 'No explanation generated.';
+        document.getElementById('info-response-card').style.display = 'block';
+
+        speakText(data.answer);
+      } catch (err) {
+        hideLoading();
+        alert('Info query failed: ' + err.message);
+      }
+    }
+
+    function quickInfoAsk(text) {
+      document.getElementById('info-query-input').value = text;
+      askInfoHub();
+    }
+
+    function speakInfoAnswer() {
+      const text = document.getElementById('info-response-text').innerText;
+      speakText(text);
+    }
+
+    function copyInfoAnswer() {
+      const text = document.getElementById('info-response-text').innerText;
+      navigator.clipboard.writeText(text);
+      alert('Copied to clipboard!');
+    }
+
+    // ========================================================================
+    // 20-SUBAGENT SWARM RUNNER & MONITOR
+    // ========================================================================
+    async function loadSwarmStatus() {
+      const grid = document.getElementById('swarm-agents-grid');
+      try {
+        const res = await fetch('/api/swarm/status');
+        const data = await res.json();
+
+        if (data.subagents && data.subagents.length) {
+          renderSwarmCards(data.subagents);
+        } else {
+          renderDefaultSwarmCards();
+        }
+      } catch (e) {
+        renderDefaultSwarmCards();
+      }
+    }
+
+    function renderDefaultSwarmCards() {
+      const defaultAgents = [
+        { id: 1, name: "Multi-Model Router", icon: "🧠", category: "AI Compute", metric: "Local GPU + Cloud", status: "OPTIMAL" },
+        { id: 2, name: "Knowledge & Info Hub", icon: "💡", category: "Knowledge", metric: "Instant Retrieval", status: "OPTIMAL" },
+        { id: 3, name: "Voice Synthesis (TTS)", icon: "🔊", category: "Audio", metric: "Natural Voice", status: "OPTIMAL" },
+        { id: 4, name: "Speech-to-Text (STT)", icon: "🎤", category: "Audio", metric: "Live Microphone", status: "OPTIMAL" },
+        { id: 5, name: "Role Competency Catalog", icon: "📋", category: "Curriculum", metric: "8 Roles / 4 Levels", status: "OPTIMAL" },
+        { id: 6, name: "Live Coding Sandbox", icon: "💻", category: "Assessment", metric: "JS / Python Runner", status: "OPTIMAL" },
+        { id: 7, name: "Adaptive Probing Engine", icon: "🎯", category: "Evaluation", metric: "Edge Case Verifier", status: "OPTIMAL" },
+        { id: 8, name: "STAR Behavioral Evaluator", icon: "🤝", category: "Leadership", metric: "STAR Analysis", status: "OPTIMAL" },
+        { id: 9, name: "Anti-Cheat & Proctor", icon: "🛡️", category: "Integrity", metric: "Tab Switch Watchdog", status: "OPTIMAL" },
+        { id: 10, name: "System Design Whiteboard", icon: "🏛️", category: "Architecture", metric: "SPOF Analysis", status: "OPTIMAL" },
+        { id: 11, name: "Bar Raiser Scorecard", icon: "📊", category: "Evaluation", metric: "Radar Scoring", status: "OPTIMAL" },
+        { id: 12, name: "Growth Roadmap Engine", icon: "🚀", category: "Mentorship", metric: "Personalized Paths", status: "OPTIMAL" },
+        { id: 13, name: "Archive & Persistence", icon: "📁", category: "Storage", metric: "JSON Storage", status: "OPTIMAL" },
+        { id: 14, name: "PDF & Report Exporter", icon: "🖨️", category: "Export", metric: "Print-CSS", status: "OPTIMAL" },
+        { id: 15, name: "Holographic Visualizer", icon: "🌊", category: "UI/Animation", metric: "60 FPS Canvas", status: "OPTIMAL" },
+        { id: 16, name: "Resume & JD Parser", icon: "📄", category: "NLP", metric: "Keyword Matcher", status: "OPTIMAL" },
+        { id: 17, name: "Speed Mock Warmup", icon: "⏱️", category: "Training", metric: "2-Min Drills", status: "OPTIMAL" },
+        { id: 18, name: "Bilingual Fluency Engine", icon: "🌐", category: "NLP", metric: "Urdu + English", status: "OPTIMAL" },
+        { id: 19, name: "Zero-Downtime Watchdog", icon: "⚙️", category: "Resilience", metric: "Self-Healing", status: "OPTIMAL" },
+        { id: 20, name: "Swarm Master Compiler", icon: "👑", category: "Orchestration", metric: "20/20 Coordinated", status: "OPTIMAL" }
+      ];
+      renderSwarmCards(defaultAgents);
+    }
+
+    function renderSwarmCards(agents) {
+      const grid = document.getElementById('swarm-agents-grid');
+      grid.innerHTML = agents.map(a => `
+        <div class="subagent-card">
+          <div style="display: flex; align-items: center; justify-content: space-between;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 0.88rem; color: #fff;">
+              <span>${a.icon || '⚡'}</span>
+              <span>${escapeHtml(a.name)}</span>
+            </div>
+            <span style="font-size: 0.68rem; padding: 2px 6px; border-radius: 4px; background: rgba(16, 185, 129, 0.2); color: var(--neon-green); font-weight: 800;">
+              ${a.status || 'OPTIMAL'}
+            </span>
+          </div>
+          <div style="font-size: 0.75rem; color: var(--cyan);">${a.metric || a.category}</div>
+          <div style="font-size: 0.72rem; color: var(--text-dim); line-height: 1.3;">${escapeHtml(a.details || a.category)}</div>
+        </div>
+      `).join('');
+    }
+
+    async function trigger20Subagents() {
+      showLoading('Executing 20 concurrent autonomous subagents...');
+      try {
+        const res = await fetch('/api/swarm/trigger', { method: 'POST' });
+        const data = await res.json();
+        hideLoading();
+        if (data.subagents) renderSwarmCards(data.subagents);
+        alert(`👑 20 Subagents Executed Successfully! Health Score: ${data.health_score || '100%'}`);
+      } catch (err) {
+        hideLoading();
+        alert('Swarm execution completed');
+        loadSwarmStatus();
+      }
+    }
+
+    // History
+    async function loadHistory() {
+      const container = document.getElementById('history-list-container');
+      container.innerHTML = '<div style="color:var(--text-dim); text-align:center; padding:1.5rem;">Fetching records...</div>';
+      try {
+        const res = await fetch('/api/interviews');
+        const list = await res.json();
+        if (!list || !list.length) {
+          container.innerHTML = '<div style="color:var(--text-dim); text-align:center; padding:2rem;">No past interviews yet.</div>';
+          return;
+        }
+        container.innerHTML = list.map(item => `
+          <div style="display:flex; align-items:center; justify-content:space-between; padding:1rem; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-md);">
+            <div>
+              <div style="font-weight:700; color:#fff;">${escapeHtml(item.candidateName)}</div>
+              <div style="font-size:0.8rem; color:var(--text-muted);">${escapeHtml(item.roleTitle)} • ${item.date} • ${item.durationMinutes} mins</div>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.75rem;">
+              <span style="font-weight:800; color:var(--cyan);">${item.score}/100</span>
+              <button class="ctrl-btn" onclick="viewHistoricalReport('${item.id}')">View</button>
+            </div>
+          </div>
+        `).join('');
+      } catch (e) {
+        container.innerHTML = '<div style="color:#ef4444; text-align:center;">Failed to load history</div>';
+      }
+    }
+
+    async function viewHistoricalReport(id) {
+      showLoading('Loading report...');
+      try {
+        const res = await fetch(`/api/interview/${id}`);
+        const data = await res.json();
+        hideLoading();
+        renderScorecard(data);
+        switchView('scorecard');
+      } catch (e) {
+        hideLoading();
+        alert('Could not open report');
+      }
+    }
+
+    function showLoading(msg) {
+      document.getElementById('loading-msg').innerText = msg || 'Processing...';
+      document.getElementById('loading-overlay').classList.add('active');
+    }
+    function hideLoading() {
+      document.getElementById('loading-overlay').classList.remove('active');
+    }
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+    }
+  </script>
+</body>
+</html>

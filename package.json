@@ -1,0 +1,23 @@
+{
+  "name": "basit-ai-interview",
+  "version": "1.0.0",
+  "description": "👑 Basit AI Interview Pro — Sovereign AI Technical & Behavioral Interview Intelligence System",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "keywords": [
+    "ai-interview",
+    "interview-intelligence",
+    "technical-interview",
+    "system-design",
+    "live-coding",
+    "speech-recognition",
+    "voice-ai"
+  ],
+  "author": "Basit (absh5506@gmail.com)",
+  "license": "MIT"
+}

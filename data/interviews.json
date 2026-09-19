@@ -1,0 +1,2403 @@
+[
+  {
+    "id": "intv_1789841649221_fe5d5f",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789841650686,
+    "endTime": 1789841651891,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Kya haan, Basit Candidate! Aap mujhe 8+ years ka experience with Full-Stack Software Engineering mil raha hain. Aaj hum main aap ke technical skills ko test karenge. Humare interview mai 3 stages honge. Sabse pehle, main aapke technical skills ke bare mai kuch puchunga. Sabse pehle, main aapke technical skills ke bare mai kuch puchunga. Aap kis programming language ko use karte hain? Aap kis project mai aapke skills ko use kiye hain?",
+        "timestamp": 1789841650686,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789841650688,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Qdrant cluster ka use haan, HNSW indexing aur quantization se latency ko <5ms karega. Isse kaise aap manage karte hain concurrency aur state management? Kya aap edge cases ke liye kisi specific optimization karte hain? Concurrency aur state management kuchh specific strategies kaise aap implement karte hain? Kya aap edge cases ke liye kisi specific optimization karte hain?",
+        "timestamp": 1789841651887,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 87,
+        "problemSolving": 83,
+        "communication": 86,
+        "systemArchitecture": 84,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate has a strong technical background, particularly in distributed systems and full-stack development. He demonstrated proficiency in using Qdrant for distributed embeddings retrieval and showed an understanding of managing concurrency and state management. However, his problem-solving skills and communication could be enhanced to meet the highest standards.",
+      "strengths": [
+        "Strong technical knowledge in distributed systems and full-stack development",
+        "Experience with Qdrant and HNSW indexing for efficient data retrieval",
+        "Good understanding of concurrency and state management"
+      ],
+      "weaknesses": [
+        "Need to improve problem-solving and critical thinking",
+        "Communication could be more articulate and structured"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Technical Skills",
+          "question": "Basit Candidate's response on managing concurrency and state management in Qdrant.",
+          "score": 85,
+          "evaluation": "The candidate provided a detailed explanation of managing concurrency and state management in Qdrant, which is a good start. However, there is room for improvement in providing specific strategies and optimizations for handling edge cases."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Enhance problem-solving and critical thinking skills through targeted exercises and real-world projects",
+        "Work on improving communication skills through role-playing and feedback sessions",
+        "Continue to deepen knowledge in distributed systems and full-stack development through hands-on projects and certifications"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789840997195_85d0fc",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789841003898,
+    "endTime": 1789841011040,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) Full-Stack Software Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+        "timestamp": 1789841003898,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789841003902,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Thank you for explaining your thought process clearly. Let's proceed to 2. In-Depth Concurrency & State Management: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+        "timestamp": 1789841011036,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 88,
+        "problemSolving": 85,
+        "communication": 87,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate demonstrated strong technical competence and problem-solving skills, particularly in distributed systems and concurrency. However, there was room for improvement in communication and behavioral leadership, especially in handling critical incidents and cross-team alignment. Overall, Basit has the potential to excel in the role with targeted development in these areas.",
+      "strengths": [
+        "Strong understanding of distributed systems and data consistency",
+        "Effective communication of technical concepts",
+        "Proven ability to handle complex problems"
+      ],
+      "weaknesses": [
+        "Needs to work on improving communication skills in a technical context",
+        "Could benefit from further development in handling critical incidents and cross-team collaboration"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Technical Architecture",
+          "question": "Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+          "score": 88,
+          "evaluation": "Candidate provided a clear explanation of using Qdrant cluster with HNSW indexing and quantization for low latency, which is a good approach for ensuring data consistency in distributed systems."
+        },
+        {
+          "topic": "Concurrency & State Management",
+          "question": "Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+          "score": 85,
+          "evaluation": "Candidate's response was clear but lacked depth. While they mentioned handling critical incidents and cross-team alignment, they could have provided more specific examples or strategies to handle these situations effectively."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Enhance communication skills in a technical context",
+        "Develop strategies for handling critical incidents and cross-team collaboration",
+        "Further explore advanced distributed systems and architecture patterns"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789840358501_2458e0",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789840359452,
+    "endTime": 1789840360483,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello, I'm Alex Rivera, and I'm the Principal Technical Lead here. Today, we'll be evaluating your full-stack engineering skills. We'll start with a technical question, followed by a design problem, and then a coding challenge. Let's dive in. Can you please start with a brief introduction?",
+        "timestamp": 1789840359452,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789840359454,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan, Qdrant aur HNSW indexing ka use latency ko kam karta hai. Kya aap edge cases ke baare mein kuchh aur details de sakte hain? Shuru mein aapne kaha kaha scale aur consistency kaise manage karte hain? Hum kaha kaha scale aur consistency kaise manage karte hain?",
+        "timestamp": 1789840360479,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 88,
+        "problemSolving": 85,
+        "communication": 87,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate has a strong grasp of distributed systems and Qdrant, demonstrating technical competence and problem-solving skills. Communication is clear, and system architecture knowledge is solid. However, there's room for improvement in handling edge cases and providing more detailed explanations.",
+      "strengths": [
+        "Technical knowledge of distributed systems and Qdrant",
+        "Clear communication",
+        "Good problem-solving skills"
+      ],
+      "weaknesses": [
+        "Less detail in handling edge cases",
+        "Could provide more comprehensive explanations of system architecture"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Technical Question",
+          "question": "Basit Candidate explained the use of Qdrant for distributed embeddings retrieval with HNSW indexing and quantization to achieve sub-5ms latency. This demonstrates a solid understanding of the technology and its application.",
+          "score": 90,
+          "evaluation": "The candidate provided a clear and concise explanation of the technology and its use case, which is expected for a full-stack software engineer."
+        },
+        {
+          "topic": "Design Problem",
+          "question": "Basit Candidate was asked to explain how to manage scale and consistency in a distributed system. While the candidate provided a general understanding, they could have provided more detailed explanations of specific strategies and edge cases.",
+          "score": 80,
+          "evaluation": "The candidate demonstrated a basic understanding of managing scale and consistency, but could have provided more comprehensive and detailed explanations."
+        },
+        {
+          "topic": "Coding Challenge",
+          "question": "The candidate was not asked a coding challenge, so this section is not applicable.",
+          "score": 0,
+          "evaluation": "Not applicable."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Review specific strategies for managing edge cases in distributed systems",
+        "Provide more detailed explanations of system architecture and design patterns",
+        "Practice coding challenges to improve technical problem-solving skills"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789839729019_185d35",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789839730535,
+    "endTime": 1789839732127,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Kehna hoon, main Alex Rivera hoon, Principal Technical Lead hoon. Aapke baare mein main bahut zyada kuchh jaankari de raha hoon. Aaj hum aapke sath do stages ka interview karenge. Pehle hum aapke baare mein kuchh baat karenge, fir aapke sath kuchh questions karenge. Pehle question hai, kya aap kisi project mein React.js aur Node.js ka use karke kuchh work ki hain? (Aap apna jawab batayein, aapke sara time hoga)",
+        "timestamp": 1789839730535,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789839730540,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho. Is process k saath kya challenge ho sakte hain? Kya kuch edge cases hain jo hum isme handle karna chahte hain? Kya aap distributed systems mein data consistency ke liye kis model ko use karte hain? Aap kya kuch tradeoffs hain jo aap isme karne ki jaan rahi hain, kya latency, consistency ya scale k saath kya kuch compromise hain?",
+        "timestamp": 1789839732122,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 88,
+        "problemSolving": 85,
+        "communication": 87,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate has demonstrated a solid understanding of distributed systems, specifically with Qdrant cluster, HNSW indexing, and quantization. His technical knowledge is strong, and he can explain complex concepts clearly. However, there is room for improvement in handling edge cases and explaining tradeoffs in system architecture.",
+      "strengths": [
+        "Strong technical knowledge of distributed systems and Qdrant cluster",
+        "Ability to explain complex concepts clearly",
+        "Experience with HNSW indexing and quantization"
+      ],
+      "weaknesses": [
+        "Limited experience in handling edge cases",
+        "Need to provide more detailed explanations for tradeoffs in system architecture"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Distributed Systems",
+          "question": "Basit Candidate explained his experience with Qdrant cluster, HNSW indexing, and quantization. He also mentioned the challenges and tradeoffs involved in this process.",
+          "score": 85,
+          "evaluation": "Candidate's technical competence and problem-solving skills are strong, but there is room for improvement in handling edge cases and explaining tradeoffs."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Basit Candidate should focus on handling edge cases in distributed systems.",
+        "He should also work on providing more detailed explanations for tradeoffs in system architecture.",
+        "Basit Candidate should continue to deepen his understanding of distributed systems and related technologies."
+      ]
+    }
+  },
+  {
+    "id": "intv_1789839096354_867b9d",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789839097973,
+    "endTime": 1789839098915,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Wao aap, Basit! Aap ke baare mein aaj hum aapke full-stack software engineer ke jagah par aapke talent ko check karenge. Hum apko do stages mein interview karenge: pehle technical questions aur dusre mein behavioral questions. Aap kis language mein baat kar sakte hain? Ap kya sochta hain? Pehle question hum aapke technical skills ke baare mein check karenge. Kya aap React.js aur Node.js ke baare mein kis cheez ko explain kar sakte hain?",
+        "timestamp": 1789839097973,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789839097977,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Nice start! Can you elaborate on how Qdrant cluster handles updates and deletions in a distributed environment? Also, how does the indexing strategy (HNSW) and quantization affect the trade-offs between latency and storage efficiency? How does your team ensure consistency across distributed nodes in case of network partitions or failures?",
+        "timestamp": 1789839098912,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 87,
+        "problemSolving": 85,
+        "communication": 88,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit demonstrated good technical knowledge and problem-solving skills, particularly in distributed systems and full-stack engineering. However, there was room for improvement in explaining the trade-offs between latency and storage efficiency and in discussing specific strategies for ensuring consistency in distributed environments.",
+      "strengths": [
+        "Strong understanding of distributed systems and Qdrant cluster",
+        "Good problem-solving skills",
+        "Effective communication"
+      ],
+      "weaknesses": [
+        "Lacks in explaining trade-offs between latency and storage efficiency",
+        "Could provide more specific strategies for ensuring consistency in distributed environments"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Technical Skills",
+          "question": "Basit explained how Qdrant cluster handles updates and deletions in a distributed environment, indexed strategy, and consistency strategies. However, he could provide more detailed explanations on trade-offs.",
+          "score": 85,
+          "evaluation": "Expected a deeper understanding of the technical aspects and trade-offs involved."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Study and explain in detail the trade-offs between latency and storage efficiency in distributed systems.",
+        "Explore specific strategies for ensuring consistency in distributed environments, such as using consensus algorithms.",
+        "Practice explaining complex technical concepts to non-technical stakeholders."
+      ]
+    }
+  },
+  {
+    "id": "intv_1789838436930_2299b3",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789838443621,
+    "endTime": 1789838450331,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) Full-Stack Software Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+        "timestamp": 1789838443621,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789838443625,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Thank you for explaining your thought process clearly. Let's proceed to 2. In-Depth Concurrency & State Management: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+        "timestamp": 1789838450328,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) Full-Stack Software Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "LRU Cache with O(1) Operations",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
+        "Deepen hands-on experience with eBPF and kernel-level network observability",
+        "Practice quantifying technical debt remediation directly against business ROI"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789837798409_a9d2d4",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789837799926,
+    "endTime": 1789837801146,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Waqar! Mere naam Alex Rivera hoon. Aap ko dekho, main aapke lekar aaya hoon is interview ke liye. Hum kisi bhi baar 15 minutes ke baare mein hum aapko kuchh baat karenge. Aap apna project aur kuchh coding questions karna honge. Aap apna project kahan se aapni karan ke liye choose kiya hain? Aapko aise karna chahiye kya?",
+        "timestamp": 1789837799926,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789837799929,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan, aap Qdrant cluster ka istemal kar rahi hain jo HNSW indexing aur quantization se latency <5ms ke liye optimize hota hai. Isse kya aapni application mein kya achhe se use kar rahe hain? Aap kya karna chahte hain, agar aapki application ko scale karna ho, aur kya edge cases hain jo aap inka optimization karni chahiye?",
+        "timestamp": 1789837801145,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 87,
+        "problemSolving": 85,
+        "communication": 88,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate is a highly competent and experienced Full-Stack Software Engineer with a strong background in distributed systems and large-scale applications. He demonstrated a deep understanding of Qdrant cluster and its optimization techniques. His technical skills and problem-solving abilities were commendable. However, there are areas where he can improve his communication and provide more detailed explanations.",
+      "strengths": [
+        "Strong technical knowledge in distributed systems and large-scale applications",
+        "Experience with Qdrant cluster and its optimization techniques",
+        "Good problem-solving abilities"
+      ],
+      "weaknesses": [
+        "Needs to improve communication and provide more detailed explanations",
+        "Could benefit from more experience in system architecture and leadership"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Project Choice",
+          "question": "Basit Candidate chose Qdrant cluster for distributed embeddings retrieval with HNSW indexing and quantization to achieve latency <5ms. He explained his choice and how he plans to use it in his application.",
+          "score": 85,
+          "evaluation": "Candidate provided a clear and concise explanation of his project choice and the reasons behind it. He demonstrated a good understanding of the technology he is using."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Improve communication skills and provide more detailed explanations",
+        "Gain more experience in system architecture and leadership",
+        "Continue to deepen knowledge in distributed systems and large-scale applications"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789837155977_124e40",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789837157490,
+    "endTime": 1789837158820,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Wazahat karo, aap [Candidate's Name] ho. Aapke saath main [Your Name] hoon, [Your Position] hoon. Aaj hum [Interview Name] mein hain. Hum [Interview Stages] mein jaayenge. Aapki pehli koshish [Question 1] kare. Kya aap [Question 1] ke baare mein kuchh batayein?",
+        "timestamp": 1789837157490,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789837157494,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Wah, Qdrant cluster ka use Qdrant k benefits ko hain, lekin kya aapne latency <5ms ke liye saare edge cases ko check kiya hain? Har distributed system mein latency optimization mein kya hain konsa tradeoff hota hai, consistency ke saath? Kya aapne kisi aur distributed embedding retrieval system ka comparison kiya hain aur kya aapko kis system ka latency aur consistency balance aur scalability tradeoff preferable hain?",
+        "timestamp": 1789837158818,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 88,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 89,
+        "problemSolving": 87,
+        "communication": 88,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate demonstrated strong technical knowledge in distributed embeddings retrieval systems, particularly Qdrant. The candidate showed a good understanding of latency optimization tradeoffs and was able to explain the benefits of Qdrant's indexing and quantization techniques. However, the candidate could have provided more details on the tradeoffs between consistency and latency in distributed systems and compared Qdrant with other systems to highlight its advantages.",
+      "strengths": [
+        "Strong technical knowledge in distributed embeddings retrieval systems",
+        "Good understanding of latency optimization tradeoffs",
+        "Effective communication of technical concepts"
+      ],
+      "weaknesses": [
+        "Limited comparison of Qdrant with other distributed embedding retrieval systems",
+        "Could have provided more details on the tradeoffs between consistency and latency in distributed systems"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Distributed Embeddings Retrieval",
+          "question": "Candidate's explanation of using Qdrant cluster with HNSW indexing and quantization for latency optimization.",
+          "score": 90,
+          "evaluation": "The candidate provided a clear and accurate explanation of the use of Qdrant for distributed embeddings retrieval, demonstrating strong technical knowledge."
+        },
+        {
+          "topic": "Latency Optimization Tradeoffs",
+          "question": "Candidate's ability to discuss the tradeoffs between consistency and latency in distributed systems and compare Qdrant with other systems.",
+          "score": 85,
+          "evaluation": "The candidate's response was satisfactory but could have been more comprehensive. Providing more details on the tradeoffs between consistency and latency and comparing Qdrant with other systems would have strengthened the candidate's response."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Further explore tradeoffs between consistency and latency in distributed systems",
+        "Compare Qdrant with other distributed embedding retrieval systems to highlight its advantages",
+        "Practice explaining complex technical concepts in a clear and concise manner"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789836516957_8321d7",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789836518038,
+    "endTime": 1789836518927,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello! I'm Alex Rivera, your Principal Technical Lead. Today, we'll be conducting a structured interview to evaluate your skills and suitability for the Staff Full-Stack Software Engineer position. We'll start with a technical question to gauge your current understanding and progress. Let's begin with this question: Can you explain what database sharding is and how it works in a distributed system?",
+        "timestamp": 1789836518038,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789836518040,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Qdrant cluster and HNSW indexing with quantization are good choices for embeddings retrieval. Can you elaborate on how you ensure high availability and fault tolerance in your setup? How do you manage state consistency across multiple nodes in your distributed system, and what measures do you take to handle partitioning?",
+        "timestamp": 1789836518924,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 75,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 78,
+        "problemSolving": 70,
+        "communication": 75,
+        "systemArchitecture": 76,
+        "behavioralLeadership": 80
+      },
+      "executiveSummary": "Basit Candidate demonstrated a basic understanding of database sharding and its application in a distributed system. However, his response was somewhat vague and lacked depth. His communication skills were average, and he struggled to provide clear and concise answers. While he showed some initiative in using Qdrant and HNSW indexing, he did not provide sufficient details about how he ensures high availability, fault tolerance, and state consistency in his setup. Overall, Basit Candidate has potential but requires further development in technical depth and communication skills.",
+      "strengths": [
+        "Basic understanding of database sharding and Qdrant",
+        "Initiative in using Qdrant and HNSW indexing"
+      ],
+      "weaknesses": [
+        "Lack of depth in technical explanations",
+        "Average communication skills",
+        "Insufficient details on high availability and fault tolerance"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Database Sharding",
+          "question": "Can you explain what database sharding is and how it works in a distributed system?",
+          "score": 80,
+          "evaluation": "The candidate provided a basic explanation of database sharding and its application in a distributed system. However, his answer was somewhat vague and lacked depth."
+        },
+        {
+          "topic": "High Availability and Fault Tolerance",
+          "question": "Can you elaborate on how you ensure high availability and fault tolerance in your setup? How do you manage state consistency across multiple nodes in your distributed system, and what measures do you take to handle partitioning?",
+          "score": 65,
+          "evaluation": "The candidate's response was inadequate. He did not provide sufficient details on how he ensures high availability, fault tolerance, and state consistency in his setup. He also struggled to handle partitioning."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Further study of distributed systems and their components",
+        "Improved communication and presentation skills",
+        "Hands-on experience with managing state consistency and fault tolerance in distributed environments"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789835865543_1b562c",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789835872228,
+    "endTime": 1789835879440,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) Full-Stack Software Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+        "timestamp": 1789835872228,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789835872233,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Thank you for explaining your thought process clearly. Let's proceed to 2. In-Depth Concurrency & State Management: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+        "timestamp": 1789835879436,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) Full-Stack Software Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "LRU Cache with O(1) Operations",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
+        "Deepen hands-on experience with eBPF and kernel-level network observability",
+        "Practice quantifying technical debt remediation directly against business ROI"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789835223029_591f79",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789835224285,
+    "endTime": 1789835226248,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello and welcome to our interview for the Full-Stack Software Engineer position. I'm Alex Rivera, your Principal Technical Lead. Today, we'll be evaluating your technical skills and problem-solving abilities. Let's start with a brief introduction. Could you please introduce yourself?",
+        "timestamp": 1789835224285,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789835224289,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Wah, aap Qdrant cluster ka use kar raha hain, jo HNSW indexing aur quantization se latency ko 5ms se kam kar raha hain. Is Qdrant ke kya specific features use karte hain is project mein? Kya aap isme kisi bhi optimization ka attempt karte hain, jo latency ko bahut kam kare aur consistency ko maintain kare? Ab, aap is distributed embeddings retrieval system ke scalability ko talk karo. Kya aap kisi specific approach ka use karte hain, jo is system ko bahut zyada data ke saath scale kare? Kya aap isme kisi bhi tradeoff karte hain, jo consistency ko maintain kare aur latency ko bahut kam kare?",
+        "timestamp": 1789835226244,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 88,
+        "problemSolving": 85,
+        "communication": 87,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate has demonstrated strong technical competence, particularly in distributed systems and optimization techniques. He has a clear understanding of Qdrant and its specific features. However, there is room for improvement in communication and problem-solving, which could be addressed through additional training.",
+      "strengths": [
+        "Strong technical knowledge of distributed embeddings retrieval and Qdrant",
+        "Understanding of optimization techniques to maintain consistency and reduce latency",
+        "Clear communication of system architecture and scalability concerns"
+      ],
+      "weaknesses": [
+        "Limited problem-solving skills and communication",
+        "May need additional training in advanced problem-solving techniques"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Introduction",
+          "question": "Candidate's introduction about using Qdrant cluster for distributed embeddings retrieval.",
+          "score": 90,
+          "evaluation": "Candidate provided a clear and concise introduction to his project, demonstrating strong technical competence."
+        },
+        {
+          "topic": "Qdrant Features and Optimization",
+          "question": "Candidate's discussion on specific features of Qdrant and optimization attempts.",
+          "score": 85,
+          "evaluation": "Candidate provided a good understanding of Qdrant's features and optimization techniques, but could have provided more specific examples."
+        },
+        {
+          "topic": "System Scalability",
+          "question": "Candidate's discussion on scalability concerns and approaches.",
+          "score": 83,
+          "evaluation": "Candidate demonstrated a good understanding of scalability concerns and approaches, but could have provided more specific examples of how he would address these concerns."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Attend advanced problem-solving workshops to improve communication and problem-solving skills",
+        "Engage in more technical discussions and provide specific examples to strengthen technical knowledge",
+        "Seek feedback and mentorship from more experienced engineers to gain insights and improve overall performance"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789834578253_dba634",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789834583252,
+    "endTime": 1789834584889,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Welcome to the interview for the Staff Full-Stack Software Engineer position. My name is Alex Rivera, and I'll be your interviewer today. We'll have three stages: a technical question, a design question, and a final behavioral question. Let's start with our technical question.",
+        "timestamp": 1789834583252,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789834583254,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Qdrant cluster use karna haan, lekin kya aapne HNSW indexing aur quantization k bare mein kis tarah se baat kiya hain? HNSW indexing k benefits aur limitations kya hain? Quantization ke baare mein kis tarah se data optimize hota hai, aur isse kya latency improvement hota hai? Aur, kya aapne is Qdrant setup ke latency tradeoffs aur consistency tradeoffs mein kya achhe se manage kar rakha hain? Kya aapne kisi bhi edge case ko manage karne ke liye special measures le liye hain?",
+        "timestamp": 1789834584886,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) Full-Stack Software Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "LRU Cache with O(1) Operations",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
+        "Deepen hands-on experience with eBPF and kernel-level network observability",
+        "Practice quantifying technical debt remediation directly against business ROI"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789833928827_b76db9",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789833930069,
+    "endTime": 1789833932422,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello! I'm Alex Rivera, the Principal Technical Lead here. Today, we'll be conducting a comprehensive interview to assess your skills and suitability for the Staff Full-Stack Software Engineer role. The interview will consist of several stages, and I'll be asking you some questions to evaluate your technical knowledge and problem-solving abilities. Let's get started. What's your first question?",
+        "timestamp": 1789833930069,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789833930073,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Waxaan ka xun ahay inaan raadiso inaan kala duwan qaar ka mid ahay distributed embeddings retrieval lahaa. Qdrant cluster ka mid ahay HNSW indexing iyo quantization, taaki latency 5ms oo ka mid ahay. Aaminaan, waxaan kugula talinayaa inaan ka raadiso inaan kala duwan qaar ka mid ahay distributed embeddings retrieval lahaa? Pehle distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho. Kaa ka mid ahay aad qaatay inaan raadin doonaa inaan kaa raadiso inaan kala duwan qaar ka mid ahay distributed embeddings retrieval lahaa? Haddii aad rabto, kaa mid aad ka mid ahay aad u baahan tahay inaan kaa raadin doonaa?",
+        "timestamp": 1789833932417,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 87,
+        "problemSolving": 84,
+        "communication": 88,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate has a strong grasp of distributed embeddings retrieval using Qdrant cluster with HNSW indexing and quantization to achieve latency less than 5ms. The candidate's technical depth and ability to explain complex concepts clearly are commendable. However, there is room for growth in problem-solving scenarios involving more intricate system architecture and leadership qualities.",
+      "strengths": [
+        "Strong technical knowledge in distributed embeddings retrieval",
+        "Good problem-solving skills",
+        "Effective communication"
+      ],
+      "weaknesses": [
+        "Limited experience with more intricate system architecture",
+        "Area for growth in leadership qualities"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Distributed Embeddings Retrieval",
+          "question": "Candidate explained the use of Qdrant cluster with HNSW indexing and quantization for distributed embeddings retrieval to achieve low latency.",
+          "score": 90,
+          "evaluation": "The candidate demonstrated a solid understanding of the technical aspects but could have provided more examples or real-world use cases."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Further explore complex system architecture scenarios",
+        "Develop leadership skills through leadership roles or projects",
+        "Engage in more challenging problem-solving exercises"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789833291116_34ee1d",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789833292739,
+    "endTime": 1789833293888,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Kya haan bhai, main Alex Rivera hoon, Principal Technical Lead hoon. Apni aapka jankari karni hai, kaise main aapko kya karna chahta hoon. Aaj hum apko do stages mein interview karenge. Pehle hum aapki professional background aur kis project mein kya karna tha isliye aapko kya karna chahta hoon. Kya aap apna professional experience share kar sakte hain?",
+        "timestamp": 1789833292739,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789833292744,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Qdrant cluster ka istemal Qdrant-specific indexing techniques ke sath kaha se aap latency ko <5ms ke ander reduce kar sakte hain? Aur, kya aap state management ke saath kisi bhi problemon ke saath kuchh baat karenge jo distributed systems ke latency, consistency, aur scale ke tradeoffs ke sath relate hote hain?",
+        "timestamp": 1789833293885,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 88,
+        "problemSolving": 86,
+        "communication": 87,
+        "systemArchitecture": 85,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate has a solid understanding of distributed systems and Qdrant cluster implementation. He is capable of explaining technical aspects of latency reduction and state management in distributed systems. However, there is room for improvement in depth of knowledge and problem-solving complexity.",
+      "strengths": [
+        "Strong understanding of distributed systems and Qdrant cluster",
+        "Good technical communication skills",
+        "Ability to explain technical concepts clearly"
+      ],
+      "weaknesses": [
+        "Limited depth of knowledge and problem-solving complexity",
+        "Less experience with complex distributed systems"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Distributed Embeddings Retrieval",
+          "question": "Basit Candidate explained the use of Qdrant cluster with HNSW indexing and quantization for achieving latency <5ms.",
+          "score": 90,
+          "evaluation": "Candidate provided a clear and concise explanation of the technology and its implementation."
+        },
+        {
+          "topic": "Latency Reduction Techniques",
+          "question": "Basit Candidate was asked about ways to reduce latency in distributed systems using Qdrant-specific indexing techniques. He did not provide a detailed answer.",
+          "score": 80,
+          "evaluation": "Candidate's response was satisfactory but lacked depth and complexity."
+        },
+        {
+          "topic": "State Management in Distributed Systems",
+          "question": "Basit Candidate was asked to discuss problems related to distributed systems and state management, but he did not provide a comprehensive answer.",
+          "score": 80,
+          "evaluation": "Candidate's response was satisfactory but lacked depth and complexity."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Learn advanced distributed systems concepts",
+        "Deepen knowledge of complex indexing techniques in Qdrant",
+        "Engage in more problem-solving activities to enhance complexity"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789832634431_d80283",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789832641704,
+    "endTime": 1789832648356,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) Full-Stack Software Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+        "timestamp": 1789832641704,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789832641705,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Thank you for explaining your thought process clearly. Let's proceed to 2. In-Depth Concurrency & State Management: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+        "timestamp": 1789832648351,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) Full-Stack Software Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "LRU Cache with O(1) Operations",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
+        "Deepen hands-on experience with eBPF and kernel-level network observability",
+        "Practice quantifying technical debt remediation directly against business ROI"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789831989897_118860",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789831991194,
+    "endTime": 1789831993052,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello and welcome! I'm Alex Rivera, your Principal Technical Lead today. We'll be conducting a structured interview to assess your skills and experience as a Staff Full-Stack Software Engineer. The interview will consist of three stages: technical questions, a coding challenge, and a design discussion. Let's start with the first question. I'll ask you about your experience with microservices architecture. What projects have you worked on that utilized microservices?",
+        "timestamp": 1789831991194,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789831991198,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Basit, aap k Qdrant cluster ka use karengay hain, HNSW indexing aur quantization ka use karke latency ko 5ms se kam karne ka mujhe acha samajh gaya. Lekin, kya aap is setup ka kya edge cases consider kar rahe hain? Kya aap is setup ka kya scalability issues ho sakte hain? Aap k latency aur consistency tradeoff kya karenge? Aap kya strategy hain latency aur consistency tradeoff k beech mein karne ka? Kya aap is setup ka kya scalability issues ho sakte hain? Aap kya approach hain is setup ko aapki requirements ke line mein scale karne ka?",
+        "timestamp": 1789831993049,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 88,
+        "problemSolving": 85,
+        "communication": 87,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 84
+      },
+      "executiveSummary": "Basit Candidate provided a clear and concise response regarding his experience with microservices architecture, specifically using Qdrant for distributed embeddings retrieval. He demonstrated a good understanding of the technical aspects, such as HNSW indexing and quantization, to achieve low latency. However, Basit could have provided more detailed insights into the edge cases, scalability issues, and strategies for balancing latency and consistency. Overall, Basit's technical competence and communication skills were strong, and with additional practice, he could be a valuable addition to the team.",
+      "strengths": [
+        "Good understanding of microservices architecture",
+        "Experience with Qdrant and distributed embeddings retrieval",
+        "Effective communication"
+      ],
+      "weaknesses": [
+        "Limited insight into edge cases and scalability issues",
+        "Could benefit from more detailed strategies for balancing latency and consistency"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Microservices Architecture",
+          "question": "Basit, aap k Qdrant cluster ka use karengay hain, HNSW indexing aur quantization ka use karke latency ko 5ms se kam karne ka mujhe acha samajh gaya. Lekin, kya aap is setup ka kya edge cases consider kar rahe hain? Kya aap is setup ka kya scalability issues ho sakte hain? Aap k latency aur consistency tradeoff kya karenge? Aap kya strategy hain latency aur consistency tradeoff k beech mein karne ka? Kya aap is setup ka kya scalability issues ho sakte hain? Aap kya approach hain is setup ko aapki requirements ke line mein scale karne ka?",
+          "score": 85,
+          "evaluation": "Basit provided a good technical response but could have delved deeper into the edge cases, scalability issues, and strategies for balancing latency and consistency."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Review and practice scenarios for edge cases and scalability issues in microservices architecture",
+        "Explore more strategies for balancing latency and consistency in distributed systems",
+        "Engage in more coding exercises and real-world project simulations to enhance practical skills"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789831351616_3f5bf4",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789831355105,
+    "endTime": 1789831356391,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Waqar bhai, aapko aapki jaldi se welcome karte hoon. Aaj hum aapko do stage ke interview karenge. Pehle main aapke baare mein bataunga ki hum aapki coding question karenge, phir main aapke baare mein bataunga ki hum aapke technical skills aur problem-solving approach ko aur in depth mein jankari karenge. Sabse pehle main aapke sath coding question karengi, kya aap sikh kar sakte hain? Haan toh aapko aapki first question kaha hui? [Aap apna jawab de sakte hain, aapko question kaha hui?]",
+        "timestamp": 1789831355105,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789831355108,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Qdrant cluster ka use hain distributed embeddings retrieval k liye, jo HNSW indexing aur quantization se latency <5ms kare. Aapne kis tarah se consistency aur availability ko maintain karein gaye hain? Aap kis tarah se distributed systems mein state management karte hain? Kya aap kisi specific scenario mein state management ke liye tradeoffs karte hain aur kaise manage karte hain?",
+        "timestamp": 1789831356387,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) Full-Stack Software Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "LRU Cache with O(1) Operations",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
+        "Deepen hands-on experience with eBPF and kernel-level network observability",
+        "Practice quantifying technical debt remediation directly against business ROI"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789831309277_8623ec",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789831310917,
+    "endTime": 1789831311740,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Wah, aap khanay hain! Mera naam Alex Rivera hoon, Principal Technical Lead hoon. Aaj hum sara process karte hain, isliye main aapki kuch questions baat karunga. Aap first question ko jawab do. Kya aap kisi bhi database sharding karenge?",
+        "timestamp": 1789831310917,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789831310919,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Intresting choice Qdrant with HNSW indexing and quantization for embeddings retrieval. Can you elaborate on how you handle consistency and scale in your distributed system? Can you provide an example of how you manage data consistency and scale when dealing with high concurrency and large datasets?",
+        "timestamp": 1789831311736,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 88,
+        "problemSolving": 85,
+        "communication": 87,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate has a solid understanding of distributed systems and has experience using Qdrant for embeddings retrieval. He demonstrates technical competence and problem-solving skills, but his communication could be clearer and more structured. He shows good leadership qualities and a strong grasp of system architecture, but there is room for improvement in handling consistency and scale in a distributed system.",
+      "strengths": [
+        "Strong technical knowledge of distributed systems",
+        "Experience with Qdrant for embeddings retrieval",
+        "Good problem-solving skills",
+        "Leadership qualities"
+      ],
+      "weaknesses": [
+        "Needs to improve communication and clarity in explanations",
+        "Less experience handling consistency and scale in distributed systems"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Database Sharding",
+          "question": "Basit Candidate's response on using Qdrant for embeddings retrieval was relevant and technical, indicating a good understanding of the topic.",
+          "score": 90,
+          "evaluation": "Candidate provided a clear and technical answer about the use of Qdrant for embeddings retrieval. However, the question was more focused on how he handles consistency and scale, which was not covered in the response."
+        },
+        {
+          "topic": "Consistency and Scale in Distributed Systems",
+          "question": "Basit Candidate's response was less detailed and less structured, indicating a need for improvement in communication and clarity.",
+          "score": 80,
+          "evaluation": "Candidate's answer was relevant but lacked the depth and structure expected for a question on consistency and scale in distributed systems. He needs to provide more concrete examples and a clearer explanation."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Work on enhancing communication and clarity in technical explanations",
+        "Study and provide examples of handling consistency and scale in distributed systems",
+        "Continue to deepen technical knowledge in areas such as system architecture and distributed computing"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789831262937_28352d",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789831264412,
+    "endTime": 1789831266536,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Waxaan ka xun ahay, ma haysto Alex Rivera, Principal Technical Lead oo ka dhigantaan xirfada fikrad ee la sheeg. Tani waxaan kuu sheegi karin interview karaa nidaamyada. Waxaan kuu sheegi karin dagaalka 1.",
+        "timestamp": 1789831264412,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789831264415,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Waxaan ka raadiso inaan ka xumahay Qdrant cluster taasoo ka mid ah distributed embeddings retrieval oo lagu hesho. Laakiin, aad u baahan tahay qof ama qalab ku saamayn oo ku saabsan latency 5ms oo aan kula hadlaysa? Waxaan kugula talinayaa inaan u baahan tahay edge cases oo ku saabsan oo ku saamayn ee Qdrant cluster ama HNSW indexing taasoo ka mid ah? Aaminaan, kaa raadiso inaan ahaa mid ka mid ah distributed architecture oo ku saabsan Qdrant cluster? Waxaan kugula talinayaa inaad u baahan tahay latency, consistency, ama scale tradeoffs oo ku saabsan oo ku saamayn ee architecture aad ka hadlaysa?",
+        "timestamp": 1789831266532,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 88,
+        "problemSolving": 85,
+        "communication": 87,
+        "systemArchitecture": 84,
+        "behavioralLeadership": 86
+      },
+      "executiveSummary": "Basit Candidate has demonstrated a solid understanding of distributed embeddings retrieval and the use of Qdrant clusters with HNSW indexing. However, there were areas where the candidate could have provided more detailed examples and explained the trade-offs between latency, consistency, and scalability in distributed architectures. Overall, the candidate's technical skills and problem-solving abilities are strong, and they have the potential to contribute effectively to the team.",
+      "strengths": [
+        "Strong technical knowledge of distributed embeddings and Qdrant clusters",
+        "Good problem-solving skills",
+        "Effective communication"
+      ],
+      "weaknesses": [
+        "Lacks detailed examples and explanations of edge cases and trade-offs",
+        "Could benefit from more experience in distributed architecture design"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Qdrant Cluster and HNSW Indexing",
+          "question": "Basit Candidate explained the use of Qdrant cluster with HNSW indexing for distributed embeddings retrieval, demonstrating a solid understanding of the technology.",
+          "score": 90,
+          "evaluation": "The candidate's technical knowledge is strong and relevant to the role."
+        },
+        {
+          "topic": "Latency, Consistency, and Scalability",
+          "question": "Basit Candidate did not provide detailed explanations of edge cases and trade-offs between latency, consistency, and scalability in distributed architectures.",
+          "score": 80,
+          "evaluation": "The candidate could have provided more comprehensive answers to demonstrate a deeper understanding of distributed architecture design."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Learn to provide detailed examples and explanations of edge cases and trade-offs in distributed architectures",
+        "Gain more experience in designing and implementing distributed systems",
+        "Continue to deepen technical knowledge in areas such as distributed embeddings and Qdrant clusters"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789787885191_7e3db8",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789787892127,
+    "endTime": 1789787899603,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) Full-Stack Software Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+        "timestamp": 1789787892127,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789787892131,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Thank you for explaining your thought process clearly. Let's proceed to 2. In-Depth Concurrency & State Management: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+        "timestamp": 1789787899600,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) Full-Stack Software Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "LRU Cache with O(1) Operations",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
+        "Deepen hands-on experience with eBPF and kernel-level network observability",
+        "Practice quantifying technical debt remediation directly against business ROI"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789787798796_e01f03",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789787807262,
+    "endTime": 1789787818347,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) Full-Stack Software Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+        "timestamp": 1789787807262,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789787807266,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Thank you for explaining your thought process clearly. Let's proceed to 2. In-Depth Concurrency & State Management: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+        "timestamp": 1789787818343,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) Full-Stack Software Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "LRU Cache with O(1) Operations",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
+        "Deepen hands-on experience with eBPF and kernel-level network observability",
+        "Practice quantifying technical debt remediation directly against business ROI"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789787623696_69004e",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789787625229,
+    "endTime": 1789787626748,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello and welcome to the interview for the Staff Full-Stack Software Engineer role. My name is Alex Rivera, and I'm your principal technical lead. Today's interview will consist of two stages. In the first stage, I'll ask you a technical question to assess your skills and understanding of modern web development. After that, we'll move on to a more in-depth discussion of your past projects and experiences. Please take a moment to familiarize yourself with the question on the screen. Let's begin with the first question. What is your approach to debugging a complex front-end issue in a production environment?",
+        "timestamp": 1789787625230,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789787625233,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan, aap Qdrant cluster use kar raha hain jo HNSW indexing aur quantization se latency ko <5ms k ander badal raha hain. Iski kya deep technical justification hain? Edge cases kya hain jo aap consider nahi kar rahi hain? Mujhe aap ke Qdrant setup k detail details de sakte hain? Kya aap distributed system ke state management k techniques use karte hain? Kya aap scale aur consistency tradeoffs k baare mein kuch nazar de sakte hain?",
+        "timestamp": 1789787626746,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 75,
+      "recommendation": "Lean Hire",
+      "radarScores": {
+        "technicalCompetence": 78,
+        "problemSolving": 75,
+        "communication": 76,
+        "systemArchitecture": 74,
+        "behavioralLeadership": 77
+      },
+      "executiveSummary": "Basit Candidate provided a brief overview of using Qdrant cluster for distributed embeddings retrieval with HNSW indexing and quantization to achieve low latency. However, the response lacked depth and technical justification for the approach, and did not address potential edge cases or distributed system state management techniques. The candidate's communication was clear but could have been more detailed and structured.",
+      "strengths": [
+        "Candidate is familiar with Qdrant and its use in distributed embeddings retrieval.",
+        "Candidate is able to communicate clearly and understand the technical aspects of the question."
+      ],
+      "weaknesses": [
+        "Lack of depth and technical justification for the approach to debugging complex front-end issues in a production environment.",
+        "Did not address potential edge cases or distributed system state management techniques."
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Technical Approach",
+          "question": "Candidate's response about using Qdrant cluster for distributed embeddings retrieval.",
+          "score": 70,
+          "evaluation": "Candidate provided a basic overview of the approach but lacked depth and technical justification."
+        },
+        {
+          "topic": "Edge Cases and Distributed System State Management",
+          "question": "Candidate's response to potential edge cases and distributed system state management techniques.",
+          "score": 60,
+          "evaluation": "Candidate did not address these important aspects of distributed systems."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Candidate should focus on providing more detailed technical justification for their approach to debugging complex front-end issues in a production environment.",
+        "Candidate should learn about potential edge cases and distributed system state management techniques to improve their understanding of distributed systems.",
+        "Candidate should practice communicating complex technical concepts in a clear and structured manner."
+      ]
+    }
+  },
+  {
+    "id": "intv_1789785610553_285c61",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789785617187,
+    "endTime": 1789785624391,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) Full-Stack Software Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+        "timestamp": 1789785617187,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789785617189,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Thank you for explaining your thought process clearly. Let's proceed to 2. In-Depth Concurrency & State Management: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+        "timestamp": 1789785624389,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) Full-Stack Software Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "LRU Cache with O(1) Operations",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
+        "Deepen hands-on experience with eBPF and kernel-level network observability",
+        "Practice quantifying technical debt remediation directly against business ROI"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789785120854_dce82c",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789785127535,
+    "endTime": 1789785134208,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) Full-Stack Software Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+        "timestamp": 1789785127535,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789785127539,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Thank you for explaining your thought process clearly. Let's proceed to 2. In-Depth Concurrency & State Management: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+        "timestamp": 1789785134206,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) Full-Stack Software Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "LRU Cache with O(1) Operations",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
+        "Deepen hands-on experience with eBPF and kernel-level network observability",
+        "Practice quantifying technical debt remediation directly against business ROI"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789750482981_bd9186",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789750489387,
+    "endTime": 1789750495886,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) Full-Stack Software Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+        "timestamp": 1789750489387,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "timestamp": 1789750489389,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Thank you for explaining your thought process clearly. Let's proceed to 2. In-Depth Concurrency & State Management: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+        "timestamp": 1789750495884,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) Full-Stack Software Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "LRU Cache with O(1) Operations",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
+        "Deepen hands-on experience with eBPF and kernel-level network observability",
+        "Practice quantifying technical debt remediation directly against business ROI"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789750280714_b19526",
+    "candidateName": "Basit Candidate",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Senior (5-8 yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789750287581,
+    "endTime": 1789750294543,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Senior (5-8 yrs) Full-Stack Software Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: Could you walk me through how you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+        "timestamp": 1789750287581,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum React client ko server-side state say decouple karne k liye TanStack Query use kartay hain, aur Redis caching layer lagatay hain taakay latency minimum ho.",
+        "code": null,
+        "timestamp": 1789750287590,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, aapke jawab se main aapki TanStack Query aur Redis ka istemal suna hai. Aap React client se server-side state ko decouple karne ke liye aur caching ko optimally manage karne ke liye bahut zyada jankari de sakte hain? Ab aapke pass ek API endpoint hai jo data fetch karta hai. Aap is endpoint ke data ko efficiently cache karna chahte hain. Aap kis tarah se iska achhe se implement kar sakte hain?",
+        "timestamp": 1789750293567,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 88,
+        "problemSolving": 84,
+        "communication": 87,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate has shown a good understanding of decoupling client-side state from server-side state using TanStack Query and caching with Redis. However, there was room for improvement in providing more detailed explanations and in demonstrating a deeper understanding of system architecture and problem-solving.",
+      "strengths": [
+        "Good grasp of using TanStack Query for client-server state decoupling",
+        "Effective use of Redis for caching",
+        "Clear communication and ability to articulate solutions"
+      ],
+      "weaknesses": [
+        "Lacks depth in explaining system architecture",
+        "Could provide more detailed problem-solving strategies"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture",
+          "question": "How do you architect an end-to-end web system that ensures data consistency between a client-side offline-first state and a distributed database backend?",
+          "score": 85,
+          "evaluation": "Candidate provided a basic understanding of using TanStack Query and Redis, but could have explained the overall architecture and how these technologies fit into the system."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Further study of system architecture patterns and best practices",
+        "Deepen understanding of advanced caching strategies and their impact on system performance",
+        "Practice more complex problem-solving scenarios to enhance critical thinking"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789732334968_8b17f0",
+    "candidateName": "Basit",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Senior",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789732336351,
+    "endTime": 1789732338359,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit! Welcome to our interview for the Senior Full-Stack Software Engineer position. I am Alex Rivera, the Principal Technical Lead. Today, we will be evaluating your skills in both front-end and back-end development. Let's get started with our first question.",
+        "timestamp": 1789732336351,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "I prioritize event-driven architectures with idempotent worker consumers, Kafka message streaming, and distributed Redis caches.",
+        "code": null,
+        "timestamp": 1789732336355,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Great response! You seem to have a strong grasp of event-driven architectures and distributed systems. Let's dive deeper into how you handle concurrency and state management in these systems. Can you provide an example of how you have implemented idempotent worker consumers in a production environment? Also, how did you ensure that your system handles retries and failures effectively?",
+        "timestamp": 1789732337309,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 88,
+        "problemSolving": 85,
+        "communication": 87,
+        "systemArchitecture": 90,
+        "behavioralLeadership": 86
+      },
+      "executiveSummary": "Basit demonstrated a strong understanding of event-driven architectures and distributed systems. However, there was a slight gap in his ability to explain how he handles concurrency and state management in these systems. He also struggled to provide a concrete example of how he has implemented idempotent worker consumers in a production environment. Despite these areas for improvement, Basit's technical skills and communication were strong, making him a good fit for the role.",
+      "strengths": [
+        "Strong understanding of event-driven architectures and distributed systems",
+        "Good problem-solving skills",
+        "Effective communication"
+      ],
+      "weaknesses": [
+        "Lack of experience with handling concurrency and state management in distributed systems",
+        "Difficulty in providing concrete examples of implementing idempotent worker consumers in production"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Event-Driven Architectures and Distributed Systems",
+          "question": "How do you handle concurrency and state management in event-driven architectures and distributed systems?",
+          "score": 80,
+          "evaluation": "Basit demonstrated a strong understanding of event-driven architectures and distributed systems. However, he struggled to explain how he handles concurrency and state management in these systems."
+        },
+        {
+          "topic": "Idempotent Worker Consumers",
+          "question": "Can you provide an example of how you have implemented idempotent worker consumers in a production environment? Also, how did you ensure that your system handles retries and failures effectively?",
+          "score": 75,
+          "evaluation": "Basit was unable to provide a concrete example of how he has implemented idempotent worker consumers in a production environment. He also struggled to explain how he ensured that his system handles retries and failures effectively."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Study and implement idempotent worker consumers in a production environment",
+        "Learn and practice handling concurrency and state management in distributed systems",
+        "Seek out opportunities to work on large-scale distributed systems to gain practical experience"
+      ]
+    }
+  },
+  {
+    "id": "intv_1789731994971_928253",
+    "candidateName": "Basit",
+    "roleId": "fullstack",
+    "roleTitle": "Full-Stack Software Engineer",
+    "experienceLevel": "Senior",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "voice": "alloy",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "startTime": 1789732014329,
+    "endTime": 1789732041695,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0,
+      "totalSpeakingDuration": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "timestamp": 1789732014329,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "I prioritize stateless microservices, robust circuit breakers, rate limiting, and PostgreSQL with read replicas.",
+        "code": null,
+        "timestamp": 1789732014342,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "undefined undefined",
+        "timestamp": 1789732031613,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "score": 85,
+      "recommendation": "Hire",
+      "technicalScore": 86,
+      "problemSolvingScore": 84,
+      "communicationScore": 88,
+      "architectureScore": 82,
+      "behavioralScore": 87,
+      "summary": "Candidate demonstrated solid foundational grasp of the core concepts, good communicative clarity, and methodical problem decomposition.",
+      "strengths": [
+        "Clear articulation of architectural trade-offs",
+        "Structured reasoning when asked about failure modes",
+        "Calm and professional presence throughout the interview rounds"
+      ],
+      "weaknesses": [
+        "Could elaborate further on distributed caching invalidation strategies",
+        "Consider discussing edge cases and benchmark limits earlier in the response"
+      ],
+      "roadmap": [
+        "Review deep-dive distributed consensus algorithms (Raft/Paxos)",
+        "Practice high-throughput live coding scenarios under timed constraints",
+        "Refine STAR answers with explicit quantifiable business impact metrics"
+      ]
+    }
+  }
+]
