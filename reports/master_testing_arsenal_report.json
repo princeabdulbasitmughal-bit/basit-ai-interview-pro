@@ -1,6 +1,6 @@
 {
   "title": "Basit AI Interview Pro — Master Testing Arsenal Report",
-  "timestamp": "2026-09-19T18:14:23.095Z",
+  "timestamp": "2026-09-20T02:35:00.864Z",
   "total": 12,
   "passed": 12,
   "failed": 0,
@@ -11,84 +11,84 @@
       "name": "Health Check & Helmet Headers",
       "passed": true,
       "details": "Status: 200, CSP: Present, XFO: DENY",
-      "durationMs": 52
+      "durationMs": 68
     },
     {
       "suite": "Basit3-Security",
       "name": "CWE-22 Path Traversal Defense",
       "passed": true,
       "details": "HTTP 403 (Access Safely Blocked)",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "suite": "Basit3-Security",
       "name": "512KB Payload Ceiling Protection",
       "passed": true,
       "details": "Payload rejected with HTTP 413",
-      "durationMs": 29
+      "durationMs": 7
     },
     {
       "suite": "Basit1-Code",
       "name": "JavaScript Sandbox Execution",
       "passed": true,
-      "details": "Output: blue is sky the",
-      "durationMs": 736
+      "details": "Output: ✓ Test Case 1: Passed ✓ Test Case 2: Passed ✓ Edge Case (Empty / Boundary): Handled",
+      "durationMs": 13033
     },
     {
       "suite": "Basit1-Code",
       "name": "Python Algorithmic Analysis",
       "passed": true,
-      "details": "Complexity: O(N), Score: 90",
-      "durationMs": 868
+      "details": "Complexity: O(1) average lookup, Score: 88",
+      "durationMs": 7367
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "English Knowledge Hub Query",
       "passed": true,
-      "details": "Length: 2182 chars",
-      "durationMs": 3968
+      "details": "Length: 361 chars",
+      "durationMs": 6659
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "Roman Urdu Bilingual Query",
       "passed": true,
-      "details": "Length: 1757 chars",
-      "durationMs": 4134
+      "details": "Length: 2343 chars",
+      "durationMs": 5816
     },
     {
       "suite": "Interview-Flow",
       "name": "Start Session (AI Track, Staff)",
-      "passed": "intv_1789841649221_fe5d5f",
-      "details": "Session ID: intv_1789841649221_fe5d5f",
-      "durationMs": 1467
+      "passed": "intv_1789871686050_6f0053",
+      "details": "Session ID: intv_1789871686050_6f0053 | Stack: Kubernetes, Redis",
+      "durationMs": 1630
     },
     {
       "suite": "Interview-Flow",
       "name": "Candidate Turn & Adaptive Reply",
-      "passed": "Qdrant cluster ka use haan, HNSW indexing aur quantization se latency ko <5ms karega. Isse kaise aap manage karte hain concurrency aur state management? Kya aap edge cases ke liye kisi specific optimization karte hain?",
-      "details": "Reply snippet: Qdrant cluster ka use haan, HNSW indexing aur quantization se latency ko <5ms ka...",
-      "durationMs": 1202
+      "passed": "Aur aap k architecture mein Kubernetes k use kyun karte hain? Kya state management strategies kuchh aur hain jo aapne nahi describe kiya hain?",
+      "details": "Reply snippet: Aur aap k architecture mein Kubernetes k use kyun karte hain? Kya state manageme...",
+      "durationMs": 1220
     },
     {
       "suite": "Interview-Flow",
       "name": "Comprehensive 5D Scorecard",
       "passed": true,
       "details": "Score: 85/100, Decision: Hire",
-      "durationMs": 3667
+      "durationMs": 5595
     },
     {
       "suite": "BasitSwarm",
       "name": "Swarm Status Inspection",
       "passed": true,
       "details": "Active Subagents: 20",
-      "durationMs": 1
+      "durationMs": 2
     },
     {
       "suite": "BasitSwarm",
       "name": "20-Subagent Swarm Trigger (Live Run)",
       "passed": true,
-      "details": "Health: 100.0%, Agents: 20/20 Optimal in 7338.4ms",
-      "durationMs": 7537
+      "details": "Health: 100.0%, Agents: 20/20 Optimal in 6100.9ms",
+      "durationMs": 6366
     }
   ]
 }

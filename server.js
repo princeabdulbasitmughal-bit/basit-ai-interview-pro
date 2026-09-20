@@ -16,6 +16,7 @@ const path = require('path');
 const os = require('os');
 const crypto = require('crypto');
 const { exec } = require('child_process');
+const vm = require('vm');
 
 const PORT = parseInt(process.env.PORT || '8090', 10);
 const BASE_DIR = __dirname;
@@ -115,7 +116,29 @@ function loadSavedInterviews() {
   return [];
 }
 
-// Helper: Atomic Save Interview to disk (Prevents corruption on sudden shutdown)
+// Deterministic Technical Entity & Stack Parser
+function extractTechnicalSkills(text) {
+  if (!text || typeof text !== 'string') return [];
+  const knownSkills = [
+    'Kubernetes', 'K8s', 'Docker', 'Redis', 'Kafka', 'PostgreSQL', 'Postgres', 'MySQL', 'MongoDB',
+    'PyTorch', 'TensorFlow', 'React', 'Next.js', 'Vue', 'Angular', 'Node.js', 'Go', 'Golang',
+    'Python', 'Rust', 'Java', 'Spring', 'GraphQL', 'gRPC', 'AWS', 'GCP', 'Azure',
+    'Microservices', 'Event-Driven', 'CI/CD', 'eBPF', 'WebSockets', 'WebRTC', 'Elasticsearch',
+    'RabbitMQ', 'Cassandra', 'DynamoDB', 'Distributed Systems', 'CAP Theorem', 'Tail Latency'
+  ];
+  const found = new Set();
+  const lower = text.toLowerCase();
+  for (const skill of knownSkills) {
+    const escaped = skill.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`\\b${escaped}\\b`, 'i');
+    if (regex.test(lower)) {
+      found.add(skill);
+    }
+  }
+  return Array.from(found);
+}
+
+// Helper: Atomic Save Interview to disk (Prevents corruption on sudden shutdown with Windows retry)
 function saveCompletedInterview(interview) {
   try {
     const list = loadSavedInterviews();
@@ -127,7 +150,12 @@ function saveCompletedInterview(interview) {
     }
     const tempFile = `${SESSIONS_FILE}.${Date.now()}.${crypto.randomBytes(2).toString('hex')}.tmp`;
     fs.writeFileSync(tempFile, JSON.stringify(list, null, 2), 'utf-8');
-    fs.renameSync(tempFile, SESSIONS_FILE);
+    try {
+      fs.renameSync(tempFile, SESSIONS_FILE);
+    } catch (renameErr) {
+      fs.copyFileSync(tempFile, SESSIONS_FILE);
+      try { fs.unlinkSync(tempFile); } catch (e) {}
+    }
     return true;
   } catch (e) {
     console.error('[Storage] Error saving interview atomically:', e.message);
@@ -729,17 +757,19 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
       const role = ROLES_CATALOG.find(r => r.id === roleId) || ROLES_CATALOG[0];
       const persona = PERSONAS[personaId] || PERSONAS.alex;
       const sessionId = 'intv_' + Date.now() + '_' + crypto.randomBytes(3).toString('hex');
+      const extractedSkills = extractTechnicalSkills(`${resumeText} ${jobDescription}`);
 
       const systemPrompt = `You are ${persona.name}, ${persona.title}. You are an elite engineering interviewer conducting an interview for a ${experienceLevel} ${role.title}.
+${extractedSkills.length > 0 ? `Target Candidate Competencies: ${extractedSkills.join(', ')}.` : ''}
 Output strictly valid JSON with:
 {
   "openingMessage": "Warm introduction introducing yourself, outlining today's interview stages, and asking Question 1.",
-  "question1": "The exact question text for stage 1"
+  "question1": "The exact question text for stage 1 anchoring on candidate experience or core architecture"
 }`;
 
       const userPrompt = `Candidate: ${candidateName}, Seniority: ${experienceLevel}, Role: ${role.title}.
 Resume Notes: ${resumeText || 'Not provided'}
-Job Requirements: ${jobDescription || 'Standard requirements'}`;
+Job Requirements: ${jobDescription || 'Standard requirements'}${extractedSkills.length > 0 ? `\nTarget Tech Stack: ${extractedSkills.join(', ')}` : ''}`;
 
       let parsedAI = null;
       const aiResponse = await queryAI({ systemPrompt, userPrompt, temperature: 0.6, jsonMode: true, modelChoice });
@@ -766,6 +796,7 @@ Job Requirements: ${jobDescription || 'Standard requirements'}`;
         modelChoice,
         resumeText: resumeText || '',
         jobDescription: jobDescription || '',
+        extractedSkills,
         startTime: Date.now(),
         currentStageIndex: 0,
         stages: role.stages,
@@ -800,6 +831,7 @@ Job Requirements: ${jobDescription || 'Standard requirements'}`;
         stages: session.stages,
         persona: session.persona,
         role: role.title,
+        extractedSkills,
         stageIndex: 0,
         totalStages: session.stages.length
       });
@@ -818,6 +850,7 @@ Job Requirements: ${jobDescription || 'Standard requirements'}`;
       const sessionId = (typeof body.sessionId === 'string' ? body.sessionId : '').trim();
       const answerText = (typeof body.answerText === 'string' ? body.answerText : '').substring(0, 4000);
       const codeSnippet = (typeof body.codeSnippet === 'string' ? body.codeSnippet : '').substring(0, 10000);
+      const whiteboardNotes = (typeof body.whiteboardNotes === 'string' ? body.whiteboardNotes : '').substring(0, 10000);
       const tabSwitches = typeof body.tabSwitches === 'number' ? Math.max(0, body.tabSwitches) : 0;
       const modelChoice = (typeof body.modelChoice === 'string' ? body.modelChoice : 'auto').trim();
 
@@ -833,6 +866,7 @@ Job Requirements: ${jobDescription || 'Standard requirements'}`;
         speaker: 'candidate',
         text: answerText,
         code: codeSnippet || null,
+        whiteboardNotes: whiteboardNotes || null,
         timestamp: Date.now(),
         stageIndex: session.currentStageIndex
       });
@@ -844,11 +878,12 @@ Job Requirements: ${jobDescription || 'Standard requirements'}`;
 You are interviewing ${session.candidateName} for the ${session.experienceLevel} ${session.roleTitle} role.
 ${session.resumeText ? `Candidate Resume Background: ${session.resumeText}` : ''}
 ${session.jobDescription ? `Target Job Requirements: ${session.jobDescription}` : ''}
+${(session.extractedSkills && session.extractedSkills.length > 0) ? `Target Stack Skills: ${session.extractedSkills.join(', ')}` : ''}
 Current Stage: ${session.stages[session.currentStageIndex]}.
 Next Stage: ${isLastStage ? 'Conclusion' : session.stages[nextStageIndex]}.
 
 Evaluate candidate answer depth against ${session.experienceLevel} engineering expectations.
-If shallow or missing edge-case consideration, provide constructive probing feedback and challenge candidate on latency, consistency, or scale tradeoffs.
+If shallow or missing edge-case consideration, provide constructive probing feedback and challenge candidate on concurrency, race conditions, CAP theorem, p99 tail latency, or scale tradeoffs.
 Respond in strictly valid JSON:
 {
   "interviewerReply": "Spoken feedback in natural Roman Urdu or English acknowledging candidate's points (1-2 sentences)",
@@ -857,7 +892,7 @@ Respond in strictly valid JSON:
 }`;
 
       const userPrompt = `Candidate Answer: "${answerText}"
-${codeSnippet ? `Candidate Code:\n${codeSnippet}` : ''}`;
+${codeSnippet ? `Candidate Code:\n${codeSnippet}\n` : ''}${whiteboardNotes ? `Whiteboard & Architecture Notes:\n${whiteboardNotes}\n` : ''}`;
 
       let parsedAI = null;
       const aiResponse = await queryAI({ systemPrompt, userPrompt, temperature: 0.65, jsonMode: true, modelChoice: modelChoice || session.modelChoice });
@@ -874,14 +909,15 @@ ${codeSnippet ? `Candidate Code:\n${codeSnippet}` : ''}`;
         nextQuestion = `That completes our core technical and behavioral rounds today, ${session.candidateName}. You did a commendable job articulating your engineering experience. Do you have any questions for me before we generate your evaluation report?`;
       } else {
         const nextStageName = session.stages[nextStageIndex];
-        if (nextStageIndex === 2) {
+        if (parsedAI && parsedAI.nextQuestion) {
+          nextQuestion = parsedAI.nextQuestion;
+        } else if (nextStageIndex === 2) {
           nextQuestion = `Now let's move to Stage 3: Live Coding Sandbox. Please look at the coding challenge in your console: '${session.codingProblem?.title || 'Algorithm Challenge'}'. Walk me through your approach and implement the solution in the editor.`;
         } else if (nextStageIndex === 3) {
-          nextQuestion = `Let's transition to Stage 4: High-Scale Distributed System Design. How would you design this architecture to handle 50x peak traffic without database connection pool starvation or cache stampedes?`;
+          const skills = (session.extractedSkills && session.extractedSkills.length > 0) ? session.extractedSkills.join(', ') : 'distributed storage, caching, and streaming';
+          nextQuestion = `Let's transition to Stage 4: High-Scale Distributed System Design. Focusing on ${skills}, how would you architect this system to handle 50x peak load while guaranteeing p99 latency under 20ms, cache-aside consistency, and eliminating single points of failure?`;
         } else {
-          nextQuestion = (parsedAI && parsedAI.nextQuestion)
-            ? parsedAI.nextQuestion
-            : `Let's proceed to ${nextStageName}: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?`;
+          nextQuestion = `Let's proceed to ${nextStageName}: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?`;
         }
         session.currentStageIndex = nextStageIndex;
       }
@@ -924,6 +960,24 @@ ${codeSnippet ? `Candidate Code:\n${codeSnippet}` : ''}`;
       const problemStatement = (typeof body.problemStatement === 'string' ? body.problemStatement : '').substring(0, 2000);
       const modelChoice = (typeof body.modelChoice === 'string' ? body.modelChoice : 'auto').trim();
 
+      // Sub-millisecond syntax pre-flight for JavaScript
+      if (language === 'javascript' || language === 'js') {
+        try {
+          new vm.Script(code);
+        } catch (syntaxErr) {
+          return sendJson(res, 200, {
+            passed: false,
+            score: 30,
+            output: `Syntax Error: ${syntaxErr.message}`,
+            timeComplexity: 'N/A (Syntax Error)',
+            complexity: 'N/A (Syntax Error)',
+            spaceComplexity: 'N/A',
+            feedback: `JavaScript syntax pre-flight detected an error: ${syntaxErr.message}. Please fix syntax before re-running.`,
+            suggestions: ['Check matching braces, parentheses, and variable declarations.']
+          });
+        }
+      }
+
       const systemPrompt = `You are a code evaluator for technical coding interviews.
 Output strictly valid JSON:
 {
@@ -956,6 +1010,7 @@ Output strictly valid JSON:
         };
       }
 
+      evaluation.complexity = evaluation.complexity || evaluation.timeComplexity || 'O(n)';
       return sendJson(res, 200, evaluation);
     } catch (err) {
       console.error('[Interview:RunCode] Error:', err.message || err);
@@ -998,7 +1053,7 @@ Output strictly valid JSON:
     "systemArchitecture": 89,
     "behavioralLeadership": 91
   },
-  "executiveSummary": "2-3 paragraphs reviewing candidate strengths, depth, and clarity.",
+  "executiveSummary": "2-3 paragraphs reviewing candidate strengths, depth, and quoting transcript statements.",
   "strengths": ["Strength 1", "Strength 2", "Strength 3"],
   "weaknesses": ["Area for growth 1", "Area for growth 2"],
   "questionBreakdown": [
@@ -1010,9 +1065,9 @@ Output strictly valid JSON:
     }
   ],
   "personalizedRoadmap": [
-    "Skill step 1",
-    "Skill step 2",
-    "Skill step 3"
+    "Phase 1: Topic with documentation URL",
+    "Phase 2: Topic with documentation URL",
+    "Phase 3: Topic with documentation URL"
   ]
 }`;
 
@@ -1022,6 +1077,7 @@ Duration: ${totalMinutes} mins
 Tab Focus Switches: ${session.metrics.tabSwitches}
 ${session.resumeText ? `Resume Background: ${session.resumeText}` : ''}
 ${session.jobDescription ? `Target Job Requirements: ${session.jobDescription}` : ''}
+${(session.extractedSkills && session.extractedSkills.length > 0) ? `Verified Target Stack: ${session.extractedSkills.join(', ')}` : ''}
 
 Transcript:
 ${transcriptText}`;
@@ -1074,9 +1130,9 @@ ${transcriptText}`;
             }
           ],
           personalizedRoadmap: [
-            "Master advanced multi-region distributed databases (CockroachDB/Spanner)",
-            "Deepen hands-on experience with eBPF and kernel-level network observability",
-            "Practice quantifying technical debt remediation directly against business ROI"
+            "Master advanced multi-region distributed databases (CockroachDB/Spanner) - https://www.cockroachlabs.com/docs/",
+            "Deepen hands-on experience with eBPF and kernel-level network observability - https://ebpf.io/what-is-ebpf/",
+            "Master high-throughput streaming and event architectures with Kafka & Redis - https://redis.io/docs/ & https://kafka.apache.org/documentation/"
           ]
         };
       }
@@ -1088,6 +1144,9 @@ ${transcriptText}`;
         roleTitle: session.roleTitle,
         experienceLevel: session.experienceLevel,
         persona: session.persona,
+        resumeText: session.resumeText || '',
+        jobDescription: session.jobDescription || '',
+        extractedSkills: session.extractedSkills || [],
         startTime: session.startTime,
         endTime: session.endTime,
         durationMinutes: totalMinutes,

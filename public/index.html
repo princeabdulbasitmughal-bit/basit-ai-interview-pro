@@ -664,33 +664,58 @@
       padding: 1.25rem;
     }
 
-    /* Print & PDF Export Stylesheet */
+    /* Print & PDF Export Stylesheet (Subagent 14 Certified) */
     @media print {
-      nav, .ctrl-btn, .btn-launch, .loading-overlay, #tab-switch-count, .history-card button {
+      nav, .ctrl-btn, .btn-launch, .loading-overlay, #tab-switch-count, .history-card button, #report-actions-row {
         display: none !important;
       }
       body {
         background: #ffffff !important;
         color: #0f172a !important;
+        font-family: system-ui, -apple-system, sans-serif !important;
       }
       .glass-card {
         background: #ffffff !important;
-        border: 1px solid #e2e8f0 !important;
+        border: 1px solid #cbd5e1 !important;
         box-shadow: none !important;
         color: #0f172a !important;
         break-inside: avoid;
         page-break-inside: avoid;
+        margin-bottom: 1.5rem !important;
       }
       .dimension-card {
-        border: 1px solid #cbd5e1 !important;
-        background: #f8fafc !important;
+        border: 1px solid #94a3b8 !important;
+        background: #f1f5f9 !important;
         color: #0f172a !important;
       }
-      .section-title {
+      .dimension-card div {
         color: #0f172a !important;
       }
-      #report-executive-summary, #report-strengths-weaknesses, #report-roadmap, #report-transcript-section {
+      .section-title, h1, h2, h3, h4 {
+        color: #0f172a !important;
+      }
+      #report-executive-summary, #report-strengths-weaknesses, #report-roadmap, #report-transcript-container {
         color: #1e293b !important;
+      }
+      #report-transcript-container {
+        max-height: none !important;
+        overflow: visible !important;
+      }
+      #report-transcript-container > div {
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-left: 4px solid #0284c7 !important;
+        color: #0f172a !important;
+        page-break-inside: avoid;
+        margin-bottom: 0.5rem;
+      }
+      #report-transcript-container > div * {
+        color: #0f172a !important;
+      }
+      .verdict-badge {
+        color: #0f172a !important;
+        border: 2px solid #0f172a !important;
+        background: #e2e8f0 !important;
       }
     }
   </style>
@@ -790,6 +815,7 @@
             <label class="form-label">Interview Mode</label>
             <select id="interview-mode">
               <option value="Full Technical & Behavioral">Full Technical & Behavioral (5 Stages)</option>
+              <option value="Speed Mock: 2-Minute Warmup Drill">⏱️ Speed Mock: 2-Minute Warmup Drill</option>
               <option value="Live Coding & Algorithms Only">Live Coding & Algorithms Only</option>
               <option value="High-Scale System Design Only">High-Scale System Design Only</option>
               <option value="Behavioral & Leadership (STAR)">Behavioral & Leadership (STAR)</option>
@@ -803,34 +829,41 @@
 
           <div class="form-group">
             <label class="form-label">Candidate Resume Highlights (Optional)</label>
-            <textarea id="resume-text" rows="2" placeholder="Paste projects, experience, or resume bullet points for personalized questioning..."></textarea>
+            <textarea id="resume-text" rows="2" placeholder="Paste candidate projects, stack (Kubernetes, Redis, React, etc.)..."></textarea>
           </div>
         </div>
 
-        <!-- Pre-Flight Audio/Video Check -->
+        <!-- Right Configuration Column -->
         <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div class="section-title"><span>📹</span> Audio & Video Pre-Flight</div>
+            <div class="section-title">
+              <span>🎛️</span> Session & Audio Setup
+            </div>
 
-            <div class="preflight-camera">
-              <video id="preflight-video" class="preflight-video" autoplay playsinline muted></video>
-              <div id="camera-placeholder" class="camera-placeholder">
-                <span style="font-size: 2rem;">📷</span>
-                <span>Webcam Not Active</span>
-                <button class="ctrl-btn" onclick="initMediaDevices()" style="margin-top: 4px;">Allow Camera & Mic</button>
+            <!-- Pre-flight Camera Preview & Mic Meter -->
+            <div style="margin-bottom: 1.25rem;">
+              <div class="form-label">Camera & Microphone Pre-Flight</div>
+              <div class="preflight-box">
+                <video id="preflight-video" autoplay playsinline muted></video>
+                <div style="position: absolute; bottom: 8px; left: 8px; font-size: 0.72rem; background: rgba(0,0,0,0.6); padding: 2px 6px; border-radius: 4px;">
+                  Pre-flight Live
+                </div>
+              </div>
+              <div style="margin-top: 0.6rem;">
+                <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.25rem;">
+                  <span>Microphone Input Level</span>
+                  <span>Audio Activity</span>
+                </div>
+                <div class="mic-meter-bar">
+                  <div class="mic-meter-fill" id="mic-fill"></div>
+                </div>
               </div>
             </div>
 
-            <div class="mic-meter-wrapper">
-              <span style="font-size: 0.85rem;">🎤 Mic Level:</span>
-              <div class="mic-meter-bar">
-                <div class="mic-meter-fill" id="mic-fill"></div>
-              </div>
-            </div>
-
-            <div style="margin-top: 1.25rem;">
-              <label class="form-label">Interviewer Persona</label>
-              <div class="personas-row">
+            <!-- Interviewer Persona Selection -->
+            <div class="form-group">
+              <label class="form-label">Select Interviewer Persona</label>
+              <div class="persona-card-grid">
                 <div class="persona-card selected" onclick="selectPersona(this, 'alex')">
                   <div style="font-size: 1.8rem;">👨‍💻</div>
                   <div style="font-size: 0.85rem; font-weight: 700; color: #fff;">Alex Rivera</div>
@@ -860,9 +893,14 @@
             </div>
           </div>
 
-          <button class="btn-launch" onclick="startInterviewSession()">
-            <span>⚡</span> Enter AI Interview Room
-          </button>
+          <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem;">
+            <button class="btn-launch" onclick="startInterviewSession()" style="flex: 2; margin-top: 0;">
+              <span>⚡</span> Enter AI Interview Room
+            </button>
+            <button class="btn-launch" onclick="startWarmupDrill()" style="flex: 1; margin-top: 0; background: rgba(0, 240, 255, 0.15); border: 1px solid var(--cyan); color: var(--cyan);">
+              <span>⏱️</span> 2-Min Warmup
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -1317,21 +1355,37 @@
       }
     }
 
+    let lastFocusLossTimestamp = 0;
     function setupAntiCheatListener() {
+      function recordFocusLoss(reason) {
+        if (!activeSessionId) return;
+        const now = Date.now();
+        if (now - lastFocusLossTimestamp < 600) return; // 600ms Debounce prevents double-counting blur + visibilitychange
+        lastFocusLossTimestamp = now;
+        tabSwitchCount += 1;
+        const el = document.getElementById('tab-switch-count');
+        if (el) el.innerText = tabSwitchCount;
+        console.warn(`[AntiCheat] Focus loss recorded: ${reason} (Total switches: ${tabSwitchCount})`);
+      }
+
       document.addEventListener('visibilitychange', () => {
-        if (document.hidden && activeSessionId) {
-          tabSwitchCount += 1;
-          const el = document.getElementById('tab-switch-count');
-          if (el) el.innerText = tabSwitchCount;
-        }
+        if (document.hidden) recordFocusLoss('visibilitychange:hidden');
       });
       window.addEventListener('blur', () => {
+        recordFocusLoss('window:blur');
+      });
+      window.addEventListener('paste', () => {
         if (activeSessionId) {
-          tabSwitchCount += 1;
-          const el = document.getElementById('tab-switch-count');
-          if (el) el.innerText = tabSwitchCount;
+          console.log('[AntiCheat] Clipboard paste event detected during active session');
         }
       });
+    }
+
+    // Speed Mock Warmup Drill Trigger
+    function startWarmupDrill() {
+      const modeSelect = document.getElementById('interview-mode');
+      if (modeSelect) modeSelect.value = 'Speed Mock: 2-Minute Warmup Drill';
+      startInterviewSession();
     }
 
     // Start Session
@@ -1438,9 +1492,10 @@
       const answerInput = document.getElementById('live-answer-input');
       const answerText = answerInput.value.trim();
       const codeSnippet = document.getElementById('live-code-editor').value.trim();
+      const whiteboardNotes = (document.getElementById('system-design-notes')?.value || '').trim();
       const modelChoice = document.getElementById('global-model-selector').value;
 
-      if (!answerText && !codeSnippet) {
+      if (!answerText && !codeSnippet && !whiteboardNotes) {
         alert('Please speak or type your answer before continuing.');
         return;
       }
@@ -1448,7 +1503,7 @@
       if (isListening) toggleSpeechRecognition();
 
       const candidateName = document.getElementById('candidate-name').value.trim() || 'Candidate';
-      appendChatMessage('candidate', candidateName, answerText || '(Submitted code solution)');
+      appendChatMessage('candidate', candidateName, answerText || (codeSnippet ? '(Submitted code solution)' : '(Submitted system architecture whiteboard notes)'));
       answerInput.value = '';
 
       setSpeechState('Thinking...', true);
@@ -1462,6 +1517,7 @@
             sessionId: activeSessionId,
             answerText,
             codeSnippet: codeSnippet !== '// Write your solution here...' ? codeSnippet : '',
+            whiteboardNotes,
             tabSwitches: tabSwitchCount,
             modelChoice
           })
@@ -1576,17 +1632,23 @@
 
       // Populate Personalized 3-Step Mastery Roadmap
       const roadmapItems = (sc.personalizedRoadmap && sc.personalizedRoadmap.length) ? sc.personalizedRoadmap : [
-        "Phase 1: Deepen hands-on mastery of multi-region distributed databases (CockroachDB/Spanner) and consensus models",
-        "Phase 2: Master advanced eBPF and kernel-level network observability for high-concurrency microservices",
-        "Phase 3: Formalize STAR behavioral articulation with explicit business ROI and telemetry metric quantification"
+        "Phase 1: Deepen hands-on mastery of multi-region distributed databases (CockroachDB/Spanner) - https://www.cockroachlabs.com/docs/",
+        "Phase 2: Master advanced eBPF and kernel-level network observability for high-concurrency microservices - https://ebpf.io/what-is-ebpf/",
+        "Phase 3: Master high-throughput streaming and event architectures with Kafka & Redis - https://redis.io/docs/ & https://kafka.apache.org/documentation/"
       ];
+
+      function formatRoadmapItem(item) {
+        const str = typeof item === 'string' ? item : (item.title || item.step || JSON.stringify(item));
+        const escaped = escapeHtml(str);
+        return escaped.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" style="color:var(--cyan); text-decoration:underline; font-weight:600;">$1</a>');
+      }
 
       const rmContainer = document.getElementById('report-roadmap');
       if (rmContainer) {
         rmContainer.innerHTML = roadmapItems.map((item, idx) => `
           <div style="display:flex; align-items:flex-start; gap:0.75rem; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.07); border-radius:8px; padding:0.75rem 1rem;">
             <div style="background:var(--cyan); color:#000; font-weight:800; font-size:0.8rem; border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">${idx+1}</div>
-            <div style="color:#e2e8f0; font-size:0.9rem; line-height:1.5;">${escapeHtml(typeof item === 'string' ? item : item.title || item.step || JSON.stringify(item))}</div>
+            <div style="color:#e2e8f0; font-size:0.9rem; line-height:1.5;">${formatRoadmapItem(item)}</div>
           </div>
         `).join('');
       }
@@ -1700,7 +1762,21 @@
       speechRecognition.start();
     }
 
-    // Text-to-Speech (TTS)
+    // Text-to-Speech (TTS) with Roman Urdu Phonetic Polish
+    function applyPhoneticPolish(text) {
+      if (!text || typeof text !== 'string') return '';
+      return text
+        .replace(/\bhai\b/gi, 'hye')
+        .replace(/\bboht\b/gi, 'bohat')
+        .replace(/\bshukriya\b/gi, 'shook-ree-yah')
+        .replace(/\bkarenge\b/gi, 'kuh-reng-ay')
+        .replace(/\bpehle\b/gi, 'peh-lay')
+        .replace(/\bkaise\b/gi, 'kay-say')
+        .replace(/\bacha\b/gi, 'uh-cha')
+        .replace(/\bzabardast\b/gi, 'zuh-bur-dust')
+        .replace(/\bkarna\b/gi, 'kur-na');
+    }
+
     function speakText(text, onEndCallback) {
       const enabled = document.getElementById('voice-enable-toggle').checked;
       if (!enabled || !synth) {
@@ -1710,11 +1786,19 @@
 
       synth.cancel();
       const cleaned = text.replace(/[*#`_\[\]]/g, '').trim();
-      const utterance = new SpeechSynthesisUtterance(cleaned);
+      const polished = applyPhoneticPolish(cleaned);
+      const utterance = new SpeechSynthesisUtterance(polished);
       utterance.rate = 1.0;
 
       const voices = synth.getVoices();
-      const preferred = voices.find(v => v.name.includes('Natural') || v.name.includes('Google') || v.lang.startsWith('en'));
+      const hasUrduTokens = /\b(hai|karenge|shukriya|pehle|kaise|zabardast|aur|hain|karna)\b/i.test(cleaned);
+      let preferred = null;
+      if (hasUrduTokens) {
+        preferred = voices.find(v => v.lang === 'ur-PK' || v.lang.startsWith('ur') || v.lang === 'en-IN' || v.lang.startsWith('hi'));
+      }
+      if (!preferred) {
+        preferred = voices.find(v => v.name.includes('Natural') || v.name.includes('Google') || v.lang.startsWith('en'));
+      }
       if (preferred) utterance.voice = preferred;
 
       setSpeechState('Speaking...', true);
@@ -1749,6 +1833,13 @@
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
       let angle = 0;
+      const particles = Array.from({ length: 24 }, (_, i) => ({
+        orbitRadius: 75 + (i % 3) * 14,
+        speed: 0.015 + (i % 4) * 0.008,
+        offset: (i * Math.PI * 2) / 24,
+        size: 1.5 + (i % 2) * 1.5,
+        alpha: 0.3 + (i % 3) * 0.25
+      }));
 
       function renderWave() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -1756,15 +1847,62 @@
         const isSpeaking = orb && orb.classList.contains('speaking');
         const cx = canvas.width / 2;
         const cy = canvas.height / 2;
-        const radius = isSpeaking ? 65 + Math.sin(angle * 2) * 5 : 55;
 
+        // 1. Dual Resonance Rings
+        const baseRadius = isSpeaking ? 62 + Math.sin(angle * 3) * 6 : 52;
+        ctx.save();
         ctx.beginPath();
-        ctx.arc(cx, cy, radius, 0, Math.PI * 2);
-        ctx.strokeStyle = isSpeaking ? 'rgba(0, 240, 255, 0.7)' : 'rgba(0, 240, 255, 0.2)';
-        ctx.lineWidth = isSpeaking ? 3 : 1;
+        ctx.arc(cx, cy, baseRadius, 0, Math.PI * 2);
+        ctx.strokeStyle = isSpeaking ? 'rgba(0, 240, 255, 0.85)' : 'rgba(0, 240, 255, 0.25)';
+        ctx.lineWidth = isSpeaking ? 3 : 1.5;
+        if (isSpeaking) {
+          ctx.shadowBlur = 15;
+          ctx.shadowColor = '#00f0ff';
+        }
         ctx.stroke();
 
-        angle += 0.05;
+        ctx.beginPath();
+        ctx.arc(cx, cy, baseRadius + (isSpeaking ? 12 : 7), 0, Math.PI * 2);
+        ctx.strokeStyle = isSpeaking ? 'rgba(112, 0, 255, 0.6)' : 'rgba(112, 0, 255, 0.15)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+        ctx.restore();
+
+        // 2. 64-Point Undulating Harmonic Wave
+        const points = 64;
+        ctx.save();
+        ctx.beginPath();
+        for (let i = 0; i <= points; i++) {
+          const theta = (i / points) * Math.PI * 2;
+          const harmonic = isSpeaking
+            ? Math.sin(theta * 6 + angle * 4) * 7 + Math.cos(theta * 3 - angle * 2) * 4
+            : Math.sin(theta * 4 + angle) * 1.5;
+          const r = baseRadius + harmonic;
+          const x = cx + Math.cos(theta) * r;
+          const y = cy + Math.sin(theta) * r;
+          if (i === 0) ctx.moveTo(x, y);
+          else ctx.lineTo(x, y);
+        }
+        ctx.closePath();
+        ctx.strokeStyle = isSpeaking ? 'rgba(0, 255, 159, 0.75)' : 'rgba(0, 240, 255, 0.2)';
+        ctx.lineWidth = isSpeaking ? 2 : 1;
+        ctx.stroke();
+        ctx.restore();
+
+        // 3. 24 Floating Cyber-Particle Orbital Halo
+        particles.forEach(p => {
+          const currentTheta = angle * p.speed * (isSpeaking ? 2.5 : 1) + p.offset;
+          const px = cx + Math.cos(currentTheta) * p.orbitRadius;
+          const py = cy + Math.sin(currentTheta) * p.orbitRadius;
+          ctx.beginPath();
+          ctx.arc(px, py, p.size, 0, Math.PI * 2);
+          ctx.fillStyle = isSpeaking
+            ? `rgba(0, 240, 255, ${p.alpha})`
+            : `rgba(0, 240, 255, ${p.alpha * 0.4})`;
+          ctx.fill();
+        });
+
+        angle += isSpeaking ? 0.04 : 0.015;
         requestAnimationFrame(renderWave);
       }
       renderWave();

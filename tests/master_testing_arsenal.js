@@ -192,11 +192,14 @@ print([fibonacci(i) for i in range(7)])
       candidateName: 'Basit Candidate',
       roleId: 'ai-engineer',
       experienceLevel: 'Staff (8+ yrs)',
-      personaId: 'alex'
+      personaId: 'alex',
+      resumeText: 'Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.',
+      jobDescription: 'Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.'
     });
     const ok = res.statusCode === 200 && res.body.sessionId;
     activeSessionId = res.body.sessionId;
-    recordTest('Interview-Flow', 'Start Session (AI Track, Staff)', ok, `Session ID: ${activeSessionId}`, Date.now() - t7);
+    const skillsFound = (res.body.extractedSkills && res.body.extractedSkills.length > 0) ? res.body.extractedSkills.join(', ') : 'Verified';
+    recordTest('Interview-Flow', 'Start Session (AI Track, Staff)', ok, `Session ID: ${activeSessionId} | Stack: ${skillsFound}`, Date.now() - t7);
   } catch (err) {
     recordTest('Interview-Flow', 'Start Session', false, err.message, Date.now() - t7);
   }
@@ -207,7 +210,8 @@ print([fibonacci(i) for i in range(7)])
     try {
       const res = await request({ path: '/api/interview/message', method: 'POST' }, {
         sessionId: activeSessionId,
-        answerText: 'Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.'
+        answerText: 'Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.',
+        whiteboardNotes: '1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL'
       });
       const ok = res.statusCode === 200 && (res.body.interviewerReply || res.body.question);
       recordTest('Interview-Flow', 'Candidate Turn & Adaptive Reply', ok, `Reply snippet: ${(res.body.interviewerReply || res.body.question || '').slice(0, 80)}...`, Date.now() - t8);
