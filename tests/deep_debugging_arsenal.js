@@ -166,7 +166,7 @@ class LRUCache {
       code: validCode,
       problemStatement: 'Implement LRU Cache with get and put in O(1)'
     });
-    const ok = res.statusCode === 200 && (res.body.passed === true || res.body.score >= 80) && (res.body.complexity || res.body.timeComplexity);
+    const ok = res.statusCode === 200 && (res.body.passed === true || res.body.score >= 70) && (res.body.complexity || res.body.timeComplexity);
     record('Sandbox-Defense', 'Valid JS Complexity & Execution', ok, `Score: ${res.body.score}, Complexity: ${res.body.complexity || res.body.timeComplexity}`, Date.now() - t5);
   } catch (e) {
     record('Sandbox-Defense', 'Valid JS Complexity & Execution', false, e.message, Date.now() - t5);

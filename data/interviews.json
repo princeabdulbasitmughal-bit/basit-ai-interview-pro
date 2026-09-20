@@ -1,5 +1,89 @@
 [
   {
+    "id": "intv_1789874552412_ad9cf6",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1789874557653,
+    "endTime": 1789874559170,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai! Kya mera naam Alex Rivera hoon. Main aapki today's interview main Kubernetes aur Redis ke baare mein jaankari karna chahta hoon. Aap apna experience share kar sakte hain? Iske baad main aapko ek question milegi jo aapke expertise ko test karega.",
+        "timestamp": 1789874557653,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1789874557657,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Bilkul, aapne apni distributed embeddings retrieval architecture k bare mein achhe se describe kiya hain. Aab mujhe pata chahiye ki aap is architecture ke liye latency optimization kaise kar raha hain aur edge cases ka kitna zamaan pehuncha rahe hain. Aap kis tarah se Qdrant HNSW Cluster mein concurrency and race conditions handle kar rahi hain? Kya CAP theorem ke saath aapne iske liye tradeoffs kar diye hain?",
+        "timestamp": 1789874559167,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 87,
+        "problemSolving": 83,
+        "communication": 90,
+        "systemArchitecture": 84,
+        "behavioralLeadership": 86
+      },
+      "executiveSummary": "Basit Candidate demonstrated strong technical competence in distributed vector search using Qdrant, Redis caching, and Kubernetes. He provided a clear description of the architecture and its latency optimization strategies but could have elaborated more on handling concurrency and race conditions within the Qdrant HNSW cluster.",
+      "strengths": [
+        "Strong understanding of distributed vector search with Qdrant",
+        "Good communication skills in explaining technical concepts"
+      ],
+      "weaknesses": [
+        "Less depth in discussing edge cases, concurrency, and race conditions handling within Qdrant HNSW Cluster"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Latency Optimization",
+          "question": "How do you optimize latency for your distributed embeddings retrieval architecture?",
+          "score": 85,
+          "evaluation": "Candidate provided a brief answer but could have gone deeper into specific techniques and tools used."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Advanced Qdrant HNSW Cluster Optimization Techniques",
+        "Phase 2: Concurrency and Race Conditions Handling in Distributed Systems",
+        "Phase 3: CAP Theorem Tradeoffs in Real-World Scenarios"
+      ]
+    }
+  },
+  {
     "id": "intv_1789873997479_f4e114",
     "candidateName": "Basit Candidate",
     "roleId": "aiml",

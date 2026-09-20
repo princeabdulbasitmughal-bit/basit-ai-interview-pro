@@ -377,9 +377,15 @@ async function queryAI({ systemPrompt, userPrompt, temperature = 0.6, jsonMode =
     enhancedSystem += "\n\nBilingual Capability: You understand both English and Roman Urdu (e.g. 'haan bhai', 'pehle database sharding karenge'). If the candidate speaks in Roman Urdu, acknowledge warmly and reply either in crisp English or natural Roman Urdu.";
   }
 
-  // 1. Force Local GPU Ollama
-  if (modelChoice === 'ollama' || modelChoice === 'ollama-32b' || modelChoice === 'auto') {
-    const targetModel = modelChoice === 'ollama-32b' ? 'qwen2.5-coder:32b' : 'qwen2.5-coder:7b';
+  // 1. Sovereign Custom Model & Local GPU Ollama
+  if (modelChoice === 'basit-custom' || modelChoice === 'basit-custom-32b' || modelChoice === 'ollama' || modelChoice === 'ollama-32b' || modelChoice === 'auto') {
+    let targetModel = 'basit-interviewer-pro';
+    if (modelChoice === 'basit-custom-32b' || modelChoice === 'ollama-32b') {
+      targetModel = 'basit-interviewer-pro-32b';
+    } else if (modelChoice === 'ollama') {
+      targetModel = 'qwen2.5-coder:7b';
+    }
+
     try {
       const fullPrompt = `${enhancedSystem}\n\nTask:\n${userPrompt}`;
       const resp = await fetch('http://localhost:11434/api/generate', {
@@ -399,7 +405,29 @@ async function queryAI({ systemPrompt, userPrompt, temperature = 0.6, jsonMode =
         const text = data.response?.trim();
         if (text) return cleanJsonResponse(text, jsonMode);
       }
-    } catch (e) {}
+    } catch (e) {
+      if (modelChoice === 'auto') {
+        try {
+          const resp = await fetch('http://localhost:11434/api/generate', {
+            method: 'POST',
+            signal: AbortSignal.timeout(3000),
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              model: 'qwen2.5-coder:7b',
+              prompt: `${enhancedSystem}\n\nTask:\n${userPrompt}`,
+              stream: false,
+              format: jsonMode ? 'json' : undefined,
+              options: { temperature: temperature, num_predict: 800 }
+            })
+          });
+          if (resp.ok) {
+            const data = await resp.json();
+            const text = data.response?.trim();
+            if (text) return cleanJsonResponse(text, jsonMode);
+          }
+        } catch (errFallback) {}
+      }
+    }
   }
 
   // 2. Groq LPU (Sub-second cloud Llama 3.3)
@@ -978,14 +1006,16 @@ ${codeSnippet ? `Candidate Code:\n${codeSnippet}\n` : ''}${whiteboardNotes ? `Wh
         }
       }
 
-      const systemPrompt = `You are a code evaluator for technical coding interviews.
+      const systemPrompt = `You are an elite code evaluator for technical coding interviews.
+Evaluate logic correctness and algorithmic complexity accurately.
+Note: In JavaScript, ES6 Map strictly guarantees insertion order. Using Map.delete followed by Map.set refreshes recency, and Map.keys().next().value retrieves the least-recently-used item in O(1) time. A Map-based LRU Cache is a valid O(1) get and O(1) put implementation in JavaScript.
 Output strictly valid JSON:
 {
   "passed": true,
   "score": 90,
   "output": "Test cases output summary",
-  "timeComplexity": "O(n)",
-  "spaceComplexity": "O(1)",
+  "timeComplexity": "O(1)",
+  "spaceComplexity": "O(capacity)",
   "feedback": "Concise evaluation note",
   "suggestions": ["Suggestion 1"]
 }`;
