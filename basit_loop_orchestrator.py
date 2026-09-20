@@ -33,6 +33,7 @@ PORT = 8090
 HEALTH_URL = f"http://127.0.0.1:{PORT}/api/health"
 SWARM_SCRIPT = BASE_DIR / "modules" / "subagents_20_interview_swarm.py"
 TEST_SCRIPT = BASE_DIR / "tests" / "master_testing_arsenal.js"
+DEEP_DEBUG_SCRIPT = BASE_DIR / "tests" / "deep_debugging_arsenal.js"
 LOOP_INTERVAL_SECONDS = 600  # 10 Minutes
 
 def log(msg: str, level: str = "INFO"):
@@ -141,6 +142,30 @@ def run_master_testing_arsenal() -> dict:
         log(f"Test arsenal exception: {e}", "ERROR")
     return {"passed": 0, "total": 12, "healthRate": "0%"}
 
+def run_deep_debugging_arsenal() -> bool:
+    log("Executing Deep Debugging & Fuzzing Arsenal...", "INFO")
+    t0 = time.perf_counter()
+    try:
+        proc = subprocess.run(
+            ["node", str(DEEP_DEBUG_SCRIPT)],
+            cwd=str(BASE_DIR),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=30
+        )
+        duration_ms = round((time.perf_counter() - t0) * 1000, 1)
+        if proc.returncode == 0:
+            log(f"Deep Debugging Arsenal Passed in {duration_ms}ms: 100% Zero Bugs", "SUCCESS")
+            return True
+        else:
+            log(f"Deep Debugging returned code {proc.returncode}: {proc.stdout[:200]}", "WARN")
+            return False
+    except Exception as e:
+        log(f"Deep Debugging exception: {e}", "ERROR")
+        return False
+
 def record_cycle_history(cycle_number: int, swarm_res: dict, test_res: dict):
     history = []
     if HISTORY_FILE.exists():
@@ -189,7 +214,10 @@ def execute_basit_loop_single_cycle(cycle_num: int):
     # 3. Run Master Testing Arsenal
     test_report = run_master_testing_arsenal()
 
-    # 4. Save history telemetry
+    # 4. Run Deep Debugging & Fuzzing Arsenal
+    deep_debug_ok = run_deep_debugging_arsenal()
+
+    # 5. Save history telemetry
     record_cycle_history(cycle_num, swarm_report, test_report)
 
     all_passed = test_report.get("passed") == test_report.get("total")

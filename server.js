@@ -754,7 +754,7 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
       const personaId = (typeof body.personaId === 'string' ? body.personaId : 'alex').trim();
       const modelChoice = (typeof body.modelChoice === 'string' ? body.modelChoice : 'auto').trim();
 
-      const role = ROLES_CATALOG.find(r => r.id === roleId) || ROLES_CATALOG[0];
+      const role = ROLES_CATALOG.find(r => r.id === roleId || (roleId === 'ai-engineer' && r.id === 'aiml') || (roleId === 'system-design' && r.id === 'system_design')) || ROLES_CATALOG[0];
       const persona = PERSONAS[personaId] || PERSONAS.alex;
       const sessionId = 'intv_' + Date.now() + '_' + crypto.randomBytes(3).toString('hex');
       const extractedSkills = extractTechnicalSkills(`${resumeText} ${jobDescription}`);
