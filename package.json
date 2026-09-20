@@ -1,11 +1,20 @@
 {
-  "name": "basit-ai-interview",
-  "version": "1.0.0",
-  "description": "👑 Basit AI Interview Pro — Sovereign AI Technical & Behavioral Interview Intelligence System",
+  "name": "basit-ai-interview-pro",
+  "version": "3.5.0",
+  "description": "👑 Basit AI Interview Pro — Sovereign AI Technical, Coding, System Design & Behavioral Interview System",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "test": "node tests/master_testing_arsenal.js",
+    "test:deep": "node tests/deep_debugging_arsenal.js",
+    "swarm": "python modules/subagents_20_interview_swarm.py",
+    "train": "python modules/train_interview_model.py",
+    "loop": "python basit_loop_orchestrator.py",
+    "pm2:start": "pm2 start ecosystem.config.js",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:restart": "pm2 restart ecosystem.config.js",
+    "pm2:logs": "pm2 logs"
   },
   "dependencies": {},
   "devDependencies": {},
@@ -16,8 +25,15 @@
     "system-design",
     "live-coding",
     "speech-recognition",
-    "voice-ai"
+    "voice-ai",
+    "ollama",
+    "sovereign-ai",
+    "roman-urdu"
   ],
-  "author": "Basit (absh5506@gmail.com)",
-  "license": "MIT"
+  "author": "Prince Abdul Basit (absh5506@gmail.com)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/princeabdulbasitmughal-bit/basit-ai-interview-pro.git"
+  }
 }

@@ -1,14 +1,14 @@
 {
-  "name": "Basit Jarvis AI — Sovereign PC Control OS",
-  "short_name": "Jarvis OS",
-  "description": "24/7 Autonomous Sovereign Voice, PC Controller, & Neural AI Assistant for Basit",
+  "name": "Basit AI Interview Pro — Sovereign Interview Intelligence OS",
+  "short_name": "AI Interview Pro",
+  "description": "Autonomous Sovereign AI Technical, System Design, Live Coding & Behavioral Interview System",
   "start_url": "/",
   "id": "/",
   "display": "standalone",
   "background_color": "#050811",
   "theme_color": "#00f0ff",
   "orientation": "any",
-  "categories": ["utilities", "productivity", "personalization"],
+  "categories": ["education", "business", "productivity"],
   "icons": [
     {
       "src": "/icon.svg",
@@ -29,22 +29,28 @@
   ],
   "shortcuts": [
     {
-      "name": "📸 Screenshot",
-      "short_name": "Screen",
-      "description": "Capture PC screen immediately",
-      "url": "/?action=screenshot"
+      "name": "🚀 Enter Interview Room",
+      "short_name": "Interview",
+      "description": "Start live mock interview round",
+      "url": "/#interview"
     },
     {
-      "name": "📊 System Status",
-      "short_name": "Status",
-      "description": "View live hardware telemetry",
-      "url": "/?action=status"
+      "name": "💡 AI Knowledge Hub",
+      "short_name": "Knowledge",
+      "description": "Ask technical and architectural interview questions",
+      "url": "/#info"
     },
     {
-      "name": "🎤 Voice Command",
-      "short_name": "Voice",
-      "description": "Open voice control modal",
-      "url": "/?action=voice"
+      "name": "⚡ 20-Subagent Swarm",
+      "short_name": "Swarm",
+      "description": "Inspect 20-subagent parallel health score",
+      "url": "/#swarm"
+    },
+    {
+      "name": "📊 Hiring Scorecard",
+      "short_name": "Scorecard",
+      "description": "View 5D Bar Raiser hiring scorecard",
+      "url": "/#scorecard"
     }
   ]
 }

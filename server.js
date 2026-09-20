@@ -17,6 +17,7 @@ const os = require('os');
 const crypto = require('crypto');
 const { exec } = require('child_process');
 const vm = require('vm');
+const zlib = require('zlib');
 
 const PORT = parseInt(process.env.PORT || '8090', 10);
 const BASE_DIR = __dirname;
@@ -669,6 +670,31 @@ const server = http.createServer(async (req, res) => {
   }
 
   // --------------------------------------------------------------------------
+  // API ROUTE: Production System Metrics & Launch Telemetry
+  // --------------------------------------------------------------------------
+  if (pathname === '/api/system/metrics' && method === 'GET') {
+    const mem = process.memoryUsage();
+    return sendJson(res, 200, {
+      status: 'ready',
+      name: 'Basit AI Interview Pro (Official Production)',
+      version: '3.5.0-launch',
+      launchReady: true,
+      uptimeSeconds: Math.round(process.uptime()),
+      activeSessions: activeSessions.size,
+      memory: {
+        rssMb: Math.round(mem.rss / 1024 / 1024),
+        heapUsedMb: Math.round(mem.heapUsed / 1024 / 1024),
+        heapTotalMb: Math.round(mem.heapTotal / 1024 / 1024)
+      },
+      sovereignModels: ['basit-interviewer-pro:latest', 'basit-interviewer-pro-32b:latest'],
+      nodeVersion: process.version,
+      platform: process.platform,
+      arch: process.arch,
+      timestamp: new Date().toISOString()
+    });
+  }
+
+  // --------------------------------------------------------------------------
   // API ROUTE: Roles & Catalog
   // --------------------------------------------------------------------------
   if (pathname === '/api/roles' && method === 'GET') {
@@ -1286,22 +1312,40 @@ ${transcriptText}`;
           return res.end('404 Not Found - Basit AI Interview Pro');
         }
         applySecurityHeaders(res);
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-        res.end(content);
+        const acceptEncoding = req.headers['accept-encoding'] || '';
+        if (/\bgzip\b/.test(acceptEncoding)) {
+          zlib.gzip(content, (gzErr, zipped) => {
+            if (!gzErr) {
+              res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8', 'Content-Encoding': 'gzip' });
+              return res.end(zipped);
+            }
+            res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+            res.end(content);
+          });
+        } else {
+          res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+          res.end(content);
+        }
       });
       return;
     }
 
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
+    const acceptEncoding = req.headers['accept-encoding'] || '';
+    const shouldGzip = /\bgzip\b/.test(acceptEncoding) && (contentType.startsWith('text/') || contentType === 'application/javascript' || contentType === 'application/json' || contentType === 'image/svg+xml');
 
     applySecurityHeaders(res);
-    res.writeHead(200, {
+    const headers = {
       'Content-Type': contentType,
       'Cache-Control': ext === '.html' ? 'no-cache' : 'max-age=86400'
-    });
+    };
+    if (shouldGzip) {
+      headers['Content-Encoding'] = 'gzip';
+    }
+    res.writeHead(200, headers);
 
-    // Stream-based delivery prevents memory spikes
+    // Stream-based delivery with optional Gzip compression prevents memory spikes
     const stream = fs.createReadStream(filePath);
     stream.on('error', () => {
       if (!res.headersSent) {
@@ -1309,7 +1353,11 @@ ${transcriptText}`;
         res.end('500 Internal Server Error');
       }
     });
-    stream.pipe(res);
+    if (shouldGzip) {
+      stream.pipe(zlib.createGzip()).pipe(res);
+    } else {
+      stream.pipe(res);
+    }
   });
 });
 
