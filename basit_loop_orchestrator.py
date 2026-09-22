@@ -195,9 +195,24 @@ def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_re
     topics = [
         ("Multi-Raft Consensus Topologies", "Distributed Systems Architect", "Network Partition Split-Brain Mitigation"),
         ("eBPF Kernel Tracing & Network Filtering", "Staff Systems Engineer", "Sub-microsecond Packet Inspection"),
-        ("Quantized HNSW Vector Search at Scale", "AI/ML Engineer", "SIMD Acceleration for 1B Vector Indices"),
+        ("Quantized HNSW Vector Search at Scale", "AI/ML Systems Engineer", "SIMD Acceleration for 1B Vector Indices"),
         ("Zero-Trust Service Mesh & mTLS", "DevOps & Cloud Architect", "Cross-Cluster Blue/Green Cryptographic Verification"),
-        ("Double-Entry Financial Ledger Idempotency", "Senior Backend Engineer", "Distributed Lock Elimination")
+        ("Double-Entry Financial Ledger Idempotency", "Senior Backend Engineer", "Distributed Lock Elimination"),
+        ("LSM-Tree Storage Engine Compaction", "Database Kernel Engineer", "Write Amplification & Read Latency Tradeoffs"),
+        ("High-Frequency L3 Order Book Engine", "FinTech Core Engineer", "Zero-Allocation Ring Buffers & Cache Locality"),
+        ("WebRTC SFU Media Pipeline", "Real-Time Communications Engineer", "Dynamic Bitrate Adaptation & Jitter Buffering"),
+        ("Linux Zero-Copy io_uring Network Stack", "High-Performance Systems Engineer", "Kernel Bypass and Async Event Loops"),
+        ("Fault-Tolerant Event-Sourcing CQRS", "Enterprise Platform Architect", "Out-of-Order Event Reconciliation & Snapshotting"),
+        ("Zero-Downtime Database Schema Migration", "Data Platform Engineer", "Online Table Rewrites on 50TB Postgres Clusters"),
+        ("Distributed Deadlock Detection & Resolution", "Distributed Database Engineer", "Wait-For Graph Cycle Detection Algorithms"),
+        ("Token Bucket Rate Limiting with Redis Clusters", "API Gateway Architect", "Atomic Lua Scripting & Cross-Region Sync"),
+        ("WebAssembly (Wasm) Edge Plugin Sandboxing", "Security & Edge Architect", "Memory Isolation & Syscall Virtualization"),
+        ("GPU Memory Pooling & CUDA Kernel Fusion", "Deep Learning Systems Engineer", "FlashAttention & Tensor Parallelism Optimization"),
+        ("Automated Canary Deployments with Flagger & Istio", "SRE / Infrastructure Lead", "Prometheus Metric-Based Automated Rollback"),
+        ("Deterministic Simulation Testing (DST)", "Quality & Resilience Engineer", "Simulating Chaos & Fault Injection in Distributed State"),
+        ("BGP Anycast Routing & Global Traffic Management", "Network & Edge Architect", "DDoS Mitigation & Edge Cache Invalidation"),
+        ("Distributed Secret Vault with Shamir's Secret Sharing", "Cybersecurity Engineer", "KMS Key Rotation & Hardware Security Modules"),
+        ("Bi-directional Streaming Speech-to-Speech Architecture", "Voice AI Systems Engineer", "Full-Duplex Audio Frames with WebSockets")
     ]
     topic_idx = (cycle_num - 1) % len(topics)
     topic, role, scenario = topics[topic_idx]
@@ -206,10 +221,11 @@ def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_re
         "instruction": f"Conduct an elite Bar Raiser evaluation for a {role} specializing in {topic}.",
         "input": f"Candidate demonstrates architectural ownership on scenario: {scenario} (Cycle #{cycle_num}).",
         "output": json.dumps({
-            "interviewerReply": f"Aapka {topic} ka approach impressive hai. Roman Urdu: Production resilience maintain karne k liye yeh key factor hai.",
-            "nextQuestion": f"How do you mathematically guarantee linearizability and zero data loss under Byzantine fault conditions in {topic}?",
+            "interviewerReply": f"Aapka {topic} ka solution dekha—Roman Urdu: Production scalability or zero downtime achieve krne k liye yeh architectural trade-off critical hai.",
+            "nextQuestion": f"Under extreme network partitions and cascading hardware failures in {topic}, how do you mathematically guarantee linearizability and zero data loss?",
             "cycle": cycle_num,
-            "evaluationStandard": "Bar-Raiser Top 1% Seniority"
+            "evaluationStandard": "Bar-Raiser Top 1% Seniority",
+            "domain": role
         }, ensure_ascii=False)
     }
 
@@ -324,6 +340,15 @@ def main():
     log("==================================================================", "LOOP")
 
     cycle = 1
+    if HISTORY_FILE.exists():
+        try:
+            with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+                history = json.load(f)
+                if history and isinstance(history, list) and "cycle" in history[0]:
+                    cycle = history[0]["cycle"] + 1
+        except Exception:
+            cycle = 1
+
     # Check if single run requested
     if "--once" in sys.argv:
         execute_basit_loop_single_cycle(cycle)

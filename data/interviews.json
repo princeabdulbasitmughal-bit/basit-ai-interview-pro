@@ -1,5 +1,100 @@
 [
   {
+    "id": "intv_1790081016920_1f5f41",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790081018489,
+    "endTime": 1790081019356,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate! Welcome to the interview. I'm Alex Rivera, your Principal Technical Lead today. We'll be evaluating your experience in Kubernetes and Redis as well as your understanding of high-scale distributed systems and vector search. Let's dive right into it.\n\nCan you tell me about a time when you successfully implemented a large-scale AI system using Kubernetes and Redis? What were the key challenges, and how did you overcome them?",
+        "timestamp": 1790081018489,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790081018492,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Nice job explaining the use of Qdrant for distributed embeddings retrieval with HNSW indexing and quantization to achieve low latency. Can you describe how you handle concurrency in your production environment? What measures do you take to prevent race conditions?",
+        "timestamp": 1790081019354,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 90,
+        "problemSolving": 82,
+        "communication": 87,
+        "systemArchitecture": 84,
+        "behavioralLeadership": 91
+      },
+      "executiveSummary": "Basit Candidate demonstrated strong technical competence in using Qdrant for distributed embeddings retrieval and handling concurrency. However, there was an opportunity to provide more detail on specific strategies used to prevent race conditions.",
+      "strengths": [
+        "Strong understanding of distributed vector search with Qdrant",
+        "Good communication skills"
+      ],
+      "weaknesses": [
+        "Less detailed explanation of how concurrency is managed in production environments"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Kubernetes and Redis Implementation",
+          "question": "Can you tell me about a time when you successfully implemented a large-scale AI system using Kubernetes and Redis? What were the key challenges, and how did you overcome them?",
+          "score": 90,
+          "evaluation": "The candidate provided a concise explanation of their experience with Qdrant for distributed embeddings retrieval. However, there was an opportunity to provide more detail on specific strategies used to prevent race conditions."
+        },
+        {
+          "topic": "Concurrency and Race Conditions",
+          "question": "Can you describe how you handle concurrency in your production environment? What measures do you take to prevent race conditions?",
+          "score": 75,
+          "evaluation": "The candidate mentioned handling concurrency but did not provide specific strategies or measures taken to prevent race conditions."
+        }
+      ],
+      "personalizedRoadmap": [
+        {
+          "topic": "Concurrency Management in Distributed Systems",
+          "documentationURL": "https://docs.microsoft.com/en-us/azure/architecture/dapr/concurrency-management"
+        },
+        {
+          "topic": "Race Condition Prevention Techniques",
+          "documentationURL": "https://www.geeksforgeeks.org/race-conditions-in-operating-systems/"
+        }
+      ]
+    }
+  },
+  {
     "id": "intv_1790080410962_b5d2e5",
     "candidateName": "Basit Candidate",
     "roleId": "aiml",
