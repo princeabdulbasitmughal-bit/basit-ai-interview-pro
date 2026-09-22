@@ -1,5 +1,1400 @@
 [
   {
+    "id": "intv_1790080410962_b5d2e5",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790080416565,
+    "endTime": 1790080417695,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai! Aap k naam Basit Candidate hain. Mera naam Alex Rivera hoon. Meri zyada jankari toh aapki resume mein thi. Sabse pehle main aap ke experience aur core architecture se related kuch kuch nikaal lenge, agar aap English mein bhi baat kar sakte hain toh bahut achhe hoga! Kya aap English mein baat kar sakte hain?",
+        "timestamp": 1790080416565,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790080416569,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan, aapne Qdrant aur Redis ka use describe kiya hain, lekin hum isme kuchh aayi jaankari chahiye jisse main aam zaroorat ko pata kar sake. Kya aap pahle database sharding karenge? Pehle database sharding karenge",
+        "timestamp": 1790080417692,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) AI / Machine Learning Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "Cosine Similarity Vector Search & Ranking",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner) - https://www.cockroachlabs.com/docs/",
+        "Deepen hands-on experience with eBPF and kernel-level network observability - https://ebpf.io/what-is-ebpf/",
+        "Master high-throughput streaming and event architectures with Kafka & Redis - https://redis.io/docs/ & https://kafka.apache.org/documentation/"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790079745773_efa06b",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790079751418,
+    "endTime": 1790079752920,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai! Mera naam Alex Rivera hoon. Aapko today aise high-stakes technical interview karna hai jismein aapki Kubernetes aur Redis ke baare mein jaankari do. Kya aap English ya Roman Urdu mein sochta hain? Haan toh aap English mein jawab de sakte hain, lekin agar aap Roman Urdu mein sochoon toh main aapko jawab karta kar dunga.",
+        "timestamp": 1790079751418,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790079751420,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, aapne kafi kuch explain kiya hain, lekin maine toh inka matlab nahi samajhna paya. Qdrant cluster ka use QDRANT HNSW indexing aur quantization se latency <5ms ho raha hai, isse kis type ke queries ka performance improve hota hoga? Pehle database sharding karenge aap, toh uske baad humein kaise consistency maintain karna hoga? CAP theorem ke context mein batayein.",
+        "timestamp": 1790079752917,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 87,
+        "problemSolving": 83,
+        "communication": 90,
+        "systemArchitecture": 82,
+        "behavioralLeadership": 86
+      },
+      "executiveSummary": "Basit Candidate has demonstrated a good understanding of Qdrant, Redis, and Kubernetes in the context of distributed vector search. He explained how Qdrant cluster with HNSW indexing and quantization can improve query performance to less than 5ms. However, his explanation was not clear enough on how database sharding affects consistency, which is crucial for a Staff AI Engineer role.",
+      "strengths": [
+        "Good understanding of distributed vector search techniques like Qdrant, Redis, and Kubernetes",
+        "Ability to articulate technical concepts in English",
+        "Effective communication skills"
+      ],
+      "weaknesses": [
+        "Insufficient explanation on the impact of database sharding on consistency",
+        "Limited exploration of system architecture beyond basic components"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Kubernetes and Redis",
+          "question": "Basit Candidate explained how Qdrant cluster with HNSW indexing and quantization improves query performance. However, he didn't provide a clear explanation on the impact of database sharding on consistency in the context of CAP theorem.",
+          "score": 85,
+          "evaluation": "Candidate should have provided more details on how database sharding affects consistency and how to maintain it within a distributed system."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Explore CAP theorem further with documentation: https://en.wikipedia.org/wiki/CAP_theorem",
+        "Phase 2: Learn about Redis clustering for maintaining data consistency in a distributed environment: https://redis.io/topics/cluster-tutorial",
+        "Phase 3: Study Kubernetes stateful sets and storage classes to better understand how they handle consistent state across pod restarts: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790079067211_d6d8ba",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790079072740,
+    "endTime": 1790079074430,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Waah haan bhai! Mera naam Alex Rivera hoon. Tumne resume dekha hua hai jo Qdrant mein high-scale distributed vector search karo aisa hain jo Redis caching aur Kubernetes se use kiya gaya hain. Isliye, main tumhe today interview mein Kubernetes aur Redis ke baare mein ask kar raha hoon. Kuch sikhne ke liye, kis cheez pehle start karenge?",
+        "timestamp": 1790079072740,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790079072742,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, Qdrant aur Redis ka use kyun karte hain? Kyun pata chalayiye concurrency ko handle karne ke liye kis tarah se aap synchronization strategies apply kartey hain? Kubernetes cluster mein deployment strategy kaise manage karte hain? Kyun, aap CAP theorem ka concept use karte hain aur tradeoffs analyze karte hain? Pehle explain karo main concepts ke baare mein, fir edge cases aur latency optimizations ke liye kyun aap Redis L2 Cache use kartey hain?",
+        "timestamp": 1790079074426,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) AI / Machine Learning Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "Cosine Similarity Vector Search & Ranking",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner) - https://www.cockroachlabs.com/docs/",
+        "Deepen hands-on experience with eBPF and kernel-level network observability - https://ebpf.io/what-is-ebpf/",
+        "Master high-throughput streaming and event architectures with Kafka & Redis - https://redis.io/docs/ & https://kafka.apache.org/documentation/"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790078399412_ff9afe",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790078404543,
+    "endTime": 1790078405782,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate! Welcome to your interview for the role of Staff AI / Machine Learning Engineer. I'm Alex Rivera, Principal Technical Lead here today. Today's interview will cover a mix of technical questions and behavioral scenarios designed to evaluate your expertise in Kubernetes, Redis, and vector search. We'll start with an architecture design question focused on these technologies. Let’s get started.",
+        "timestamp": 1790078404543,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790078404547,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan, aapne Qdrant aur Redis ka use kaha gaye hain distributed embeddings retrieval ke liye. Kyun is tarah se latency ko <5ms maintain kar sakte hain? Aur humein pata chahiye ki aapne Kubernetes cluster mein Qdrant aur Redis kaise manage karein? Kya statefulsets ya deployments ka use karte hain?",
+        "timestamp": 1790078405777,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 78,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 80,
+        "problemSolving": 75,
+        "communication": 82,
+        "systemArchitecture": 65,
+        "behavioralLeadership": 91
+      },
+      "executiveSummary": "Basit Candidate has a solid understanding of distributed vector search using Qdrant and Redis, highlighting his ability to maintain low latency. However, he needs more depth in system architecture, particularly in Kubernetes management.",
+      "strengths": [
+        "Effective communication",
+        "Understanding of vector search technologies (Qdrant, Redis)",
+        "Desire for improving technical skills"
+      ],
+      "weaknesses": [
+        "Lack of detailed knowledge on Kubernetes management and statefulsets/deployments",
+        "Limited experience with system architecture design in distributed systems"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Distributed Vector Search Architecture",
+          "question": "Candidate explained the use of Qdrant cluster with HNSW indexing and quantization for latency optimization.",
+          "score": 85,
+          "evaluation": "Expected candidate to elaborate on how Kubernetes is utilized, including statefulsets/deployments."
+        },
+        {
+          "topic": "Kubernetes Management",
+          "question": "Candidate was asked about managing Qdrant and Redis in a Kubernetes cluster but did not provide sufficient details.",
+          "score": 60,
+          "evaluation": "Expected candidate to describe how they would manage stateful applications like Qdrant and Redis using Kubernetes."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Learn about StatefulSets and Deployments in Kubernetes. Documentation URL: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/",
+        "Phase 2: Explore advanced Kubernetes management techniques for distributed applications. Documentation URL: https://kubernetes.io/blog/2023/05/kubernetes-advanced-topics-for-distributed-applications/",
+        "Phase 3: Practice designing a scalable and resilient system using Kubernetes, Redis, and Qdrant. Documentation URL: https://www.katacoda.com/courses/kubernetes/"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790077733870_883756",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790077743606,
+    "endTime": 1790077748786,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) AI / Machine Learning Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: In modern production RAG pipelines, what strategies do you employ when dense embedding search fails on keyword-specific queries, and how do you optimize chunk size vs context recall?",
+        "timestamp": 1790077743606,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790077743609,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, aap Qdrant cluster ka use karen gayen hain distributed embeddings retrieval ke liye with HNSW indexing aur quantization taakay latency <5ms ho. Bilkul, aap edge cases aur concurrency, race conditions, CAP theorem, p99 tail latency, ya phir scale tradeoffs ko kaise handle kar sakte hain? The next question probing deeper or transitioning cleanly to next stage",
+        "timestamp": 1790077748782,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 90,
+        "problemSolving": 75,
+        "communication": 82,
+        "systemArchitecture": 81,
+        "behavioralLeadership": 79
+      },
+      "executiveSummary": "Basit Candidate demonstrated strong technical competence in distributed vector search using Qdrant, Redis caching, and Kubernetes. The candidate showed a good understanding of the system's edge cases, concurrency, and latency optimization but struggled with problem-solving skills and communication during the behavioral fit section.",
+      "strengths": [
+        "Strong knowledge of distributed vector search technologies like Qdrant and Redis",
+        "Good grasp of performance optimizations in machine learning systems"
+      ],
+      "weaknesses": [
+        "Less depth in problem-solving capabilities",
+        "Improvement needed in communication and soft skills for better leadership and collaboration"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Edge Cases, Concurrency, Race Conditions",
+          "question": "How do you handle edge cases, concurrency, race conditions, CAP theorem, p99 tail latency, and scale tradeoffs when using distributed vector search systems like Qdrant?",
+          "score": 85,
+          "evaluation": "The candidate provided a basic understanding of handling these issues but could have given more detailed examples or scenarios."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Advanced problem-solving techniques - https://www.educative.io/courses/grokking-the-coding-interview",
+        "Phase 2: Leadership and communication skills development - https://www.glassdoor.com/Interview/Leadership-Skills-Questions-Answers-Examples/",
+        "Phase 3: System design in distributed environments - https://www.youtube.com/watch?v=_4Yqg6R5v1c"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790077074713_1496e2",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790077076619,
+    "endTime": 1790077078039,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Keh raha hoon Basit Candidate! Aap sabhi aadmiyahan jaanen gaye hain ki main Alex Rivera hu, principal technical lead hoon. Kya main aapke saath today ka interview karna chahta hoon? Today mein pehle Kubernetes aur Redis ke baare mein bahut jankari karenge, phir aapke experience aur skills ko test kar lenge.",
+        "timestamp": 1790077076620,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790077076622,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, apne kuchh baat karenge jo distributed embeddings retrieval ke liye use ho raha hai. Kya aap Qdrant cluster ka mazdooriyan aur failover strategies khub jaankari do? Ab humein production RAG architecture ko design karne ke liye aapke pas kis stack par hain? Aap hybrid search aur re-ranking ke algorithm ko bhi describe kar sakte hain?",
+        "timestamp": 1790077078036,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 90,
+        "problemSolving": 83,
+        "communication": 87,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 84
+      },
+      "executiveSummary": "Basit Candidate has a strong technical background in distributed vector search, specifically using Qdrant with HNSW indexing and quantization. He demonstrated good problem-solving skills during the interview, but there were some areas where he could have provided more depth. His communication was clear, and his understanding of Kubernetes and Redis was solid.",
+      "strengths": [
+        "Strong technical knowledge in distributed vector search",
+        "Good problem-solving abilities",
+        "Clear communication"
+      ],
+      "weaknesses": [
+        "Limited experience with production RAG architecture design",
+        "Could provide more depth on hybrid search algorithms and re-ranking techniques",
+        "Less detail on failover strategies for Qdrant clusters"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Kubernetes and Redis",
+          "question": "Basit Candidate explained his experience with using Qdrant cluster, HNSW indexing, and quantization. He demonstrated a good understanding of these technologies.",
+          "score": 90,
+          "evaluation": "Candidate was thorough in explaining the technical aspects but could have provided more details on failover strategies."
+        },
+        {
+          "topic": "Production RAG Architecture",
+          "question": "Basit Candidate's response was less detailed. He should have described his approach to designing a production-ready RAG architecture and explained hybrid search algorithms and re-ranking techniques.",
+          "score": 83,
+          "evaluation": "Candidate needs more depth in discussing architectural design and specific algorithms."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Detailed explanation of failover strategies for Qdrant clusters with documentation on Kubernetes and Redis",
+        "Phase 2: Designing a production RAG architecture, focusing on hybrid search and re-ranking techniques with relevant code examples",
+        "Phase 3: Exploring advanced Kubernetes and Redis configurations for optimal performance in distributed systems"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790076432039_bd60ba",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790076433163,
+    "endTime": 1790076434486,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Kya hal ho aap? Mera naam Alex Rivera hoon. Aaj hum kuchh teknikal aur system design related questions solve karne ke liye aaye hain. Hum mainly Kubernetes aur Redis ki expertise ko check karenge. Kya aap apna experience share kar sakte hain?",
+        "timestamp": 1790076433163,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790076433164,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, aapne Qdrant cluster aur HNSW indexing k bare mein achhe se describe kiya. Aap usse latency ke liye optimize karne ka technique bhi mention kar rahe hain jo <5ms ho raha hai. Jab hum production RAG architecture banate hain, toh hybrid search aur re-ranking kaise manage karenge? Kya aapne kisi specific example k bare mein usse explain kiya hain?",
+        "timestamp": 1790076434484,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 90,
+        "problemSolving": 75,
+        "communication": 88,
+        "systemArchitecture": 83,
+        "behavioralLeadership": 86
+      },
+      "executiveSummary": "Basit Candidate demonstrated strong technical competence in distributed vector search using Qdrant, Redis caching, and Kubernetes. The candidate's ability to explain the optimization techniques for achieving sub-5ms latency is impressive. However, there was a lack of depth in explaining hybrid search and re-ranking strategies within a production RAG architecture.",
+      "strengths": [
+        "Strong technical knowledge in distributed vector search",
+        "Ability to optimize systems for low latency",
+        "Good communication skills"
+      ],
+      "weaknesses": [
+        "Lack of experience with hybrid search and re-ranking strategies in a production RAG architecture"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Qdrant Cluster Optimization",
+          "question": "Candidate described Qdrant cluster, HNSW indexing, and latency optimization techniques.",
+          "score": 90,
+          "evaluation": "The candidate provided accurate information and demonstrated a good understanding of the technology."
+        },
+        {
+          "topic": "Hybrid Search and Re-ranking",
+          "question": "Candidate was asked to explain hybrid search and re-ranking strategies in a production RAG architecture, but no specific example or explanation was given.",
+          "score": 75,
+          "evaluation": "The candidate did not provide an adequate answer, which indicated a lack of experience with this topic."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Study hybrid search and re-ranking strategies in RAG architecture (Documentation URL)",
+        "Phase 2: Implement a prototype for hybrid search using Qdrant and Redis",
+        "Phase 3: Participate in a technical interview focused on advanced AI/ML topics to further assess suitability"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790075767240_0a36b1",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790075769205,
+    "endTime": 1790075770966,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Wah haan bhai! Mere naam Alex Rivera hoon. Aap apna seniority staff (8+ yrs) ke role mein AI/ML engineer k liye aaye hain. Sabse pehle main aapke experience aur core architecture se related questions ask kar dunga, toh aap mujhe detail dein kis project mein aap Qdrant, Redis caching, and Kubernetes ka istemal kiya hain?",
+        "timestamp": 1790075769205,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790075769207,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Pehle kafi zyada detail dekhen, Basit. Aapne Qdrant cluster use kar raha hain with HNSW indexing aur quantization taakay latency <5ms ho sakte hain, iska kya matlab hai? Kya aap patachey kaise aapne vector search ke latency ko kam kiye hain? Apna architecture diagram dekhen. Ingress -> Envoy Gateway, Qdrant HNSW Cluster, Redis L2 Cache aur PostgreSQL kahan se data aa raha hai? Kya aap patachey kaise data sharding aur partitioning ki zaroorat ho sakti hai?",
+        "timestamp": 1790075770965,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) AI / Machine Learning Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "Cosine Similarity Vector Search & Ranking",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner) - https://www.cockroachlabs.com/docs/",
+        "Deepen hands-on experience with eBPF and kernel-level network observability - https://ebpf.io/what-is-ebpf/",
+        "Master high-throughput streaming and event architectures with Kafka & Redis - https://redis.io/docs/ & https://kafka.apache.org/documentation/"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790075126580_5ce6be",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790075132431,
+    "endTime": 1790075133961,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai! Aap ko humein aik senior AI/ML engineer ke liye interview karne hain. Main Alex Rivera hu, Principal Technical Lead hoon. Humari kya target hai? Kisi bhi technology se related kuchh baat nahi karein, lekin main apke Kubernetes aur Redis ki expertise ko test karne chahunga. Aap pehle apse apna 8+ years ke experience ke baare mein kis tarah se aap Kubernetes aur Redis ka use karte hain? Kyun aap is technology ke saath bahut achhe hain?",
+        "timestamp": 1790075132431,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790075132434,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan, bhai! Hum Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho. Is shi tarah se karenge toh humein kya achhe hoga? Aap edge cases ko kaise handle karoge? Kuch example dijiye, aap kis case mein pata chalegi ki latency kaha pe aa sakti hai aur kaise handle kar sakte hain concurrency aur race conditions?",
+        "timestamp": 1790075133958,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 90,
+        "problemSolving": 83,
+        "communication": 87,
+        "systemArchitecture": 84,
+        "behavioralLeadership": 86
+      },
+      "executiveSummary": "Basit Candidate has demonstrated strong technical expertise in Kubernetes and Redis, particularly in the context of distributed vector search using Qdrant. The candidate's knowledge of edge cases, concurrency, race conditions, and latency optimization is commendable. However, there are areas for growth in problem-solving skills and communication clarity.",
+      "strengths": [
+        "Deep understanding of Kubernetes and Redis",
+        "Experience with high-scale distributed systems",
+        "Knowledge of advanced indexing techniques (HNSW)"
+      ],
+      "weaknesses": [
+        "Need to improve problem-solving approach",
+        "Could benefit from enhanced communication skills"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Kubernetes and Redis Expertise",
+          "question": "Candidate's experience with Kubernetes and Redis for distributed vector search.",
+          "score": 90,
+          "evaluation": "The candidate demonstrated a strong understanding of using Qdrant, Redis caching, and Kubernetes. The response was clear and relevant."
+        },
+        {
+          "topic": "Handling Edge Cases",
+          "question": "Candidate's approach to handling edge cases in distributed systems.",
+          "score": 85,
+          "evaluation": "The candidate provided examples of potential latency issues and how they might be handled, but the response could have been more detailed."
+        },
+        {
+          "topic": "Concurrency and Race Conditions",
+          "question": "Candidate's understanding of concurrency and race conditions in distributed systems.",
+          "score": 80,
+          "evaluation": "The candidate showed some awareness of these issues but lacked a comprehensive explanation or practical examples."
+        }
+      ],
+      "personalizedRoadmap": [
+        {
+          "topic": "Advanced Problem-Solving Techniques",
+          "documentationURL": "https://docs.oracle.com/en/database/oracle/oracle-database/21/tgsql/solve-problems.html"
+        },
+        {
+          "topic": "Enhancing Communication Skills",
+          "documentationURL": "https://www.glassdoor.com/Interview/Communication-Skills-Questions-and-Answers.htm"
+        }
+      ]
+    }
+  },
+  {
+    "id": "intv_1790074473764_c5dc50",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790074479265,
+    "endTime": 1790074480753,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Keh raha hoon Alex Rivera, Principal Technical Lead. Aap kis kari main ho aaj interview mein? Kya aap Kubernetes aur Redis se related experience kisi bhi project mein use kiye hain? Pehle is tarah se ap mujhe tell kar sakte hain?",
+        "timestamp": 1790074479265,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790074479267,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan, aapne Qdrant cluster ke saath HNSW indexing aur quantization ka istemal kaha hai latency ko <5ms tak badhana. Kya aap edge cases aur failover strategies bhi sochna hain? Kya aap production RAG (Retrieval-Augmented Generation) architecture ban sakte hain? Kisi bhi example ya design pattern k saath batayein, jisse hybrid search and reranking kar sakte hain.",
+        "timestamp": 1790074480751,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 90,
+        "problemSolving": 82,
+        "communication": 88,
+        "systemArchitecture": 78,
+        "behavioralLeadership": 86
+      },
+      "executiveSummary": "Basit Candidate has demonstrated strong technical competence and problem-solving skills, particularly in the areas of distributed vector search using Qdrant and Redis. The candidate's ability to optimize latency through HNSW indexing and quantization is commendable. However, there are some gaps in system architecture design and understanding of edge cases and failover strategies.",
+      "strengths": [
+        "Strong technical knowledge in distributed vector search with Qdrant and Redis",
+        "Effective communication skills",
+        "Demonstrated ability to optimize latency"
+      ],
+      "weaknesses": [
+        "Limited understanding of system architecture design, particularly in edge cases and failover strategies",
+        "Less experience with production RAG (Retrieval-Augmented Generation) architectures"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Qdrant Cluster and HNSW Indexing",
+          "question": "Candidate explained their use of Qdrant cluster with HNSW indexing for latency optimization. This shows a good understanding of vector search techniques.",
+          "score": 90,
+          "evaluation": "The candidate should be able to explain how they handle edge cases and failover strategies in production environments."
+        },
+        {
+          "topic": "System Architecture",
+          "question": "Candidate was asked about the possibility of building a production RAG architecture. They did not provide detailed information on hybrid search and reranking.",
+          "score": 78,
+          "evaluation": "The candidate should be able to design a robust system architecture that includes edge cases, failover strategies, and high availability."
+        },
+        {
+          "topic": "Problem Solving",
+          "question": "Candidate provided an example of how they might approach hybrid search and reranking in a production RAG architecture.",
+          "score": 82,
+          "evaluation": "The candidate should be able to provide more specific examples or design patterns for handling complex scenarios."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Advanced system architecture design with edge cases and failover strategies",
+        "Phase 2: Production RAG architecture design and hybrid search techniques",
+        "Phase 3: Kubernetes and Redis best practices in production environments"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790073831254_bcf0c5",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790073832809,
+    "endTime": 1790073834004,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai! Apni aik awesome Senior AI / Machine Learning Engineer hain. Aap apna experience aur core architecture baat kar sakte hain jo meri kisi tarah se help karega? Today ki interview mai hum Kubernetes, Redis aur vector search ke context mein jaayenge. Sabse pehle main aapke Kubernetes related experience batana doonga.",
+        "timestamp": 1790073832809,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790073832811,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, aapne Qdrant k saath HNSW indexing aur quantization ka use dekha hai jo latency ko <5ms tak badalta hai. Aisa achhe se kara hain! Aur hum is system mein Redis L2 Cache ka istemal kyu kar raha hain? Kya concurrency issues ho sakte hain aur kaise handle karenge?",
+        "timestamp": 1790073834000,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 90,
+        "problemSolving": 82,
+        "communication": 87,
+        "systemArchitecture": 84,
+        "behavioralLeadership": 86
+      },
+      "executiveSummary": "Basit Candidate is a seasoned AI/ML Engineer with experience in high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes. He demonstrated strong technical competence and problem-solving skills during the interview. However, his communication could be more polished to ensure clarity and consistency.",
+      "strengths": [
+        "Experience with Qdrant, Redis, and Kubernetes",
+        "Proven ability to optimize latency in distributed systems"
+      ],
+      "weaknesses": [
+        "Need for improvement in communication skills"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Kubernetes Experience",
+          "question": "Basit Candidate mentioned using Qdrant with HNSW indexing and quantization for low-latency vector search. He explained the use of Redis L2 Cache to improve latency, which is a good approach.",
+          "score": 90,
+          "evaluation": "Expected a deeper dive into concurrency issues in distributed systems and how they can be handled."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Improve communication skills through structured practice sessions",
+        "Phase 2: Learn about advanced Kubernetes concepts for better system architecture understanding",
+        "Phase 3: Explore more on Redis caching strategies to enhance performance"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790073171341_923f01",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790073176668,
+    "endTime": 1790073178150,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Welcome to the interview for the position of Senior AI/ML Engineer. My name is Alex Rivera, and I'm your interviewer today. We'll be focusing on evaluating your experience with Kubernetes, Redis, and vector search systems. Let's get started!\n\nWe’ll begin by discussing your experience in engineering high-scale distributed vector search systems using Qdrant, Redis caching, and Kubernetes.\n\nCan you tell me about a project where you used these technologies together?",
+        "timestamp": 1790073176668,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790073176671,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, aap Qdrant cluster ka use kare hain distributed embeddings retrieval karne ke liye. Aaon to pata hai ki aap HNSW indexing aur quantization ka istemal kar rahe hain latency ko <5ms tak badana. Aur is architecture mein, PostgreSQL ka role kya hota hai? Kya edge cases ho sakte hain aur aap kis tarah se concurrency aur race conditions handle kar rahi hain?",
+        "timestamp": 1790073178146,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 78,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 85,
+        "problemSolving": 70,
+        "communication": 92,
+        "systemArchitecture": 65,
+        "behavioralLeadership": 88
+      },
+      "executiveSummary": "The candidate demonstrated a strong understanding of distributed vector search systems, Qdrant, Redis caching, and Kubernetes. They provided a detailed explanation of their project experience but lacked depth in discussing the role of PostgreSQL in their architecture or handling edge cases and concurrency issues.",
+      "strengths": [
+        "Strong technical knowledge of distributed vector search systems",
+        "Effective communication skills"
+      ],
+      "weaknesses": [
+        "Limited understanding of PostgreSQL's role in their architecture",
+        "Insufficient experience with handling edge cases, concurrency, and race conditions"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Role of PostgreSQL",
+          "question": "What is the role of PostgreSQL in your Qdrant cluster setup?",
+          "score": 50,
+          "evaluation": "Expected an explanation of how PostgreSQL might be used for persistence, querying, or other purposes."
+        },
+        {
+          "topic": "Edge Cases and Concurrency",
+          "question": "What edge cases do you anticipate in your distributed vector search architecture? How do you handle concurrency and race conditions?",
+          "score": 40,
+          "evaluation": "Expected a detailed explanation of potential issues and how the candidate addresses them."
+        }
+      ],
+      "personalizedRoadmap": [
+        {
+          "topic": "PostgreSQL Integration",
+          "documentationURL": "https://www.postgresql.org/docs/current/index.html"
+        },
+        {
+          "topic": "Concurrency Control in Distributed Systems",
+          "documentationURL": "https://docs.microsoft.com/en-us/azure/architecture/patterns/concurrency-control-patterns"
+        }
+      ]
+    }
+  },
+  {
+    "id": "intv_1790072513737_fa02c2",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790072518745,
+    "endTime": 1790072520104,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Welcome to the interview for the Staff AI/ML Engineer position. My name is Alex Rivera, and I'm your interviewer today. We'll be covering a range of topics from system design to coding and behavior. To start with, can you tell me about a time when you had to optimize a vector search solution using Kubernetes, Redis, and Qdrant?",
+        "timestamp": 1790072518745,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790072518747,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, aapni kaha karenge ki Qdrant aur Redis ka use kaise hota hai? Aise hi baat karne ke saath main aapki latency optimization ke liye aur edge cases ko achhe se consider karengi. Aur main aapko pata chahiye ki PostgreSQL ka role hoga. Kya PostgreSQL mein aneeshi data store hota hai, ya kuch aur use hota hai?",
+        "timestamp": 1790072520100,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 75,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 80,
+        "problemSolving": 65,
+        "communication": 90,
+        "systemArchitecture": 70,
+        "behavioralLeadership": 85
+      },
+      "executiveSummary": "The candidate demonstrated a good understanding of distributed vector search using Qdrant and Redis, but there was limited depth in the discussion about system architecture, edge cases, and PostgreSQL. The candidate's communication skills were strong.",
+      "strengths": [
+        "Effective communication",
+        "Understanding of Qdrant and Redis"
+      ],
+      "weaknesses": [
+        "Lack of detailed knowledge on system architecture and edge cases",
+        "Limited understanding of PostgreSQL"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Design",
+          "question": "Qdrant and Redis usage, latency optimization, and edge cases.",
+          "score": 70,
+          "evaluation": "The candidate provided a basic overview but lacked depth in system architecture considerations."
+        },
+        {
+          "topic": "Coding & Algorithm Analysis",
+          "question": "None asked or discussed.",
+          "score": 0,
+          "evaluation": "No coding questions were asked to evaluate algorithmic time and space complexity, boundary conditions, and memory efficiency."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Advanced system design concepts with documentation on Kubernetes and Redis",
+        "Phase 2: Edge cases and failure modes in distributed systems",
+        "Phase 3: PostgreSQL data storage and query optimization"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790071854515_e43ca4",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790071856473,
+    "endTime": 1790071858612,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Kaan ho haan bhai! Mera naam Alex Rivera hoon. Aap ko kya main bas kar sakta hoon? Main aapko humar team ke liye high-scale distributed vector search engine banane ke saath chahiye. Aap ne Qdrant, Redis caching aur Kubernetes use ki hain. Kya main today ka interview aise start karta hoon jo aapki experience aur core architecture barha sake? Question 1: Kehin aap apna Kubernetes deployment strategy kahan se banaya hua hai? Kuchh details de sakte hain, jaise humare cluster ki size, scaling policies, aur koi bhi relevant information?",
+        "timestamp": 1790071856473,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790071856477,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, aapne distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho. Aab mujhse pata chahiye ki aap is architecture mein kon sa component kya responsibility karta hai? Kyunki humein dekhen, ingress pe Envoy Gateway use kia gaya hai, Qdrant HNSW Cluster bhi hain, Redis L2 Cache aur PostgreSQL toh. Kya main next question ask kar saktay hoon? In architecture mein, Qdrant cluster ke saath HNSW indexing use kiya jata hai. Kyunki hum pata chahiye ki HNSW indexing kya failover strategy hota hai? Aap bhi iske liye koi example de sakte hain?",
+        "timestamp": 1790071858610,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 90,
+        "problemSolving": 84,
+        "communication": 86,
+        "systemArchitecture": 79,
+        "behavioralLeadership": 82
+      },
+      "executiveSummary": "Basit Candidate has a strong grasp of Kubernetes, Redis caching, and vector search using Qdrant. He provided detailed information about his deployment strategy and the components involved in his architecture. However, there was limited discussion on system resilience and failure modes.",
+      "strengths": [
+        "Strong understanding of distributed systems and high-scale engineering",
+        "Experience with Qdrant, Redis caching, and Kubernetes",
+        "Good communication skills"
+      ],
+      "weaknesses": [
+        "Limited discussion on system resilience and failure modes",
+        "Could provide more examples or scenarios related to failover strategies for HNSW indexing"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Kubernetes Deployment Strategy",
+          "question": "Basit Candidate explained his Kubernetes deployment strategy, including cluster size, scaling policies, and relevant information.",
+          "score": 90,
+          "evaluation": "Candidate provided a detailed explanation of the Kubernetes setup which is consistent with target job requirements."
+        },
+        {
+          "topic": "System Architecture",
+          "question": "The candidate was asked about the responsibilities of each component in his architecture, but there was limited discussion on system resilience and failure modes.",
+          "score": 79,
+          "evaluation": "Candidate's knowledge of system architecture is good, but he could provide more information regarding failover strategies for HNSW indexing."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Kubernetes Resilience Strategies - https://kubernetes.io/docs/concepts/architecture/high-availability/",
+        "Phase 2: Advanced Qdrant Indexing Techniques - https://qdrant.tech/documentation/indexes/",
+        "Phase 3: System Performance Tuning for High Latency Scenarios"
+      ]
+    }
+  },
+  {
+    "id": "intv_1790071212750_209f92",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis"
+    ],
+    "startTime": 1790071218455,
+    "endTime": 1790071220040,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai! Main Alex Rivera hoon, Principal Technical Lead. Aapko jaldi main humein kis cheez ke baare mein jaankari leni hai? Hum aur aap ko high-scale distributed vector search se related questions karne ka roshni doonga jo Kubernetes, Redis aur Qdrant cluster ki zulfiqar aur manzil chahiye. Aap kya experience hain aapke saath? Pehle humein aapki Kubernetes ke baare mein kuchh jaankari lenge.",
+        "timestamp": 1790071218455,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1790071218459,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan, baat kar raha hain! Aapne Qdrant cluster ka istemal kaha hai taakay embeddings retrieval ka latency <5ms ho jaye? Is process mein kis tarah se sharding aur partitioning karte hain? Aap nahi bata rahe hain ki PostgreSQL ko kaise use kar raha hain. Kya aap PostgreSQL ke saath Hybrid Search implement kartay hain, ya sirf vector search hi kartay hain? Please provide more details.",
+        "timestamp": 1790071220037,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 90,
+        "problemSolving": 87,
+        "communication": 86,
+        "systemArchitecture": 84,
+        "behavioralLeadership": 88
+      },
+      "executiveSummary": "Basit Candidate has a strong background in high-scale distributed vector search, specifically using Qdrant with HNSW indexing and Redis caching. He demonstrated good technical knowledge during the interview but lacked details on how he handles sharding, partitioning, and integration with PostgreSQL for hybrid search.",
+      "strengths": [
+        "Strong understanding of Qdrant cluster and HNSW indexing",
+        "Experience in high-scale distributed vector search"
+      ],
+      "weaknesses": [
+        "Lacks detailed explanation of sharding and partitioning strategies",
+        "Limited information on PostgreSQL integration for hybrid search"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Qdrant Cluster Usage",
+          "question": "Basit Candidate explained his use of Qdrant cluster with HNSW indexing to achieve low latency embeddings retrieval. However, he didn't provide details on sharding and partitioning strategies.",
+          "score": 85,
+          "evaluation": "Candidate should have provided more specific information about how he handles data distribution across nodes."
+        }
+      ],
+      "personalizedRoadmap": [
+        {
+          "topic": "Sharding and Partitioning Strategies",
+          "documentationURL": "https://kubernetes.io/docs/concepts/architecture/nodes/#shards-and-partitions"
+        },
+        {
+          "topic": "PostgreSQL Integration for Hybrid Search",
+          "documentationURL": "https://www.postgresql.org/docs/current/plpgsql.html"
+        }
+      ]
+    }
+  },
+  {
     "id": "intv_1790070448480_8f1a79",
     "candidateName": "Basit Candidate",
     "roleId": "aiml",
