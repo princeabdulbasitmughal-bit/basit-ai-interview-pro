@@ -1,6 +1,6 @@
 {
   "title": "Basit AI Interview Pro — Master Testing Arsenal Report",
-  "timestamp": "2026-09-22T04:55:33.426Z",
+  "timestamp": "2026-09-22T09:47:45.592Z",
   "total": 12,
   "passed": 12,
   "failed": 0,
@@ -11,84 +11,84 @@
       "name": "Health Check & Helmet Headers",
       "passed": true,
       "details": "Status: 200, CSP: Present, XFO: DENY",
-      "durationMs": 79
+      "durationMs": 71
     },
     {
       "suite": "Basit3-Security",
       "name": "CWE-22 Path Traversal Defense",
       "passed": true,
       "details": "HTTP 403 (Access Safely Blocked)",
-      "durationMs": 2
+      "durationMs": 1
     },
     {
       "suite": "Basit3-Security",
       "name": "512KB Payload Ceiling Protection",
       "passed": true,
       "details": "Payload rejected with HTTP 413",
-      "durationMs": 7
+      "durationMs": 8
     },
     {
       "suite": "Basit1-Code",
       "name": "JavaScript Sandbox Execution",
       "passed": true,
-      "details": "Output: blue is the sky",
-      "durationMs": 5883
+      "details": "Output: blue is sky the",
+      "durationMs": 4624
     },
     {
       "suite": "Basit1-Code",
       "name": "Python Algorithmic Analysis",
       "passed": true,
       "details": "Complexity: O(n), Score: 95",
-      "durationMs": 942
+      "durationMs": 975
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "English Knowledge Hub Query",
       "passed": true,
-      "details": "Length: 2750 chars",
-      "durationMs": 5449
+      "details": "Length: 2749 chars",
+      "durationMs": 5692
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "Roman Urdu Bilingual Query",
       "passed": true,
-      "details": "Length: 573 chars",
-      "durationMs": 10174
+      "details": "Length: 2184 chars",
+      "durationMs": 5006
     },
     {
       "suite": "Interview-Flow",
       "name": "Start Session (AI Track, Staff)",
-      "passed": "intv_1790052915283_49d84c",
-      "details": "Session ID: intv_1790052915283_49d84c | Stack: Kubernetes, Redis",
-      "durationMs": 5331
+      "passed": "intv_1790070448480_8f1a79",
+      "details": "Session ID: intv_1790070448480_8f1a79 | Stack: Kubernetes, Redis",
+      "durationMs": 2747
     },
     {
       "suite": "Interview-Flow",
       "name": "Candidate Turn & Adaptive Reply",
-      "passed": "Haan bhai, aapne distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho. Pehle hum kuch edge cases consider karenge. Kya aap us scenario mein concurrency issues ya race conditions ko handle kar sakte hain, jo multiple requests same embeddings retrieve karte hain?",
-      "details": "Reply snippet: Haan bhai, aapne distributed embeddings retrieval k liye Qdrant cluster use kart...",
-      "durationMs": 1647
+      "passed": "Haan bhai, aapne Qdrant cluster k saath HNSW indexing aur quantization se latency ko <5ms main banaye hain. Isse bahut achhe sikhayen gaein. Bina concurrency aur race conditions ke context mein is approach ka edge cases kya hoti hain? Aap kahan tak scale ho sakta hai?",
+      "details": "Reply snippet: Haan bhai, aapne Qdrant cluster k saath HNSW indexing aur quantization se latenc...",
+      "durationMs": 1681
     },
     {
       "suite": "Interview-Flow",
       "name": "Comprehensive 5D Scorecard",
       "passed": true,
       "details": "Score: 85/100, Decision: Hire",
-      "durationMs": 4692
+      "durationMs": 5653
     },
     {
       "suite": "BasitSwarm",
       "name": "Swarm Status Inspection",
       "passed": true,
       "details": "Active Subagents: 20",
-      "durationMs": 1
+      "durationMs": 6
     },
     {
       "suite": "BasitSwarm",
       "name": "20-Subagent Swarm Trigger (Live Run)",
       "passed": true,
-      "details": "Health: 100.0%, Agents: 20/20 Optimal in 6161.8ms",
-      "durationMs": 6472
+      "details": "Health: 100.0%, Agents: 20/20 Optimal in 6781.5ms",
+      "durationMs": 7026
     }
   ]
 }
