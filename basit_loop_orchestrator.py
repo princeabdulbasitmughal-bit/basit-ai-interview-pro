@@ -332,6 +332,15 @@ def execute_basit_loop_single_cycle(cycle_num: int):
     log(f"CYCLE #{cycle_num} COMPLETE: {status_str} | 20 Subagents: {swarm_report.get('health_score', '100%')} | Tests: {test_report.get('healthRate', '100%')} | Launch Readiness: 100/100", "SUCCESS" if all_passed else "WARN")
     print("=" * 70 + "\n", flush=True)
 
+def robust_sleep(seconds: int):
+    for _ in range(seconds):
+        try:
+            time.sleep(1)
+        except (KeyboardInterrupt, SystemExit):
+            raise
+        except BaseException:
+            pass
+
 def main():
     log("==================================================================", "LOOP")
     log("👑 BASITLOOP MASTER CONTINUOUS LOOPING ORCHESTRATOR v3.0 ACTIVE", "LOOP")
@@ -359,13 +368,13 @@ def main():
             execute_basit_loop_single_cycle(cycle)
             cycle += 1
             log(f"Entering sleep window. Next loop in {LOOP_INTERVAL_SECONDS // 60} minutes ({LOOP_INTERVAL_SECONDS}s)...", "INFO")
-            time.sleep(LOOP_INTERVAL_SECONDS)
+            robust_sleep(LOOP_INTERVAL_SECONDS)
         except KeyboardInterrupt:
             log("BasitLoop gracefully paused by operator.", "WARN")
             break
-        except Exception as e:
-            log(f"Unexpected loop exception (Auto-healing in 10s): {e}", "ERROR")
-            time.sleep(10)
+        except BaseException as e:
+            log(f"Unexpected loop exception (Auto-healing in 10s): {type(e).__name__}: {e}", "ERROR")
+            robust_sleep(10)
 
 if __name__ == "__main__":
     main()
