@@ -11,7 +11,7 @@ const path = require('path');
 const PORT = 8090;
 const HOST = 'localhost';
 
-function request(options, postData = null) {
+function request(options, postData = null, timeoutMs = 30000) {
   return new Promise((resolve, reject) => {
     const defaultHeaders = {
       'Content-Type': 'application/json',
@@ -45,9 +45,9 @@ function request(options, postData = null) {
     });
 
     req.on('error', reject);
-    req.setTimeout(15000, () => {
+    req.setTimeout(timeoutMs, () => {
       req.destroy();
-      reject(new Error('Request Timeout (15s)'));
+      reject(new Error(`Request Timeout (${Math.round(timeoutMs / 1000)}s)`));
     });
 
     if (postData) {
