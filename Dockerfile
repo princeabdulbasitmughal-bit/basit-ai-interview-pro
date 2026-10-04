@@ -2,7 +2,8 @@
 FROM node:20-alpine AS base
 
 # Install Python & curl for healthcheck and swarm runner
-RUN apk add --no-cache python3 curl bash
+RUN apk add --no-cache python3 curl bash && \
+    ln -sf /usr/bin/python3 /usr/bin/python
 
 WORKDIR /app
 

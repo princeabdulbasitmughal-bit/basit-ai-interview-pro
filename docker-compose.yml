@@ -31,7 +31,8 @@ services:
     restart: always
     command: ["python3", "basit_loop_orchestrator.py"]
     depends_on:
-      - app
+      app:
+        condition: service_healthy
     volumes:
       - ./data:/app/data
       - ./reports:/app/reports

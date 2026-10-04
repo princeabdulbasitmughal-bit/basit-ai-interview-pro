@@ -15,7 +15,7 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const crypto = require('crypto');
-const { exec } = require('child_process');
+const { exec, execFile, execFileSync } = require('child_process');
 const vm = require('vm');
 const zlib = require('zlib');
 
@@ -87,53 +87,109 @@ function loadEnv() {
 }
 loadEnv();
 
+const OLLAMA_BASE = process.env.OLLAMA_HOST || env.OLLAMA_HOST || 'http://localhost:11434';
+
 // In-Memory Active Interview Sessions
 const activeSessions = new Map();
+const MAX_ACTIVE_SESSIONS = 200;
 
-// Active Session TTL Reaper (Cleans abandoned sessions idle > 2 hours)
+// Active Session TTL Reaper (Cleans abandoned sessions idle > 60 minutes)
 setInterval(() => {
   const now = Date.now();
-  const TTL = 2 * 60 * 60 * 1000;
+  const TTL = 60 * 60 * 1000;
   for (const [id, session] of activeSessions.entries()) {
-    if (now - (session.startTime || now) > TTL) {
+    const lastActive = session.lastActivity || session.startTime || now;
+    if (now - lastActive > TTL) {
       console.log(`[Watchdog:Reaper] Pruning expired session: ${id}`);
       activeSessions.delete(id);
     }
   }
-}, 15 * 60 * 1000).unref();
+}, 10 * 60 * 1000).unref();
 
-// Helper: Load Saved Interviews from disk (Type-Safe & Alias Compatible)
+// In-Memory Cache for Saved Interviews (Eliminates 2.77MB synchronous JSON parsing on every request)
+let savedInterviewsCache = null;
+let savedInterviewsLastMtime = 0;
+
 function loadSavedInterviews() {
   try {
     const targetPath = fs.existsSync(SESSIONS_FILE) ? SESSIONS_FILE : (fs.existsSync(path.resolve(DATA_DIR, 'interview_sessions.json')) ? path.resolve(DATA_DIR, 'interview_sessions.json') : SESSIONS_FILE);
     if (fs.existsSync(targetPath)) {
+      const stat = fs.statSync(targetPath);
+      if (savedInterviewsCache && stat.mtimeMs === savedInterviewsLastMtime) {
+        return savedInterviewsCache;
+      }
       const data = fs.readFileSync(targetPath, 'utf-8');
       const parsed = JSON.parse(data || '[]');
-      return Array.isArray(parsed) ? parsed : [];
+      savedInterviewsCache = Array.isArray(parsed) ? parsed : [];
+      savedInterviewsLastMtime = stat.mtimeMs;
+      return savedInterviewsCache;
     }
   } catch (e) {
     console.error('[Storage] Error reading interviews.json:', e.message);
   }
-  return [];
+  return savedInterviewsCache || [];
 }
 
-// Deterministic Technical Entity & Stack Parser
+// Deterministic Technical Entity & Stack Parser (High-Coverage Enterprise Engine)
 function extractTechnicalSkills(text) {
   if (!text || typeof text !== 'string') return [];
-  const knownSkills = [
-    'Kubernetes', 'K8s', 'Docker', 'Redis', 'Kafka', 'PostgreSQL', 'Postgres', 'MySQL', 'MongoDB',
-    'PyTorch', 'TensorFlow', 'React', 'Next.js', 'Vue', 'Angular', 'Node.js', 'Go', 'Golang',
-    'Python', 'Rust', 'Java', 'Spring', 'GraphQL', 'gRPC', 'AWS', 'GCP', 'Azure',
-    'Microservices', 'Event-Driven', 'CI/CD', 'eBPF', 'WebSockets', 'WebRTC', 'Elasticsearch',
-    'RabbitMQ', 'Cassandra', 'DynamoDB', 'Distributed Systems', 'CAP Theorem', 'Tail Latency'
+  const skillMappings = [
+    { canonical: 'TypeScript', regex: /\b(typescript|ts)\b/i },
+    { canonical: 'JavaScript', regex: /\b(javascript|js|ecmascript)\b/i },
+    { canonical: 'React', regex: /\b(react|reactjs|react\.js)\b/i },
+    { canonical: 'Next.js', regex: /\b(next\.?js|nextjs)\b/i },
+    { canonical: 'Vue', regex: /\b(vue|vuejs|vue\.js)\b/i },
+    { canonical: 'Angular', regex: /\b(angular|angularjs)\b/i },
+    { canonical: 'Node.js', regex: /\b(node\.?js|nodejs|node runtime)\b/i },
+    { canonical: 'Python', regex: /\b(python|python3|py)\b/i },
+    { canonical: 'Go', regex: /\b(golang|go language|go runtime)\b/i },
+    { canonical: 'Rust', regex: /\b(rust|rustlang)\b/i },
+    { canonical: 'Java', regex: /\b(java|openjdk)\b/i },
+    { canonical: 'Spring Boot', regex: /\b(spring boot|spring framework|spring cloud)\b/i },
+    { canonical: 'C++', regex: /(?:^|[\s,;/])(c\+\+)(?:[\s,;/]|$)/i },
+    { canonical: 'C#', regex: /(?:^|[\s,;/])(c#)(?:[\s,;/]|$)/i },
+    { canonical: '.NET', regex: /(?:^|[\s,;/])(\.net|dotnet)(?:[\s,;/]|$)/i },
+    { canonical: 'FastAPI', regex: /\bfastapi\b/i },
+    { canonical: 'Kubernetes', regex: /\b(kubernetes|k8s)\b/i },
+    { canonical: 'Docker', regex: /\bdocker\b/i },
+    { canonical: 'Terraform', regex: /\b(terraform|opentofu)\b/i },
+    { canonical: 'Linux', regex: /\b(linux|ubuntu|debian|alpine)\b/i },
+    { canonical: 'AWS', regex: /\b(aws|amazon web services)\b/i },
+    { canonical: 'GCP', regex: /\b(gcp|google cloud)\b/i },
+    { canonical: 'Azure', regex: /\b(azure|microsoft azure)\b/i },
+    { canonical: 'PostgreSQL', regex: /\b(postgresql|postgres|psql)\b/i },
+    { canonical: 'MySQL', regex: /\bmysql\b/i },
+    { canonical: 'MongoDB', regex: /\b(mongodb|mongo)\b/i },
+    { canonical: 'Redis', regex: /\bredis\b/i },
+    { canonical: 'Kafka', regex: /\b(kafka|apache kafka)\b/i },
+    { canonical: 'RabbitMQ', regex: /\brabbitmq\b/i },
+    { canonical: 'Elasticsearch', regex: /\b(elasticsearch|elastic stack|elk)\b/i },
+    { canonical: 'ClickHouse', regex: /\bclickhouse\b/i },
+    { canonical: 'Cassandra', regex: /\bcassandra\b/i },
+    { canonical: 'DynamoDB', regex: /\bdynamodb\b/i },
+    { canonical: 'GraphQL', regex: /\bgraphql\b/i },
+    { canonical: 'gRPC', regex: /\bgrpc\b/i },
+    { canonical: 'WebSockets', regex: /\bwebsockets?\b/i },
+    { canonical: 'WebRTC', regex: /\bwebrtc\b/i },
+    { canonical: 'PyTorch', regex: /\bpytorch\b/i },
+    { canonical: 'TensorFlow', regex: /\btensorflow\b/i },
+    { canonical: 'LLMs', regex: /\b(llms?|large language models?)\b/i },
+    { canonical: 'RAG', regex: /\b(rag|retrieval augmented generation)\b/i },
+    { canonical: 'Vector DB / Qdrant', regex: /\b(qdrant|vector database|vector db|pinecone|chromadb|milvus)\b/i },
+    { canonical: 'LangChain', regex: /\b(langchain|langgraph|llamaindex)\b/i },
+    { canonical: 'vLLM', regex: /\b(vllm|tensorrt-llm|ollama)\b/i },
+    { canonical: 'Prometheus & Grafana', regex: /\b(prometheus|grafana|datadog)\b/i },
+    { canonical: 'eBPF', regex: /\bebpf\b/i },
+    { canonical: 'CI/CD', regex: /\b(ci\/cd|github actions|gitlab ci|jenkins)\b/i },
+    { canonical: 'Microservices', regex: /\bmicroservices?\b/i },
+    { canonical: 'Distributed Systems', regex: /\bdistributed systems?\b/i },
+    { canonical: 'CAP Theorem', regex: /\bcap theorem\b/i },
+    { canonical: 'Consistent Hashing', regex: /\bconsistent hashing\b/i }
   ];
   const found = new Set();
-  const lower = text.toLowerCase();
-  for (const skill of knownSkills) {
-    const escaped = skill.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(`\\b${escaped}\\b`, 'i');
-    if (regex.test(lower)) {
-      found.add(skill);
+  for (const item of skillMappings) {
+    if (item.regex.test(text)) {
+      found.add(item.canonical);
     }
   }
   return Array.from(found);
@@ -142,13 +198,14 @@ function extractTechnicalSkills(text) {
 // Helper: Atomic Save Interview to disk (Prevents corruption on sudden shutdown with Windows retry)
 function saveCompletedInterview(interview) {
   try {
-    const list = loadSavedInterviews();
+    const list = loadSavedInterviews().slice();
     const existingIndex = list.findIndex(i => i.id === interview.id);
     if (existingIndex >= 0) {
       list[existingIndex] = interview;
     } else {
       list.unshift(interview);
     }
+    savedInterviewsCache = list;
     const tempFile = `${SESSIONS_FILE}.${Date.now()}.${crypto.randomBytes(2).toString('hex')}.tmp`;
     fs.writeFileSync(tempFile, JSON.stringify(list, null, 2), 'utf-8');
     try {
@@ -157,6 +214,7 @@ function saveCompletedInterview(interview) {
       fs.copyFileSync(tempFile, SESSIONS_FILE);
       try { fs.unlinkSync(tempFile); } catch (e) {}
     }
+    savedInterviewsLastMtime = fs.existsSync(SESSIONS_FILE) ? fs.statSync(SESSIONS_FILE).mtimeMs : Date.now();
     return true;
   } catch (e) {
     console.error('[Storage] Error saving interview atomically:', e.message);
@@ -389,45 +447,26 @@ async function queryAI({ systemPrompt, userPrompt, temperature = 0.6, jsonMode =
 
     try {
       const fullPrompt = `${enhancedSystem}\n\nTask:\n${userPrompt}`;
-      const resp = await fetch('http://localhost:11434/api/generate', {
+      const resp = await fetch(`${OLLAMA_BASE}/api/generate`, {
         method: 'POST',
-        signal: AbortSignal.timeout(6000),
+        signal: AbortSignal.timeout(4500),
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           model: targetModel,
           prompt: fullPrompt,
           stream: false,
+          keep_alive: '30m',
           format: jsonMode ? 'json' : undefined,
           options: { temperature: temperature, num_predict: 800 }
         })
       });
-      if (resp.ok) {
+      if (resp && resp.ok) {
         const data = await resp.json();
         const text = data.response?.trim();
         if (text) return cleanJsonResponse(text, jsonMode);
       }
     } catch (e) {
-      if (modelChoice === 'auto') {
-        try {
-          const resp = await fetch('http://localhost:11434/api/generate', {
-            method: 'POST',
-            signal: AbortSignal.timeout(3000),
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              model: 'qwen2.5-coder:7b',
-              prompt: `${enhancedSystem}\n\nTask:\n${userPrompt}`,
-              stream: false,
-              format: jsonMode ? 'json' : undefined,
-              options: { temperature: temperature, num_predict: 800 }
-            })
-          });
-          if (resp.ok) {
-            const data = await resp.json();
-            const text = data.response?.trim();
-            if (text) return cleanJsonResponse(text, jsonMode);
-          }
-        } catch (errFallback) {}
-      }
+      // Fast fallback to Groq / Gemini without redundant 3s blocking delay
     }
   }
 
@@ -559,7 +598,9 @@ function parseJsonBody(req, maxBytes = 512 * 1024) {
         const raw = Buffer.concat(chunks).toString('utf-8');
         resolve(raw ? JSON.parse(raw) : {});
       } catch (e) {
-        reject(new Error('Invalid JSON: ' + e.message));
+        const err = new Error('Invalid JSON: ' + e.message);
+        err.statusCode = 400;
+        reject(err);
       }
     });
 
@@ -580,6 +621,8 @@ function applySecurityHeaders(res) {
   res.setHeader('Permissions-Policy', 'microphone=(self), camera=(self)');
   res.setHeader('Content-Security-Policy', "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https:;");
   res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
+  res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
+  res.setHeader('Cross-Origin-Resource-Policy', 'same-origin');
 }
 
 function sendJson(res, statusCode, data) {
@@ -700,7 +743,8 @@ const server = http.createServer(async (req, res) => {
   if (pathname === '/api/roles' && method === 'GET') {
     return sendJson(res, 200, {
       roles: ROLES_CATALOG,
-      personas: Object.values(PERSONAS)
+      personas: Object.values(PERSONAS),
+      seniorityTracks: ['Junior', 'Mid-Level', 'Senior', 'Staff / Lead']
     });
   }
 
@@ -778,7 +822,7 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
     const reportName = is100 ? 'subagents_100_interview_report.json' : 'subagents_20_interview_report.json';
     const swarmScript = path.join(BASE_DIR, 'modules', scriptName);
 
-    exec(`python "${swarmScript}"`, { timeout: 35000, windowsHide: true }, (err, stdout, stderr) => {
+    execFile('python', [swarmScript], { timeout: 45000, windowsHide: true }, (err, stdout, stderr) => {
       isSwarmRunning = false;
       const reportPath = path.join(REPORTS_DIR, reportName);
       if (fs.existsSync(reportPath)) {
@@ -804,13 +848,14 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
   if (pathname === '/api/interview/start' && method === 'POST') {
     try {
       const body = await parseJsonBody(req);
-      const candidateName = (typeof body.candidateName === 'string' ? body.candidateName : 'Candidate').trim() || 'Candidate';
-      const roleId = (typeof body.roleId === 'string' ? body.roleId : 'fullstack').trim();
-      const experienceLevel = (typeof body.experienceLevel === 'string' ? body.experienceLevel : 'Senior').trim();
-      const interviewType = (typeof body.interviewType === 'string' ? body.interviewType : 'Full Technical & Behavioral').trim();
-      const resumeText = (typeof body.resumeText === 'string' ? body.resumeText : '').substring(0, 2000);
-      const jobDescription = (typeof body.jobDescription === 'string' ? body.jobDescription : '').substring(0, 2000);
-      const personaId = (typeof body.personaId === 'string' ? body.personaId : 'alex').trim();
+      const rawCandidateName = (body.candidateName || body.name || 'Candidate').toString();
+      const candidateName = rawCandidateName.replace(/<[^>]*>/g, '').replace(/[<>"'`]/g, '').trim().substring(0, 80) || 'Candidate';
+      const roleId = ((typeof body.roleId === 'string' ? body.roleId : (body.role || '')) || 'fullstack').trim();
+      const experienceLevel = ((typeof body.experienceLevel === 'string' ? body.experienceLevel : (body.seniority || '')) || 'Senior').trim();
+      const interviewType = ((typeof body.interviewType === 'string' ? body.interviewType : '') || 'Full Technical & Behavioral').trim();
+      const resumeText = (typeof body.resumeText === 'string' ? body.resumeText : '').substring(0, 15000);
+      const jobDescription = (typeof body.jobDescription === 'string' ? body.jobDescription : '').substring(0, 15000);
+      const personaId = ((typeof body.personaId === 'string' ? body.personaId : (body.interviewer || '')) || 'alex').trim();
       const modelChoice = (typeof body.modelChoice === 'string' ? body.modelChoice : 'auto').trim();
 
       const role = ROLES_CATALOG.find(r => r.id === roleId || (roleId === 'ai-engineer' && r.id === 'aiml') || (roleId === 'system-design' && r.id === 'system_design')) || ROLES_CATALOG[0];
@@ -836,9 +881,10 @@ Job Requirements: ${jobDescription || 'Standard requirements'}${extractedSkills.
         try { parsedAI = JSON.parse(aiResponse); } catch (e) {}
       }
 
-      const openingMessage = (parsedAI && parsedAI.openingMessage)
+      let openingMessage = (parsedAI && parsedAI.openingMessage)
         ? parsedAI.openingMessage
         : `Hello ${candidateName}, welcome! I am ${persona.name}, ${persona.title}. Today we will evaluate your skills for the ${experienceLevel} ${role.title} role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: ${role.defaultQuestion1}`;
+      openingMessage = openingMessage.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '').trim();
 
       const question1 = (parsedAI && parsedAI.question1)
         ? parsedAI.question1
@@ -857,6 +903,7 @@ Job Requirements: ${jobDescription || 'Standard requirements'}${extractedSkills.
         jobDescription: jobDescription || '',
         extractedSkills,
         startTime: Date.now(),
+        lastActivity: Date.now(),
         currentStageIndex: 0,
         stages: role.stages,
         codingProblem: role.codingProblem,
@@ -918,6 +965,7 @@ Job Requirements: ${jobDescription || 'Standard requirements'}${extractedSkills.
         return sendError(res, 404, 'Interview session not found or expired.');
       }
 
+      session.lastActivity = Date.now();
       session.metrics.answersGiven += 1;
       session.metrics.tabSwitches = tabSwitches;
 
@@ -1034,6 +1082,34 @@ ${codeSnippet ? `Candidate Code:\n${codeSnippet}\n` : ''}${whiteboardNotes ? `Wh
             feedback: `JavaScript syntax pre-flight detected an error: ${syntaxErr.message}. Please fix syntax before re-running.`,
             suggestions: ['Check matching braces, parentheses, and variable declarations.']
           });
+        }
+      }
+
+      // Fast AST syntax pre-flight for Python
+      if (language === 'python' || language === 'py') {
+        try {
+          execFileSync('python', ['-c', 'import ast, sys; ast.parse(sys.stdin.read())'], {
+            input: code,
+            timeout: 1500,
+            windowsHide: true,
+            stdio: ['pipe', 'pipe', 'pipe']
+          });
+        } catch (pyErr) {
+          const stderr = pyErr.stderr ? pyErr.stderr.toString() : (pyErr.message || '');
+          if (stderr.includes('SyntaxError') || stderr.includes('IndentationError')) {
+            const errLines = stderr.split('\n').filter(l => l.trim().length > 0);
+            const errSummary = errLines[errLines.length - 1] || 'SyntaxError: invalid syntax';
+            return sendJson(res, 200, {
+              passed: false,
+              score: 30,
+              output: `Syntax Error: ${errSummary}`,
+              timeComplexity: 'N/A (Syntax Error)',
+              complexity: 'N/A (Syntax Error)',
+              spaceComplexity: 'N/A',
+              feedback: `Python AST syntax pre-flight detected an error: ${errSummary}. Please fix syntax/indentation before re-running.`,
+              suggestions: ['Check indentation, matching colons (:), and parenthesis syntax.']
+            });
+          }
         }
       }
 
@@ -1236,7 +1312,7 @@ ${transcriptText}`;
       candidateName: item.candidateName,
       roleTitle: item.roleTitle,
       experienceLevel: item.experienceLevel,
-      score: item.scorecard?.overallScore || 0,
+      score: item.scorecard?.overallScore ?? item.scorecard?.score ?? 0,
       recommendation: item.scorecard?.recommendation || 'Evaluated',
       date: new Date(item.startTime).toLocaleDateString(),
       durationMinutes: item.durationMinutes || 0
@@ -1262,13 +1338,20 @@ ${transcriptText}`;
   // --------------------------------------------------------------------------
   if (pathname.startsWith('/api/interview/') && method === 'DELETE') {
     const id = pathname.replace('/api/interview/', '').trim();
-    let list = loadSavedInterviews();
+    let list = loadSavedInterviews().slice();
     const prevLen = list.length;
     list = list.filter(i => i.id !== id);
     if (list.length !== prevLen) {
+      savedInterviewsCache = list;
       const tempFile = `${SESSIONS_FILE}.${Date.now()}.${crypto.randomBytes(2).toString('hex')}.tmp`;
       fs.writeFileSync(tempFile, JSON.stringify(list, null, 2), 'utf-8');
-      fs.renameSync(tempFile, SESSIONS_FILE);
+      try {
+        fs.renameSync(tempFile, SESSIONS_FILE);
+      } catch (renameErr) {
+        fs.copyFileSync(tempFile, SESSIONS_FILE);
+        try { fs.unlinkSync(tempFile); } catch (e) {}
+      }
+      savedInterviewsLastMtime = fs.existsSync(SESSIONS_FILE) ? fs.statSync(SESSIONS_FILE).mtimeMs : Date.now();
       return sendJson(res, 200, { success: true, message: 'Deleted successfully' });
     }
     return sendError(res, 404, 'Interview not found');
@@ -1338,12 +1421,20 @@ ${transcriptText}`;
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || 'application/octet-stream';
     const acceptEncoding = req.headers['accept-encoding'] || '';
-    const shouldGzip = /\bgzip\b/.test(acceptEncoding) && (contentType.startsWith('text/') || contentType === 'application/javascript' || contentType === 'application/json' || contentType === 'image/svg+xml');
+    const shouldGzip = /\bgzip\b/.test(acceptEncoding) && (contentType.startsWith('text/') || contentType.includes('application/javascript') || contentType.includes('application/json') || contentType === 'image/svg+xml');
+    const etag = `"${stats.size}-${stats.mtimeMs}"`;
+
+    if (req.headers['if-none-match'] === etag) {
+      applySecurityHeaders(res);
+      res.writeHead(304, { 'ETag': etag });
+      return res.end();
+    }
 
     applySecurityHeaders(res);
     const headers = {
       'Content-Type': contentType,
-      'Cache-Control': ext === '.html' ? 'no-cache' : 'max-age=86400'
+      'Cache-Control': ext === '.html' ? 'no-cache' : 'max-age=86400',
+      'ETag': etag
     };
     if (shouldGzip) {
       headers['Content-Encoding'] = 'gzip';
@@ -1366,10 +1457,10 @@ ${transcriptText}`;
   });
 });
 
-// Configure Server-Level Timeouts for Slowloris Mitigation (30s for AI Swarm Bursts)
-server.timeout = 30000;
-server.headersTimeout = 15000;
-server.requestTimeout = 30000;
+// Configure Server-Level Timeouts for Slowloris Mitigation (60s for 100-Agent Swarm Bursts)
+server.timeout = 60000;
+server.headersTimeout = 20000;
+server.requestTimeout = 60000;
 
 // TCP Connection Shields against ECONNRESET, Client Aborts & Malformed Requests
 server.on('connection', (socket) => {
