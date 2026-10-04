@@ -503,10 +503,13 @@ async function queryAI({ systemPrompt, userPrompt, temperature = 0.6, jsonMode =
   const geminiKey = env.GEMINI_API_KEY || env.GOOGLE_API_KEY;
   if ((modelChoice === 'gemini' || modelChoice === 'auto') && geminiKey) {
     try {
-      const resp = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiKey}`, {
+      const resp = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent', {
         method: 'POST',
         signal: AbortSignal.timeout(3500),
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': geminiKey
+        },
         body: JSON.stringify({
           contents: [{ parts: [{ text: userPrompt }] }],
           systemInstruction: { parts: [{ text: enhancedSystem }] },
@@ -556,7 +559,12 @@ function getBuiltInKnowledgeAnswer(query) {
 
 function escapeHtml(str) {
   if (!str || typeof str !== 'string') return '';
-  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
 }
 
 // ----------------------------------------------------------------------------
@@ -754,8 +762,8 @@ const server = http.createServer(async (req, res) => {
   if (pathname === '/api/info' && method === 'POST') {
     try {
       const body = await parseJsonBody(req);
-      const query = (typeof body.query === 'string' ? body.query : (typeof body.question === 'string' ? body.question : '')).trim();
-      const roleContext = (typeof body.roleContext === 'string' ? body.roleContext : '').trim();
+      const query = (typeof body.query === 'string' ? body.query : (typeof body.question === 'string' ? body.question : '')).trim().substring(0, 2000);
+      const roleContext = (typeof body.roleContext === 'string' ? body.roleContext : '').trim().substring(0, 1000);
       const modelChoice = (typeof body.modelChoice === 'string' ? body.modelChoice : 'auto').trim();
 
       if (!query) {
@@ -847,6 +855,9 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
   // --------------------------------------------------------------------------
   if (pathname === '/api/interview/start' && method === 'POST') {
     try {
+      if (activeSessions.size >= MAX_ACTIVE_SESSIONS) {
+        return sendError(res, 503, 'Maximum active interview capacity reached. Please try again shortly.');
+      }
       const body = await parseJsonBody(req);
       const rawCandidateName = (body.candidateName || body.name || 'Candidate').toString();
       const candidateName = rawCandidateName.replace(/<[^>]*>/g, '').replace(/[<>"'`]/g, '').trim().substring(0, 80) || 'Candidate';
@@ -921,7 +932,8 @@ Job Requirements: ${jobDescription || 'Standard requirements'}${extractedSkills.
         metrics: {
           questionsAsked: 1,
           answersGiven: 0,
-          tabSwitches: 0
+          tabSwitches: 0,
+          pasteCount: 0
         },
         status: 'active'
       };
@@ -943,7 +955,7 @@ Job Requirements: ${jobDescription || 'Standard requirements'}${extractedSkills.
       });
     } catch (err) {
       console.error('[Interview:Start] Error:', err);
-      return sendError(res, 500, err.message);
+      return sendError(res, err.statusCode || 500, err.message);
     }
   }
 

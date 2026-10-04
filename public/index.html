@@ -1505,7 +1505,7 @@
       const bubble = document.createElement('div');
       bubble.className = `chat-bubble ${speaker}`;
       bubble.innerHTML = `
-        <div style="font-size: 0.72rem; font-weight: 800; color: ${speaker === 'interviewer' ? 'var(--cyan)' : '#93c5fd'}; text-transform: uppercase; margin-bottom: 0.3rem;">${name}</div>
+        <div style="font-size: 0.72rem; font-weight: 800; color: ${speaker === 'interviewer' ? 'var(--cyan)' : '#93c5fd'}; text-transform: uppercase; margin-bottom: 0.3rem;">${escapeHtml(name)}</div>
         <div>${escapeHtml(text)}</div>
       `;
       feed.appendChild(bubble);
@@ -2133,7 +2133,12 @@
     }
     function escapeHtml(str) {
       if (!str) return '';
-      return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
     }
   </script>
 </body>
