@@ -1256,6 +1256,7 @@
     let sessionInterval = null;
     let secondsElapsed = 0;
     let tabSwitchCount = 0;
+    let clipboardPasteCount = 0;
     let mediaStream = null;
     let speechRecognition = null;
     let isListening = false;
@@ -1397,7 +1398,8 @@
       });
       window.addEventListener('paste', () => {
         if (activeSessionId) {
-          console.log('[AntiCheat] Clipboard paste event detected during active session');
+          clipboardPasteCount += 1;
+          console.warn(`[AntiCheat] Clipboard paste event detected during active session (Total pastes: ${clipboardPasteCount})`);
         }
       });
     }
@@ -1441,6 +1443,7 @@
         activeSessionId = data.sessionId;
         activeSessionData = data;
         tabSwitchCount = 0;
+        clipboardPasteCount = 0;
         document.getElementById('tab-switch-count').innerText = '0';
 
         document.getElementById('live-candidate-name').innerText = candidateName;
@@ -1540,6 +1543,7 @@
             codeSnippet: codeSnippet !== '// Write your solution here...' ? codeSnippet : '',
             whiteboardNotes,
             tabSwitches: tabSwitchCount,
+            pasteCount: clipboardPasteCount,
             modelChoice
           })
         });
@@ -1580,7 +1584,12 @@
         const res = await fetch('/api/interview/finish', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ sessionId: activeSessionId, modelChoice, tabSwitches: tabSwitchCount })
+          body: JSON.stringify({
+            sessionId: activeSessionId,
+            modelChoice,
+            tabSwitches: tabSwitchCount,
+            pasteCount: clipboardPasteCount
+          })
         });
 
         const data = await res.json();

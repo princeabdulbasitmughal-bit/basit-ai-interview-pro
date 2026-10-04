@@ -958,6 +958,7 @@ Job Requirements: ${jobDescription || 'Standard requirements'}${extractedSkills.
       const codeSnippet = (typeof body.codeSnippet === 'string' ? body.codeSnippet : '').substring(0, 10000);
       const whiteboardNotes = (typeof body.whiteboardNotes === 'string' ? body.whiteboardNotes : '').substring(0, 10000);
       const tabSwitches = typeof body.tabSwitches === 'number' ? Math.max(0, body.tabSwitches) : 0;
+      const pasteCount = typeof body.pasteCount === 'number' ? Math.max(0, body.pasteCount) : 0;
       const modelChoice = (typeof body.modelChoice === 'string' ? body.modelChoice : 'auto').trim();
 
       const session = activeSessions.get(sessionId);
@@ -968,6 +969,7 @@ Job Requirements: ${jobDescription || 'Standard requirements'}${extractedSkills.
       session.lastActivity = Date.now();
       session.metrics.answersGiven += 1;
       session.metrics.tabSwitches = tabSwitches;
+      session.metrics.pasteCount = Math.max(session.metrics.pasteCount || 0, pasteCount);
 
       session.conversation.push({
         speaker: 'candidate',
@@ -1192,6 +1194,9 @@ Output strictly valid JSON:
       if (typeof body.tabSwitches === 'number') {
         session.metrics.tabSwitches = Math.max(session.metrics.tabSwitches || 0, body.tabSwitches);
       }
+      if (typeof body.pasteCount === 'number') {
+        session.metrics.pasteCount = Math.max(session.metrics.pasteCount || 0, body.pasteCount);
+      }
       const transcriptText = session.conversation.map(m => `[${m.speaker.toUpperCase()}]: ${m.text}`).join('\n\n');
 
       const systemPrompt = `You are a Senior Bar Raiser and Hiring Committee Lead.
@@ -1230,6 +1235,7 @@ Output strictly valid JSON:
 Role: ${session.roleTitle} (${session.experienceLevel})
 Duration: ${totalMinutes} mins
 Tab Focus Switches: ${session.metrics.tabSwitches}
+Clipboard Pastes: ${session.metrics.pasteCount || 0}
 ${session.resumeText ? `Resume Background: ${session.resumeText}` : ''}
 ${session.jobDescription ? `Target Job Requirements: ${session.jobDescription}` : ''}
 ${(session.extractedSkills && session.extractedSkills.length > 0) ? `Verified Target Stack: ${session.extractedSkills.join(', ')}` : ''}
