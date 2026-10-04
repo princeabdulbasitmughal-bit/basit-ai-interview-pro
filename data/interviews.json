@@ -1,5 +1,104 @@
 [
   {
+    "id": "intv_1791126078723_787e6c",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis",
+      "Vector DB / Qdrant"
+    ],
+    "startTime": 1791126080154,
+    "endTime": 1791126081403,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Kya aap kuchh baat kar sakte hain? Mere naam Alex Rivera hoon. Aaj hum apni career ka next big step leke aaye hain. Hum istemal karenge Kubernetes, Redis aur Vector DB / Qdrant ke bare mein jaankari lenge. Kya aap usse baat kar sakte hain?",
+        "timestamp": 1791126080154,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1791126080157,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, aapne distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho. Bilkul, aap Qdrant and Redis ka architecture detail de saktey hain? Kahan kahan concurrency issues jaayein kyun? Aur p99 tail latency kitna hota hai?",
+        "timestamp": 1791126081400,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) AI / Machine Learning Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "Cosine Similarity Vector Search & Ranking",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner) - https://www.cockroachlabs.com/docs/",
+        "Deepen hands-on experience with eBPF and kernel-level network observability - https://ebpf.io/what-is-ebpf/",
+        "Master high-throughput streaming and event architectures with Kafka & Redis - https://redis.io/docs/ & https://kafka.apache.org/documentation/"
+      ]
+    }
+  },
+  {
     "id": "intv_1791125979613_8352d1",
     "candidateName": "Basit Candidate",
     "roleId": "aiml",
