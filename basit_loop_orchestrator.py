@@ -32,6 +32,7 @@ HISTORY_FILE = REPORTS_DIR / "basit_loop_audit_history.json"
 PORT = 8090
 HEALTH_URL = f"http://127.0.0.1:{PORT}/api/health"
 SWARM_SCRIPT = BASE_DIR / "modules" / "subagents_20_interview_swarm.py"
+SWARM_100_SCRIPT = BASE_DIR / "modules" / "subagents_100_interview_swarm.py"
 TEST_SCRIPT = BASE_DIR / "tests" / "master_testing_arsenal.js"
 DEEP_DEBUG_SCRIPT = BASE_DIR / "tests" / "deep_debugging_arsenal.js"
 LOOP_INTERVAL_SECONDS = 600  # 10 Minutes
@@ -91,6 +92,32 @@ def restart_server_if_needed():
     except Exception as e:
         log(f"Failed to start server: {e}", "ERROR")
         return False
+
+def run_100_subagent_swarm() -> dict:
+    log("Launching 100-Subagent Ultra-Parallel Multi-Model Burst Swarm...", "SWARM")
+    t0 = time.perf_counter()
+    try:
+        proc = subprocess.run(
+            [sys.executable, str(SWARM_100_SCRIPT)],
+            cwd=str(BASE_DIR),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=45
+        )
+        duration_ms = round((time.perf_counter() - t0) * 1000, 1)
+        if proc.returncode == 0:
+            report_path = REPORTS_DIR / "subagents_100_interview_report.json"
+            if report_path.exists():
+                with open(report_path, "r", encoding="utf-8") as f:
+                    rep = json.load(f)
+                    log(f"100-Subagent Swarm Completed in {duration_ms}ms: {rep.get('optimal_count', 100)}/{rep.get('total_agents', 100)} Optimal ({rep.get('health_score', '100%')})", "SUCCESS")
+                    return rep
+        log(f"100-Subagent Swarm script exited with code {proc.returncode}: {proc.stderr[:200]}", "WARN")
+    except Exception as e:
+        log(f"100-Subagent Swarm runner exception: {e}", "ERROR")
+    return {"status": "ERROR", "health_score": "0%", "total_agents": 100, "optimal_count": 0}
 
 def run_20_subagent_swarm() -> dict:
     log("Launching 20-Subagent Parallel Burst Swarm...", "SWARM")
@@ -246,7 +273,8 @@ def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_re
         "last_verified_timestamp": datetime.now().isoformat(),
         "audit_results": {
             "subagents_swarm_health": swarm_res.get("health_score", "100.0%"),
-            "subagents_optimal": f"{swarm_res.get('optimal_count', 20)}/{swarm_res.get('total_agents', 20)}",
+            "subagents_optimal": f"{swarm_res.get('optimal_count', 100)}/{swarm_res.get('total_agents', 100)}",
+            "total_subagents_deployed": swarm_res.get('total_agents', 100),
             "master_tests_pass_rate": test_res.get("healthRate", "100.0%"),
             "master_tests_score": f"{test_res.get('passed', 12)}/{test_res.get('total', 12)}",
             "deep_debugging_status": "100% Zero Bugs (9/9 Scenarios)",
@@ -283,8 +311,8 @@ def record_cycle_history(cycle_number: int, swarm_res: dict, test_res: dict, aud
         "timestamp": datetime.now().isoformat(),
         "server_port": PORT,
         "swarm": {
-            "total_subagents": swarm_res.get("total_agents", 20),
-            "optimal_subagents": swarm_res.get("optimal_count", 20),
+            "total_subagents": swarm_res.get("total_agents", 100),
+            "optimal_subagents": swarm_res.get("optimal_count", 100),
             "health_score": swarm_res.get("health_score", "100.0%"),
             "duration_ms": swarm_res.get("total_duration_ms", 0)
         },
@@ -312,8 +340,8 @@ def execute_basit_loop_single_cycle(cycle_num: int):
     # 1. Health & Resilience
     server_ok = restart_server_if_needed()
 
-    # 2. Launch 20 Subagents Swarm
-    swarm_report = run_20_subagent_swarm()
+    # 2. Launch 100 Subagents Swarm
+    swarm_report = run_100_subagent_swarm()
 
     # 3. Run Master Testing Arsenal
     test_report = run_master_testing_arsenal()
@@ -329,7 +357,7 @@ def execute_basit_loop_single_cycle(cycle_num: int):
 
     all_passed = test_report.get("passed") == test_report.get("total")
     status_str = "100% PERFECT" if all_passed else "ATTENTION REQUIRED"
-    log(f"CYCLE #{cycle_num} COMPLETE: {status_str} | 20 Subagents: {swarm_report.get('health_score', '100%')} | Tests: {test_report.get('healthRate', '100%')} | Launch Readiness: 100/100", "SUCCESS" if all_passed else "WARN")
+    log(f"CYCLE #{cycle_num} COMPLETE: {status_str} | 100 Subagents: {swarm_report.get('health_score', '100%')} | Tests: {test_report.get('healthRate', '100%')} | Launch Readiness: 100/100", "SUCCESS" if all_passed else "WARN")
     print("=" * 70 + "\n", flush=True)
 
 def robust_sleep(seconds: int):

@@ -747,10 +747,12 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
   }
 
   // --------------------------------------------------------------------------
-  // API ROUTE: 20-Subagent Swarm Status & Trigger (Protected with Concurrency Lock & Timeout)
+  // API ROUTE: Subagent Swarm Status & Trigger (Supports 20 & 100 Subagents)
   // --------------------------------------------------------------------------
-  if (pathname === '/api/swarm/status' && method === 'GET') {
-    const reportPath = path.join(REPORTS_DIR, 'subagents_20_interview_report.json');
+  if ((pathname === '/api/swarm/status' || pathname === '/api/swarm/100/status') && method === 'GET') {
+    const is100 = pathname.includes('/100') || parsedUrl.searchParams.get('count') === '100';
+    const reportName = is100 ? 'subagents_100_interview_report.json' : 'subagents_20_interview_report.json';
+    const reportPath = path.join(REPORTS_DIR, reportName);
     if (fs.existsSync(reportPath)) {
       try {
         const rep = JSON.parse(fs.readFileSync(reportPath, 'utf-8'));
@@ -758,24 +760,27 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
       } catch (e) {}
     }
     return sendJson(res, 200, {
-      title: "20-Subagent Swarm Ready",
+      title: is100 ? "100-Subagent Swarm Ready" : "20-Subagent Swarm Ready",
       status: "STANDBY",
-      total_agents: 20,
+      total_agents: is100 ? 100 : 20,
       health_score: "100%",
       timestamp: new Date().toISOString()
     });
   }
 
-  if (pathname === '/api/swarm/trigger' && method === 'POST') {
+  if ((pathname === '/api/swarm/trigger' || pathname === '/api/swarm/100/trigger') && method === 'POST') {
     if (isSwarmRunning) {
       return sendError(res, 429, 'A subagent swarm inspection is already in progress. Please wait.');
     }
     isSwarmRunning = true;
-    const swarmScript = path.join(BASE_DIR, 'modules', 'subagents_20_interview_swarm.py');
+    const is100 = pathname.includes('/100') || parsedUrl.searchParams.get('count') === '100';
+    const scriptName = is100 ? 'subagents_100_interview_swarm.py' : 'subagents_20_interview_swarm.py';
+    const reportName = is100 ? 'subagents_100_interview_report.json' : 'subagents_20_interview_report.json';
+    const swarmScript = path.join(BASE_DIR, 'modules', scriptName);
 
-    exec(`python "${swarmScript}"`, { timeout: 15000, windowsHide: true }, (err, stdout, stderr) => {
+    exec(`python "${swarmScript}"`, { timeout: 35000, windowsHide: true }, (err, stdout, stderr) => {
       isSwarmRunning = false;
-      const reportPath = path.join(REPORTS_DIR, 'subagents_20_interview_report.json');
+      const reportPath = path.join(REPORTS_DIR, reportName);
       if (fs.existsSync(reportPath)) {
         try {
           const rep = JSON.parse(fs.readFileSync(reportPath, 'utf-8'));
@@ -783,10 +788,10 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
         } catch (e) {}
       }
       return sendJson(res, 200, {
-        title: "20-Subagent Swarm Executed",
+        title: is100 ? "100-Subagent Swarm Executed" : "20-Subagent Swarm Executed",
         status: err ? "DEGRADED" : "OPTIMAL",
         error: err ? err.message : null,
-        total_agents: 20,
+        total_agents: is100 ? 100 : 20,
         timestamp: new Date().toISOString()
       });
     });
