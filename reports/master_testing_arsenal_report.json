@@ -1,6 +1,6 @@
 {
   "title": "Basit AI Interview Pro — Master Testing Arsenal Report",
-  "timestamp": "2026-10-04T15:01:34.499Z",
+  "timestamp": "2026-10-04T15:14:00.109Z",
   "total": 12,
   "passed": 12,
   "failed": 0,
@@ -11,14 +11,14 @@
       "name": "Health Check & Helmet Headers",
       "passed": true,
       "details": "Status: 200, CSP: Present, XFO: DENY",
-      "durationMs": 48
+      "durationMs": 30
     },
     {
       "suite": "Basit3-Security",
       "name": "CWE-22 Path Traversal Defense",
       "passed": true,
       "details": "HTTP 403 (Access Safely Blocked)",
-      "durationMs": 1
+      "durationMs": 15
     },
     {
       "suite": "Basit3-Security",
@@ -32,63 +32,63 @@
       "name": "JavaScript Sandbox Execution",
       "passed": true,
       "details": "Output: ✓ Test Case 1: Passed ✓ Test Case 2: Passed ✓ Edge Case (Empty / Boundary): Handled",
-      "durationMs": 5166
+      "durationMs": 5107
     },
     {
       "suite": "Basit1-Code",
       "name": "Python Algorithmic Analysis",
       "passed": true,
-      "details": "Complexity: O(n), Score: 95",
-      "durationMs": 1045
+      "details": "Complexity: O(1) average lookup, Score: 88",
+      "durationMs": 5221
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "English Knowledge Hub Query",
       "passed": true,
-      "details": "Length: 2240 chars",
-      "durationMs": 4361
+      "details": "Length: 361 chars",
+      "durationMs": 5136
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "Roman Urdu Bilingual Query",
       "passed": true,
       "details": "Length: 573 chars",
-      "durationMs": 5159
+      "durationMs": 5185
     },
     {
       "suite": "Interview-Flow",
       "name": "Start Session (AI Track, Staff)",
-      "passed": "intv_1791126078723_787e6c",
-      "details": "Session ID: intv_1791126078723_787e6c | Stack: Kubernetes, Redis, Vector DB / Qdrant",
-      "durationMs": 1434
+      "passed": "intv_1791126824553_a59189",
+      "details": "Session ID: intv_1791126824553_a59189 | Stack: Kubernetes, Redis, Vector DB / Qdrant",
+      "durationMs": 1604
     },
     {
       "suite": "Interview-Flow",
       "name": "Candidate Turn & Adaptive Reply",
-      "passed": "Haan bhai, aapne distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
-      "details": "Reply snippet: Haan bhai, aapne distributed embeddings retrieval k liye Qdrant cluster use kart...",
-      "durationMs": 1246
+      "passed": "Pehle, hum kahan karengay? Envoy gateway use karne ka matlab kya hain?",
+      "details": "Reply snippet: Pehle, hum kahan karengay? Envoy gateway use karne ka matlab kya hain?...",
+      "durationMs": 896
     },
     {
       "suite": "Interview-Flow",
       "name": "Comprehensive 5D Scorecard",
       "passed": true,
       "details": "Score: 89/100, Decision: Strong Hire",
-      "durationMs": 5178
+      "durationMs": 5167
     },
     {
       "suite": "BasitSwarm",
       "name": "Swarm Status Inspection",
       "passed": true,
       "details": "Active Subagents: 20",
-      "durationMs": 3
+      "durationMs": 4
     },
     {
       "suite": "BasitSwarm",
       "name": "20-Subagent Swarm Trigger (Live Run)",
       "passed": true,
-      "details": "Health: 100.0%, Agents: 20/20 Optimal in 7741.2ms",
-      "durationMs": 7916
+      "details": "Health: 100.0%, Agents: 20/20 Optimal in 7720.2ms",
+      "durationMs": 7885
     }
   ]
 }

@@ -981,6 +981,15 @@ Job Requirements: ${jobDescription || 'Standard requirements'}${extractedSkills.
       const nextStageIndex = session.currentStageIndex + 1;
       const isLastStage = nextStageIndex >= session.stages.length;
 
+      const isBehavioral = session.roleId === 'behavioral' ||
+        (session.stages[session.currentStageIndex] || '').toLowerCase().includes('behavioral') ||
+        (session.stages[session.currentStageIndex] || '').toLowerCase().includes('star') ||
+        (session.stages[session.currentStageIndex] || '').toLowerCase().includes('culture');
+
+      const probingInstruction = isBehavioral
+        ? `Evaluate candidate answer depth against ${session.experienceLevel} engineering leadership expectations using the STAR framework (Situation, Task, Action, Result). If shallow, probe for concrete ownership, quantifiable business metrics (% saved, latency drop, revenue impact), and blameless post-mortem accountability.`
+        : `Evaluate candidate answer depth against ${session.experienceLevel} engineering expectations. If shallow or missing edge-case consideration, provide constructive probing feedback and challenge candidate on concurrency, race conditions, CAP theorem, p99 tail latency, or scale tradeoffs.`;
+
       const systemPrompt = `You are ${session.persona.name}, ${session.persona.title}. Tone: ${session.persona.tone || 'incisive, professional, evaluating technical rigor'}.
 You are interviewing ${session.candidateName} for the ${session.experienceLevel} ${session.roleTitle} role.
 ${session.resumeText ? `Candidate Resume Background: ${session.resumeText}` : ''}
@@ -989,8 +998,7 @@ ${(session.extractedSkills && session.extractedSkills.length > 0) ? `Target Stac
 Current Stage: ${session.stages[session.currentStageIndex]}.
 Next Stage: ${isLastStage ? 'Conclusion' : session.stages[nextStageIndex]}.
 
-Evaluate candidate answer depth against ${session.experienceLevel} engineering expectations.
-If shallow or missing edge-case consideration, provide constructive probing feedback and challenge candidate on concurrency, race conditions, CAP theorem, p99 tail latency, or scale tradeoffs.
+${probingInstruction}
 Respond in strictly valid JSON:
 {
   "interviewerReply": "Spoken feedback in natural Roman Urdu or English acknowledging candidate's points (1-2 sentences)",
@@ -1018,6 +1026,16 @@ ${codeSnippet ? `Candidate Code:\n${codeSnippet}\n` : ''}${whiteboardNotes ? `Wh
         const nextStageName = session.stages[nextStageIndex];
         if (parsedAI && parsedAI.nextQuestion) {
           nextQuestion = parsedAI.nextQuestion;
+        } else if (session.roleId === 'behavioral') {
+          if (nextStageIndex === 1) {
+            nextQuestion = `Now let's proceed to Stage 2: High-Stakes Production Outage & Incident Management. Can you walk me through a major P0/P1 crisis you led, detailing how you managed executive stakeholders, triaged root cause, and drove a blameless post-mortem?`;
+          } else if (nextStageIndex === 2) {
+            nextQuestion = `Let's transition to Stage 3: Delivering Ambiguous Multi-Team Technical Initiatives. Please outline the Situation, Task, Action, and Result of a project where requirements were vague or conflicting across engineering teams.`;
+          } else if (nextStageIndex === 3) {
+            nextQuestion = `Moving to Stage 4: Engineering Mentorship & Team Talent Development. How do you identify underperforming engineers and actively sponsor high-potential teammates to senior engineering levels?`;
+          } else {
+            nextQuestion = `Let's proceed to Stage 5: Values Alignment, Ethics & Executive Accountability. Can you describe a scenario where business pressure incentivized cutting corners on safety, security, or compliance, and how you responded?`;
+          }
         } else if (nextStageIndex === 2) {
           nextQuestion = `Now let's move to Stage 3: Live Coding Sandbox. Please look at the coding challenge in your console: '${session.codingProblem?.title || 'Algorithm Challenge'}'. Walk me through your approach and implement the solution in the editor.`;
         } else if (nextStageIndex === 3) {
