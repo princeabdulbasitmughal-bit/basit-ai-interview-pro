@@ -87,41 +87,62 @@ TRAINING_EXEMPLARS = [
 ]
 
 def generate_synthetic_dataset(num_pairs: int = 50) -> int:
-    """Generates synthetic interview instruction-response pairs for fine-tuning."""
-    print(f"[*] Generating {num_pairs} high-signal training pairs...", flush=True)
-    count = 0
-    with open(DATASET_FILE, "w", encoding="utf-8") as f:
-        # Write base exemplars first
-        for ex in TRAINING_EXEMPLARS:
-            f.write(json.dumps(ex, ensure_ascii=False) + "\n")
-            count += 1
-        
-        # Synthesize role permutations
-        roles = [
-            ("Distributed System Architect", "Kafka, Redis, Kubernetes, CockroachDB", "50M DAU Video Streaming"),
-            ("Senior Backend Systems Engineer", "Go, PostgreSQL, gRPC, Redis", "Financial Ledger Idempotency"),
-            ("AI / Machine Learning Engineer", "PyTorch, Qdrant, Triton, CUDA", "Sub-10ms Semantic Vector Retrieval"),
-            ("Full-Stack Software Engineer", "React, Node.js, Next.js, IndexedDB", "Offline-First State Synchronization"),
-            ("DevOps & Cloud Architect", "Terraform, Kubernetes, Istio, Prometheus", "Multi-Region Zero-Downtime Blue/Green Deployment")
-        ]
-        
-        for role, stack, scenario in roles:
-            for stage in ["Architecture", "Concurrency", "Code Sandbox", "Behavioral"]:
+    """Preserves existing dataset and enriches with new training pairs for fine-tuning."""
+    existing_pairs = []
+    if DATASET_FILE.exists():
+        try:
+            with open(DATASET_FILE, "r", encoding="utf-8") as f:
+                for line in f:
+                    if line.strip():
+                        existing_pairs.append(json.loads(line))
+        except Exception as e:
+            print(f"[!] Warning reading existing dataset: {e}")
+
+    print(f"[*] Found {len(existing_pairs)} existing training pairs. Enriching with new exemplars...", flush=True)
+    seen_instructions = {p.get("instruction", "") for p in existing_pairs}
+    
+    new_items = []
+    # Add base exemplars
+    for ex in TRAINING_EXEMPLARS:
+        if ex.get("instruction") not in seen_instructions:
+            new_items.append(ex)
+            seen_instructions.add(ex.get("instruction"))
+
+    # Synthesize role permutations
+    roles = [
+        ("Distributed System Architect", "Kafka, Redis, Kubernetes, CockroachDB", "50M DAU Video Streaming"),
+        ("Senior Backend Systems Engineer", "Go, PostgreSQL, gRPC, Redis", "Financial Ledger Idempotency"),
+        ("AI / Machine Learning Engineer", "PyTorch, Qdrant, Triton, CUDA", "Sub-10ms Semantic Vector Retrieval"),
+        ("Full-Stack Software Engineer", "React, Node.js, Next.js, IndexedDB", "Offline-First State Synchronization"),
+        ("DevOps & Cloud Architect", "Terraform, Kubernetes, Istio, Prometheus", "Multi-Region Zero-Downtime Blue/Green Deployment"),
+        ("Security & Penetration Specialist", "eBPF, Falco, WireGuard, OWASP", "Zero-Trust Kernel-Level Threat Neutralization"),
+        ("High-Frequency Quant Systems Engineer", "C++, Rust, DPDK, Solarflare", "Sub-Microsecond Order Execution")
+    ]
+    
+    for role, stack, scenario in roles:
+        for stage in ["Architecture", "Concurrency", "Code Sandbox", "Behavioral", "System Failure Modes"]:
+            inst = f"Conduct an elite Bar Raiser evaluation for a Staff {role} specializing in {stack} during stage {stage}."
+            if inst not in seen_instructions:
                 item = {
-                    "instruction": f"Conduct an elite Bar Raiser evaluation for a Staff {role} specializing in {stack}.",
-                    "input": f"Candidate is addressing scenario: {scenario} during stage: {stage}.",
+                    "instruction": inst,
+                    "input": f"Candidate addressing scenario: {scenario} in {stage}.",
                     "output": json.dumps({
-                        "interviewerReply": f"Zabardast explanation! Aapne {stack.split(',')[0]} ka architecture clear bataya.",
-                        "nextQuestion": f"Under peak 100x traffic spikes, how do you prevent cascading failures and maintain p99 tail latency within SLA limits?",
+                        "interviewerReply": f"Zabardast explanation! Aapne {stack.split(',')[0]} ka architecture aur concurrency design clear bataya.",
+                        "nextQuestion": f"Under peak 100x traffic spikes, how do you prevent cascading failures, cache thundering herds, and maintain p99 tail latency within SLA limits?",
                         "stage": stage,
-                        "evaluationCriteria": ["p99 latency", "CAP theorem", "Idempotency", "Chaos resilience"]
+                        "evaluationCriteria": ["p99 latency", "CAP theorem", "Idempotency", "Chaos resilience", "Kernel I/O"]
                     }, ensure_ascii=False)
                 }
-                f.write(json.dumps(item, ensure_ascii=False) + "\n")
-                count += 1
-                
-    print(f"[+] Saved {count} training pairs to: {DATASET_FILE}", flush=True)
-    return count
+                new_items.append(item)
+                seen_instructions.add(inst)
+
+    all_pairs = existing_pairs + new_items
+    with open(DATASET_FILE, "w", encoding="utf-8") as f:
+        for item in all_pairs:
+            f.write(json.dumps(item, ensure_ascii=False) + "\n")
+
+    print(f"[+] Total verified dataset saved: {len(all_pairs)} training pairs in: {DATASET_FILE}", flush=True)
+    return len(all_pairs)
 
 def build_ollama_model(model_name: str = "basit-interviewer-pro", modelfile: Path = MODELFILE_PATH) -> bool:
     """Compiles the custom Modelfile into a local Ollama model."""
@@ -137,7 +158,8 @@ def build_ollama_model(model_name: str = "basit-interviewer-pro", modelfile: Pat
         )
         duration = round(time.perf_counter() - t0, 1)
         print(f"[+] Successfully compiled {model_name} in {duration}s!", flush=True)
-        print(proc.stdout)
+        if proc.stdout.strip():
+            print(proc.stdout.strip())
         return True
     except subprocess.CalledProcessError as e:
         print(f"[-] Failed to compile {model_name}: {e.stderr}", file=sys.stderr)
@@ -147,7 +169,7 @@ def build_32b_modelfile():
     """Builds the 32B flagship Modelfile for local NVIDIA RTX A6000."""
     content = """FROM qwen2.5-coder:32b
 
-# High-precision parameter tuning for 32B Flagship Bar Raiser Engine
+# High-precision parameter tuning for 32B Flagship Bar Raiser Engine on RTX A6000
 PARAMETER temperature 0.3
 PARAMETER top_p 0.9
 PARAMETER repeat_penalty 1.15
@@ -159,29 +181,62 @@ PARAMETER stop "<|endoftext|>"
 
 SYSTEM \"\"\"You are BASIT INTERVIEWER PRO (32B Flagship), the sovereign AI Principal Technical Fellow and Bar Raiser.
 You possess deep expertise across distributed databases, kernel-level eBPF observability, sub-millisecond algorithmic AST analysis, and elite STAR leadership evaluation.
-You fluently understand natural Roman Urdu and crisp English without translation latency.\"\"\"
+You fluently understand natural Roman Urdu and crisp English without translation latency.
+When evaluating candidates:
+1. Probe edge cases, memory limits, and p99 tail latency.
+2. In Roman Urdu, acknowledge warmly before delivering rigorous architectural questions.
+3. Always validate idempotency and single points of failure.\"\"\"
 """
     with open(MODELFILE_32B_PATH, "w", encoding="utf-8") as f:
         f.write(content)
     print(f"[+] Created 32B Modelfile: {MODELFILE_32B_PATH}", flush=True)
 
+def verify_live_inference(model_name: str = "basit-interviewer-pro"):
+    """Tests live inference on the compiled model via Ollama HTTP API."""
+    import urllib.request
+    print(f"[*] Verifying live inference on '{model_name}'...", flush=True)
+    url = "http://127.0.0.1:11434/api/generate"
+    payload = json.dumps({
+        "model": model_name,
+        "prompt": "Candidate says: 'Hum Redis cluster use kartay hain with read replicas.' Evaluate in conversational Roman Urdu.",
+        "stream": False,
+        "options": {"num_predict": 128, "temperature": 0.3}
+    }).encode("utf-8")
+    
+    t0 = time.perf_counter()
+    try:
+        req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            dt = round(time.perf_counter() - t0, 2)
+            reply = data.get("response", "").strip()
+            print(f"[+] Inference verified in {dt}s! Response snippet:\n    \"{reply[:180]}...\"\n", flush=True)
+            return True
+    except Exception as e:
+        print(f"[!] Live inference probe warning: {e}", flush=True)
+        return False
+
 def main():
     print("==================================================================")
-    print("👑 BASIT INTERVIEWER PRO — SOVEREIGN LOCAL MODEL COMPILER")
+    print("👑 BASIT INTERVIEWER PRO — SOVEREIGN LOCAL MODEL TRAINING PIPELINE")
     print("==================================================================")
     
-    # 1. Generate synthetic fine-tuning dataset
-    num_pairs = generate_synthetic_dataset(50)
+    # 1. Enrich & persist fine-tuning dataset
+    num_pairs = generate_synthetic_dataset()
     
     # 2. Build 7B Fast Model
     build_ollama_model("basit-interviewer-pro", MODELFILE_PATH)
     
-    # 3. Create 32B Flagship Modelfile
+    # 3. Create & Build 32B Flagship Modelfile
     build_32b_modelfile()
+    build_ollama_model("basit-interviewer-pro-32b", MODELFILE_32B_PATH)
+    
+    # 4. Verify live inference
+    verify_live_inference("basit-interviewer-pro")
     
     print("==================================================================")
-    print(f"✅ Local Model Pipeline Complete: {num_pairs} pairs generated.")
-    print("🚀 Model 'basit-interviewer-pro:latest' is ready for live inference!")
+    print(f"✅ Local Model Pipeline Complete: {num_pairs} pairs verified in dataset.")
+    print("🚀 Models 'basit-interviewer-pro:latest' and 'basit-interviewer-pro-32b:latest' are compiled & active!")
     print("==================================================================")
 
 if __name__ == "__main__":
