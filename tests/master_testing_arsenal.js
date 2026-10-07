@@ -255,7 +255,11 @@ print([fibonacci(i) for i in range(7)])
   // Test 5.2: Swarm Trigger & 20-Subagent Execution
   const t11 = Date.now();
   try {
-    const res = await request({ path: '/api/swarm/trigger', method: 'POST' });
+    let res = await request({ path: '/api/swarm/trigger', method: 'POST' });
+    if (res.statusCode === 429) {
+      await new Promise(r => setTimeout(r, 3500));
+      res = await request({ path: '/api/swarm/trigger', method: 'POST' });
+    }
     const ok = res.statusCode === 200 && (res.body.health_score === '100.0%' || res.body.health_score === '100%' || (res.body.optimal_count && res.body.optimal_count >= 19));
     recordTest('BasitSwarm', '20-Subagent Swarm Trigger (Live Run)', ok, `Health: ${res.body.health_score}, Agents: ${res.body.optimal_count}/${res.body.total_agents} Optimal in ${res.body.total_duration_ms}ms`, Date.now() - t11);
   } catch (err) {

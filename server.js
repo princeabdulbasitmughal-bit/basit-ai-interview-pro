@@ -671,6 +671,7 @@ const MIME_TYPES = {
 
 // Swarm execution concurrency lock
 let isSwarmRunning = false;
+let swarmStartTime = 0;
 
 // ============================================================================
 // Core Server Request Router
@@ -821,10 +822,11 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
   }
 
   if ((pathname === '/api/swarm/trigger' || pathname === '/api/swarm/100/trigger') && method === 'POST') {
-    if (isSwarmRunning) {
+    if (isSwarmRunning && Date.now() - swarmStartTime < 45000) {
       return sendError(res, 429, 'A subagent swarm inspection is already in progress. Please wait.');
     }
     isSwarmRunning = true;
+    swarmStartTime = Date.now();
     const is100 = pathname.includes('/100') || parsedUrl.searchParams.get('count') === '100';
     const scriptName = is100 ? 'subagents_100_interview_swarm.py' : 'subagents_20_interview_swarm.py';
     const reportName = is100 ? 'subagents_100_interview_report.json' : 'subagents_20_interview_report.json';
