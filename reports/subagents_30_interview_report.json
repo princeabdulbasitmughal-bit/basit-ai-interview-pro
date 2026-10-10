@@ -1,11 +1,11 @@
 {
   "title": "Basit AI Interview Pro \u2014 30-Subagent Parallel Burst Swarm Report",
-  "timestamp": "2026-10-10T17:14:26.947785",
+  "timestamp": "2026-10-10T17:18:49.871602",
   "total_agents": 30,
   "optimal_count": 30,
   "warn_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 10347.8,
+  "total_duration_ms": 10402.2,
   "execution_concurrency": "30 Worker Threads (Zero-Hang Non-Blocking)",
   "squadron_breakdown": {
     "AI Reasoning": "5/5 Optimal (100.0%)",
@@ -21,7 +21,7 @@
       "name": "Qwen GPU Router",
       "squadron": "AI Reasoning",
       "status": "OPTIMAL",
-      "latency_ms": 2142.1,
+      "latency_ms": 2044.4,
       "metric": "Local RTX A6000 Qwen 32B Active"
     },
     {
@@ -29,7 +29,7 @@
       "name": "Groq LPU Evaluator",
       "squadron": "AI Reasoning",
       "status": "OPTIMAL",
-      "latency_ms": 2140.2,
+      "latency_ms": 2037.7,
       "metric": "Sub-second LPU Inference Ready"
     },
     {
@@ -61,7 +61,7 @@
       "name": "Node.js VM Sandbox Guard",
       "squadron": "Code Sandboxing",
       "status": "OPTIMAL",
-      "latency_ms": 10342.9,
+      "latency_ms": 10397.4,
       "metric": "VM Context Sandbox Verified"
     },
     {
@@ -69,7 +69,7 @@
       "name": "Python AST Preflight Checker",
       "squadron": "Code Sandboxing",
       "status": "OPTIMAL",
-      "latency_ms": 10297.9,
+      "latency_ms": 10368.5,
       "metric": "Sub-50ms AST Parse Verified"
     },
     {
@@ -101,7 +101,7 @@
       "name": "Fullstack Web Track Inspector",
       "squadron": "Role Catalogs",
       "status": "OPTIMAL",
-      "latency_ms": 2129.0,
+      "latency_ms": 2034.4,
       "metric": "Fullstack 5 Stages Verified"
     },
     {
@@ -109,7 +109,7 @@
       "name": "Backend Distributed Systems Inspector",
       "squadron": "Role Catalogs",
       "status": "OPTIMAL",
-      "latency_ms": 2137.7,
+      "latency_ms": 2062.3,
       "metric": "Backend 5 Stages Verified"
     },
     {
@@ -117,7 +117,7 @@
       "name": "AI/ML & LLM Track Inspector",
       "squadron": "Role Catalogs",
       "status": "OPTIMAL",
-      "latency_ms": 2129.9,
+      "latency_ms": 2052.3,
       "metric": "AI/ML 5 Stages Verified"
     },
     {
@@ -125,7 +125,7 @@
       "name": "DevOps & SRE Track Inspector",
       "squadron": "Role Catalogs",
       "status": "OPTIMAL",
-      "latency_ms": 2137.8,
+      "latency_ms": 2051.2,
       "metric": "DevOps 5 Stages Verified"
     },
     {
@@ -133,7 +133,7 @@
       "name": "Behavioral STAR Track Inspector",
       "squadron": "Role Catalogs",
       "status": "OPTIMAL",
-      "latency_ms": 2136.9,
+      "latency_ms": 2052.2,
       "metric": "STAR Staging & Rubrics Verified"
     },
     {
@@ -197,7 +197,7 @@
       "name": "English Knowledge Hub Engine",
       "squadron": "Voice & Media",
       "status": "OPTIMAL",
-      "latency_ms": 10293.2,
+      "latency_ms": 10363.5,
       "metric": "Answer length: 356 chars"
     },
     {
@@ -205,7 +205,7 @@
       "name": "Roman Urdu Bilingual Engine",
       "squadron": "Voice & Media",
       "status": "OPTIMAL",
-      "latency_ms": 10292.4,
+      "latency_ms": 10392.5,
       "metric": "Bilingual Synthesis Active"
     },
     {
@@ -221,7 +221,7 @@
       "name": "CWE-22 Path Traversal Defense",
       "squadron": "Security & DevOps",
       "status": "OPTIMAL",
-      "latency_ms": 2017.1,
+      "latency_ms": 2029.7,
       "metric": "Blocked with HTTP 403"
     },
     {
@@ -229,7 +229,7 @@
       "name": "512KB Payload Ceiling Guard",
       "squadron": "Security & DevOps",
       "status": "OPTIMAL",
-      "latency_ms": 2126.3,
+      "latency_ms": 2045.0,
       "metric": "HTTP 413 Payload Too Large"
     },
     {
@@ -237,15 +237,15 @@
       "name": "In-Memory Cache Latency Guard",
       "squadron": "Security & DevOps",
       "status": "OPTIMAL",
-      "latency_ms": 2023.78,
-      "metric": "2023.78ms Steady-State Response"
+      "latency_ms": 2047.2,
+      "metric": "2047.2ms Steady-State Response"
     },
     {
       "id": 29,
       "name": "Gzip & ETag Compression Guard",
       "squadron": "Security & DevOps",
       "status": "OPTIMAL",
-      "latency_ms": 2015.8,
+      "latency_ms": 2036.0,
       "metric": "77.2% Payload Compression Verified"
     },
     {
