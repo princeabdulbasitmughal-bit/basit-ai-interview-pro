@@ -62,7 +62,7 @@ print("=" * 80)
 
 # Subagent 01: Node.js Core Server Health
 def t01():
-    r = requests.get("http://localhost:8888/api/status", timeout=5)
+    r = requests.get("http://127.0.0.1:8888/api/status", timeout=5)
     assert r.status_code == 200, f"Status code {r.status_code}"
     d = r.json()
     assert d.get("status") == "ONLINE"
@@ -71,7 +71,7 @@ run_test(1, "Node Server /api/status", "Server & Network", t01)
 
 # Subagent 02: Real-time Telemetry Metrics
 def t02():
-    r = requests.get("http://localhost:8888/api/metrics", timeout=5)
+    r = requests.get("http://127.0.0.1:8888/api/metrics", timeout=5)
     assert r.status_code == 200
     d = r.json()
     assert d.get("success") is True
