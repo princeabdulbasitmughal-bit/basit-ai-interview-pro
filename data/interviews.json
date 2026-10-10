@@ -1,5 +1,391 @@
 [
   {
+    "id": "intv_1791634513312_43f8ae",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis",
+      "Vector DB / Qdrant"
+    ],
+    "startTime": 1791634514737,
+    "endTime": 1791634516326,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0,
+      "pasteCount": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate! Welcome to our interview for the position of Staff AI/Machine Learning Engineer. I’m Alex Rivera, your principal interviewer today. We'll be evaluating your experience with Kubernetes, Redis, and vector search using Qdrant. Let’s get started!\n\nCan you tell me about a time when you had to design and implement a high-scale distributed system that included these technologies?",
+        "timestamp": 1791634514737,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1791634514739,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Haan bhai, aap apni kuchh achhe se batay hain! Is tarah se hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho. Aap isme kis tarah se concurrency handle kar rahe hain? Kya aapne race conditions ko manage kiya hain? Agar hum concurrency increase karte hain, toh p99 tail latency kaise manage karenge aur single points of failure kahan se bachenge?",
+        "timestamp": 1791634516324,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) AI / Machine Learning Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "Cosine Similarity Vector Search & Ranking",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner) - https://www.cockroachlabs.com/docs/",
+        "Deepen hands-on experience with eBPF and kernel-level network observability - https://ebpf.io/what-is-ebpf/",
+        "Master high-throughput streaming and event architectures with Kafka & Redis - https://redis.io/docs/ & https://kafka.apache.org/documentation/"
+      ]
+    }
+  },
+  {
+    "id": "intv_1791634342837_d05136",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis",
+      "Vector DB / Qdrant"
+    ],
+    "startTime": 1791634344290,
+    "endTime": 1791634345549,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0,
+      "pasteCount": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate! Welcome to today's interview. I'm Alex Rivera, your Principal Technical Lead. We'll be discussing your experience in high-scale distributed systems using Kubernetes, Redis, and vector search with Qdrant. To start off, can you tell me about a project where you engineered a large-scale distributed system that utilized these technologies?",
+        "timestamp": 1791634344290,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1791634344292,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Ach, aapne qayamat keliye humein kuch aur details de sakte hain? Kya concurrency scenarios main Qdrant ka performance kaise hota hai? Kya edge cases ho sakein jahan Qdrant ki latency <5ms ke saath bhi problems aayein? Aap kis tarah se concurrency issues ko manage kar sakte hain?",
+        "timestamp": 1791634345547,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) AI / Machine Learning Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "Cosine Similarity Vector Search & Ranking",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner) - https://www.cockroachlabs.com/docs/",
+        "Deepen hands-on experience with eBPF and kernel-level network observability - https://ebpf.io/what-is-ebpf/",
+        "Master high-throughput streaming and event architectures with Kafka & Redis - https://redis.io/docs/ & https://kafka.apache.org/documentation/"
+      ]
+    }
+  },
+  {
+    "id": "intv_1791633692519_4d1131",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis",
+      "Vector DB / Qdrant"
+    ],
+    "startTime": 1791633698193,
+    "endTime": 1791633704079,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0,
+      "pasteCount": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Hello Basit Candidate, welcome! I am Alex Rivera, Principal Technical Lead. Today we will evaluate your skills for the Staff (8+ yrs) AI / Machine Learning Engineer role across 5 stages: Technical Foundations, Problem Solving, Live Coding, System Design, and Behavioral Fit. Let's begin: In modern production RAG pipelines, what strategies do you employ when dense embedding search fails on keyword-specific queries, and how do you optimize chunk size vs context recall?",
+        "timestamp": 1791633698193,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1791633698198,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Thank you for explaining your thought process clearly. Let's proceed to 2. Production RAG Architecture, Hybrid Search & Re-ranking: Could you describe how you handle critical incidents and cross-team architectural alignment under tight deadlines?",
+        "timestamp": 1791633704073,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 89,
+      "recommendation": "Strong Hire",
+      "radarScores": {
+        "technicalCompetence": 91,
+        "problemSolving": 88,
+        "communication": 92,
+        "systemArchitecture": 86,
+        "behavioralLeadership": 89
+      },
+      "executiveSummary": "Basit Candidate displayed strong engineering fundamentals, structured reasoning, and impressive communication throughout the interview for the Staff (8+ yrs) AI / Machine Learning Engineer position. Technical explanations were crisp and pragmatic, demonstrating genuine real-world production experience.",
+      "strengths": [
+        "Clear articulation of architectural tradeoffs between latency, consistency, and cost",
+        "Methodical decomposition of problems into modular, testable components",
+        "High confidence and professional demeanor during deep-dive probing questions"
+      ],
+      "weaknesses": [
+        "Could delve deeper into automated chaos testing and distributed deadlocks",
+        "Consider quoting concrete telemetry metrics when describing production optimizations"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "System Architecture & Foundations",
+          "question": "End-to-end architecture and consistency guarantees",
+          "score": 92,
+          "evaluation": "Demonstrated solid grasp of distributed databases, caching, and state isolation."
+        },
+        {
+          "topic": "Live Coding & Algorithmics",
+          "question": "Cosine Similarity Vector Search & Ranking",
+          "score": 89,
+          "evaluation": "Solution was clean, idiomatic, and respected time/space constraints."
+        },
+        {
+          "topic": "Behavioral & Culture Fit",
+          "question": "Handling high-stakes technical disagreements and outages",
+          "score": 91,
+          "evaluation": "Exhibited mature ownership, stakeholder alignment, and blameless post-mortem culture."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Master advanced multi-region distributed databases (CockroachDB/Spanner) - https://www.cockroachlabs.com/docs/",
+        "Deepen hands-on experience with eBPF and kernel-level network observability - https://ebpf.io/what-is-ebpf/",
+        "Master high-throughput streaming and event architectures with Kafka & Redis - https://redis.io/docs/ & https://kafka.apache.org/documentation/"
+      ]
+    }
+  },
+  {
+    "id": "intv_1791633042834_a45630",
+    "candidateName": "Basit Candidate",
+    "roleId": "aiml",
+    "roleTitle": "AI / Machine Learning Engineer",
+    "experienceLevel": "Staff (8+ yrs)",
+    "persona": {
+      "id": "alex",
+      "name": "Alex Rivera",
+      "title": "Principal Technical Lead",
+      "tone": "Incisive, sharp, encourages deep technical justification, asks probing follow-ups on edge cases and latency tradeoffs.",
+      "avatar": "👨‍💻"
+    },
+    "resumeText": "Engineered high-scale distributed vector search using Qdrant, Redis caching, and Kubernetes.",
+    "jobDescription": "Seeking Staff AI Engineer with deep Kubernetes, Redis, and vector search mastery.",
+    "extractedSkills": [
+      "Kubernetes",
+      "Redis",
+      "Vector DB / Qdrant"
+    ],
+    "startTime": 1791633044627,
+    "endTime": 1791633046559,
+    "durationMinutes": 1,
+    "metrics": {
+      "questionsAsked": 1,
+      "answersGiven": 1,
+      "tabSwitches": 0,
+      "pasteCount": 0
+    },
+    "conversation": [
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "Waalaikum assalam! Haan bhai, mujhe aapko apni experience aur core architecture baat karna hai. Aaj hum Kubernetes, Redis, aur vector search se related questions karayenge. Aap kis tarah se Qdrant ko use kiye hain? Kya aap apna high-scale distributed vector search project ke baare mein detail doon?",
+        "timestamp": 1791633044627,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "candidate",
+        "text": "Hum distributed embeddings retrieval k liye Qdrant cluster use kartay hain with HNSW indexing aur quantization taakay latency <5ms ho.",
+        "code": null,
+        "whiteboardNotes": "1. Ingress -> Envoy Gateway\n2. Qdrant HNSW Cluster\n3. Redis L2 Cache\n4. PostgreSQL",
+        "timestamp": 1791633044631,
+        "stageIndex": 0
+      },
+      {
+        "speaker": "interviewer",
+        "persona": "Alex Rivera",
+        "text": "<span dir=\"ltr\">Aap k Qdrant cluster ka use distributed embeddings retrieval ke liye achhe se describe kar rahy hain, iska latency bhi <5ms ke ander maintain hota hai. Aam jankari ho sakti hai aapki kaise aapne HNSW indexing aur quantization ki madad se pahunch gaye hain? Kya pehle hum Ingress k saath Envoy Gateway ka use kar rahe hain?</span> <span dir=\"ltr\">Kisi bhi point ke baare mein aap concurrency, race conditions, CAP theorem aur p99 tail latency ke baare mein khud se toh kya sochte hain? Isse hum kaise handle kar sakte hain?</span>",
+        "timestamp": 1791633046557,
+        "stageIndex": 1
+      }
+    ],
+    "scorecard": {
+      "overallScore": 85,
+      "recommendation": "Hire",
+      "radarScores": {
+        "technicalCompetence": 90,
+        "problemSolving": 75,
+        "communication": 88,
+        "systemArchitecture": 83,
+        "behavioralLeadership": 86
+      },
+      "executiveSummary": "Basit Candidate demonstrated strong technical knowledge in using Qdrant for distributed vector search, highlighting the use of HNSW indexing and quantization to achieve low latency. However, their response was somewhat shallow on how they handle concurrency, race conditions, CAP theorem, and p99 tail latency.",
+      "strengths": [
+        "Demonstrated expertise in distributed vector search using Qdrant",
+        "Effective communication and technical explanation"
+      ],
+      "weaknesses": [
+        "Lack of depth in explaining system architecture considerations like concurrency, race conditions, CAP theorem, and p99 tail latency"
+      ],
+      "questionBreakdown": [
+        {
+          "topic": "Qdrant Cluster Usage",
+          "question": "Describe how you use Qdrant for distributed embeddings retrieval with HNSW indexing and quantization to achieve low latency.",
+          "score": 85,
+          "evaluation": "Candidate provided a clear understanding of the setup, but could have delved deeper into specific techniques used."
+        }
+      ],
+      "personalizedRoadmap": [
+        "Phase 1: Advanced Kubernetes Configuration with documentation URL",
+        "Phase 2: Concurrency and Race Condition Handling in Distributed Systems with documentation URL",
+        "Phase 3: CAP Theorem and p99 Tail Latency Optimization with documentation URL"
+      ]
+    }
+  },
+  {
     "id": "intv_1791632368614_503479",
     "candidateName": "Basit Candidate",
     "roleId": "aiml",
