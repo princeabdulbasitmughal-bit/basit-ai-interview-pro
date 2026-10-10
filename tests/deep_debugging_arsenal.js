@@ -30,7 +30,7 @@ function request(options, data = null) {
         'Content-Type': 'application/json',
         ...(options.headers || {})
       },
-      timeout: 10000
+      timeout: options.timeout || 20000
     };
 
     const req = http.request(reqOptions, res => {

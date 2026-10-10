@@ -49,11 +49,16 @@ process.on('unhandledRejection', (reason, promise) => {
 
 function handleGracefulShutdown(signal) {
   console.log(`[Watchdog] Received ${signal}. Draining connections and shutting down...`);
+  try {
+    if (server && typeof server.closeAllConnections === 'function') {
+      server.closeAllConnections();
+    }
+  } catch (e) {}
   server.close(() => {
     console.log('[Watchdog] HTTP server closed cleanly.');
     process.exit(0);
   });
-  setTimeout(() => process.exit(1), 5000);
+  setTimeout(() => process.exit(0), 5000);
 }
 process.on('SIGINT', () => handleGracefulShutdown('SIGINT'));
 process.on('SIGTERM', () => handleGracefulShutdown('SIGTERM'));
@@ -449,7 +454,7 @@ async function queryAI({ systemPrompt, userPrompt, temperature = 0.6, jsonMode =
       const fullPrompt = `${enhancedSystem}\n\nTask:\n${userPrompt}`;
       const resp = await fetch(`${OLLAMA_BASE}/api/generate`, {
         method: 'POST',
-        signal: AbortSignal.timeout(4500),
+        signal: AbortSignal.timeout(2000),
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           model: targetModel,
