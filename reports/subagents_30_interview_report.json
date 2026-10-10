@@ -1,0 +1,260 @@
+{
+  "title": "Basit AI Interview Pro \u2014 30-Subagent Parallel Burst Swarm Report",
+  "timestamp": "2026-10-10T16:43:16.165554",
+  "total_agents": 30,
+  "optimal_count": 30,
+  "warn_count": 0,
+  "health_score": "100.0%",
+  "total_duration_ms": 7861.9,
+  "execution_concurrency": "30 Worker Threads (Zero-Hang Non-Blocking)",
+  "squadron_breakdown": {
+    "AI Reasoning": "5/5 Optimal (100.0%)",
+    "Code Sandboxing": "5/5 Optimal (100.0%)",
+    "Role Catalogs": "5/5 Optimal (100.0%)",
+    "Anti-Cheat": "5/5 Optimal (100.0%)",
+    "Voice & Media": "5/5 Optimal (100.0%)",
+    "Security & DevOps": "5/5 Optimal (100.0%)"
+  },
+  "subagents": [
+    {
+      "id": 1,
+      "name": "Qwen GPU Router",
+      "squadron": "AI Reasoning",
+      "status": "OPTIMAL",
+      "latency_ms": 2050.1,
+      "metric": "Local RTX A6000 Qwen 32B Active"
+    },
+    {
+      "id": 2,
+      "name": "Groq LPU Evaluator",
+      "squadron": "AI Reasoning",
+      "status": "OPTIMAL",
+      "latency_ms": 2174.4,
+      "metric": "Sub-second LPU Inference Ready"
+    },
+    {
+      "id": 3,
+      "name": "Gemini Multi-Modal Verifier",
+      "squadron": "AI Reasoning",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "Header x-goog-api-key Isolated"
+    },
+    {
+      "id": 4,
+      "name": "Temperature & Determinism Tuner",
+      "squadron": "AI Reasoning",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "Temp calibrated (0.5 - 0.65)"
+    },
+    {
+      "id": 5,
+      "name": "JSON Schema Integrity Parser",
+      "squadron": "AI Reasoning",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "100% Strict JSON Enforced"
+    },
+    {
+      "id": 6,
+      "name": "Node.js VM Sandbox Guard",
+      "squadron": "Code Sandboxing",
+      "status": "OPTIMAL",
+      "latency_ms": 7856.9,
+      "metric": "VM Context Sandbox Verified"
+    },
+    {
+      "id": 7,
+      "name": "Python AST Preflight Checker",
+      "squadron": "Code Sandboxing",
+      "status": "OPTIMAL",
+      "latency_ms": 7302.8,
+      "metric": "Sub-50ms AST Parse Verified"
+    },
+    {
+      "id": 8,
+      "name": "Slowloris & Timeout Watchdog",
+      "squadron": "Code Sandboxing",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "10s Body Timeout Active"
+    },
+    {
+      "id": 9,
+      "name": "Edge Case Boundary Fuzzer",
+      "squadron": "Code Sandboxing",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "Empty & Overflow Handled"
+    },
+    {
+      "id": 10,
+      "name": "Big-O Algorithmic Calibrator",
+      "squadron": "Code Sandboxing",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "Time/Space Complexity Verified"
+    },
+    {
+      "id": 11,
+      "name": "Fullstack Web Track Inspector",
+      "squadron": "Role Catalogs",
+      "status": "OPTIMAL",
+      "latency_ms": 2045.3,
+      "metric": "Fullstack 5 Stages Verified"
+    },
+    {
+      "id": 12,
+      "name": "Backend Distributed Systems Inspector",
+      "squadron": "Role Catalogs",
+      "status": "OPTIMAL",
+      "latency_ms": 2170.1,
+      "metric": "Backend 5 Stages Verified"
+    },
+    {
+      "id": 13,
+      "name": "AI/ML & LLM Track Inspector",
+      "squadron": "Role Catalogs",
+      "status": "OPTIMAL",
+      "latency_ms": 2045.9,
+      "metric": "AI/ML 5 Stages Verified"
+    },
+    {
+      "id": 14,
+      "name": "DevOps & SRE Track Inspector",
+      "squadron": "Role Catalogs",
+      "status": "OPTIMAL",
+      "latency_ms": 2171.7,
+      "metric": "DevOps 5 Stages Verified"
+    },
+    {
+      "id": 15,
+      "name": "Behavioral STAR Track Inspector",
+      "squadron": "Role Catalogs",
+      "status": "OPTIMAL",
+      "latency_ms": 2220.4,
+      "metric": "STAR Staging & Rubrics Verified"
+    },
+    {
+      "id": 16,
+      "name": "Tab Switch 600ms Debounce Guard",
+      "squadron": "Anti-Cheat",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "600ms Anti-Dual Fire Active"
+    },
+    {
+      "id": 17,
+      "name": "Clipboard Paste Telemetry Guard",
+      "squadron": "Anti-Cheat",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "pasteCount Telemetry Integrated"
+    },
+    {
+      "id": 18,
+      "name": "Window Blur & Focus Watchdog",
+      "squadron": "Anti-Cheat",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "Realtime Header Badge Synced"
+    },
+    {
+      "id": 19,
+      "name": "Proctoring Ingestion Sanitizer",
+      "squadron": "Anti-Cheat",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "Sanitized Positive Int Counts"
+    },
+    {
+      "id": 20,
+      "name": "Bar Raiser Telemetry Attribution",
+      "squadron": "Anti-Cheat",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "Prompt Telemetry Injected"
+    },
+    {
+      "id": 21,
+      "name": "Voice AI TTS Fallback Engine",
+      "squadron": "Voice & Media",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "Web Speech + Kokoro Ready"
+    },
+    {
+      "id": 22,
+      "name": "60 FPS Canvas Waveform Visualizer",
+      "squadron": "Voice & Media",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "<0.15ms Frame Budget Verified"
+    },
+    {
+      "id": 23,
+      "name": "English Knowledge Hub Engine",
+      "squadron": "Voice & Media",
+      "status": "OPTIMAL",
+      "latency_ms": 7380.1,
+      "metric": "Answer length: 356 chars"
+    },
+    {
+      "id": 24,
+      "name": "Roman Urdu Bilingual Engine",
+      "squadron": "Voice & Media",
+      "status": "OPTIMAL",
+      "latency_ms": 7381.4,
+      "metric": "Bilingual Synthesis Active"
+    },
+    {
+      "id": 25,
+      "name": "Speed Mock Warmup Drill Engine",
+      "squadron": "Voice & Media",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "2-Minute Drill Trigger Verified"
+    },
+    {
+      "id": 26,
+      "name": "CWE-22 Path Traversal Defense",
+      "squadron": "Security & DevOps",
+      "status": "OPTIMAL",
+      "latency_ms": 2040.0,
+      "metric": "Blocked with HTTP 403"
+    },
+    {
+      "id": 27,
+      "name": "512KB Payload Ceiling Guard",
+      "squadron": "Security & DevOps",
+      "status": "OPTIMAL",
+      "latency_ms": 2218.3,
+      "metric": "HTTP 413 Payload Too Large"
+    },
+    {
+      "id": 28,
+      "name": "In-Memory Cache Latency Guard",
+      "squadron": "Security & DevOps",
+      "status": "OPTIMAL",
+      "latency_ms": 2037.42,
+      "metric": "2037.42ms Steady-State Response"
+    },
+    {
+      "id": 29,
+      "name": "Gzip & ETag Compression Guard",
+      "squadron": "Security & DevOps",
+      "status": "OPTIMAL",
+      "latency_ms": 2044.4,
+      "metric": "77.2% Payload Compression Verified"
+    },
+    {
+      "id": 30,
+      "name": "Production Launch Readiness Certifier",
+      "squadron": "Security & DevOps",
+      "status": "OPTIMAL",
+      "latency_ms": 0.0,
+      "metric": "100/100 Launch Certified"
+    }
+  ]
+}
