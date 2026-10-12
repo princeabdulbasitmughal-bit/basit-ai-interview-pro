@@ -361,12 +361,13 @@ def execute_basit_loop_single_cycle(cycle_num: int):
     print("=" * 70 + "\n", flush=True)
 
 def robust_sleep(seconds: int):
-    for _ in range(seconds):
+    end_time = time.time() + seconds
+    while time.time() < end_time:
         try:
-            time.sleep(1)
-        except (KeyboardInterrupt, SystemExit):
-            raise
+            remaining = max(0.1, end_time - time.time())
+            time.sleep(min(1.0, remaining))
         except BaseException:
+            # Shield against spurious console SIGINT / CTRL_C_EVENT from child processes
             pass
 
 def main():
@@ -398,8 +399,8 @@ def main():
             log(f"Entering sleep window. Next loop in {LOOP_INTERVAL_SECONDS // 60} minutes ({LOOP_INTERVAL_SECONDS}s)...", "INFO")
             robust_sleep(LOOP_INTERVAL_SECONDS)
         except KeyboardInterrupt:
-            log("BasitLoop gracefully paused by operator.", "WARN")
-            break
+            log("BasitLoop trapped console interrupt - maintaining 24/7 sovereign continuity (resuming in 5s)...", "WARN")
+            robust_sleep(5)
         except BaseException as e:
             log(f"Unexpected loop exception (Auto-healing in 10s): {type(e).__name__}: {e}", "ERROR")
             robust_sleep(10)
