@@ -1,33 +1,33 @@
 {
-  "timestamp": "2026-10-10 17:24:16",
+  "timestamp": "2026-10-13 12:23:21",
   "total_tests": 20,
-  "passed": 18,
-  "failed": 2,
-  "score_percent": "90.0%",
-  "total_time_sec": 185.37,
+  "passed": 20,
+  "failed": 0,
+  "score_percent": "100.0%",
+  "total_time_sec": 129.53,
   "results": [
     {
       "id": 1,
       "name": "Node Server /api/status",
       "category": "Server & Network",
-      "status": "FAIL",
-      "duration_ms": 5017.6,
-      "details": "ReadTimeout: HTTPConnectionPool(host='localhost', port=8888): Read timed out. (read timeout=5"
+      "status": "PASS",
+      "duration_ms": 126.8,
+      "details": "ONLINE | Uptime: 0s | Owner: Basit"
     },
     {
       "id": 2,
       "name": "Real-Time Metrics API",
       "category": "Server & Network",
-      "status": "FAIL",
-      "duration_ms": 5014.1,
-      "details": "ReadTimeout: HTTPConnectionPool(host='localhost', port=8888): Read timed out. (read timeout=5"
+      "status": "PASS",
+      "duration_ms": 107.1,
+      "details": "CPU: 45.6% | RAM: 31.8% | Disk: 80.4%"
     },
     {
       "id": 3,
       "name": "Brain Roman Urdu Greeting",
       "category": "Conversational AI",
       "status": "PASS",
-      "duration_ms": 21.3,
+      "duration_ms": 25.9,
       "details": "Haan bhai, kya haal hai! Batao kya karna hai?"
     },
     {
@@ -43,7 +43,7 @@
       "name": "Safe Math Calculator",
       "category": "PC Automation",
       "status": "PASS",
-      "duration_ms": 0.0,
+      "duration_ms": 0.6,
       "details": "Hisab: (500 * 12) + 250 = **6250** \u2705"
     },
     {
@@ -51,23 +51,23 @@
       "name": "Screen Capture Automation",
       "category": "PC Automation",
       "status": "PASS",
-      "duration_ms": 775.2,
-      "details": "Screenshot le liya! \ud83d\udcf8 Saved: screenshots/screenshot_20261010_172121.png"
+      "duration_ms": 765.1,
+      "details": "Screenshot le liya! \ud83d\udcf8 Saved: screenshots/screenshot_20261013_122112.png"
     },
     {
       "id": 7,
       "name": "Persistent Note Storage",
       "category": "Productivity",
       "status": "PASS",
-      "duration_ms": 8.3,
-      "details": "Kaam tamam, boss! \ud83d\udc51 Note save ho gaya: \"Basit bhai ka AI Jarvis 100 percent active hai\" \ud83d\udcdd"
+      "duration_ms": 6.6,
+      "details": "Bilkul ho gaya, sir! \ud83d\ude80 Note save ho gaya: \"Basit bhai ka AI Jarvis 100 percent active hai\" \ud83d\udcdd"
     },
     {
       "id": 8,
       "name": "Reminder Scheduling Engine",
       "category": "Productivity",
       "status": "PASS",
-      "duration_ms": 9.6,
+      "duration_ms": 7.7,
       "details": "\u23f0 Reminder set! 5 minute baad main aapko yaad dilaunga: \"meeting hai\" \ud83d\udd14"
     },
     {
@@ -75,15 +75,15 @@
       "name": "Hardware System Telemetry",
       "category": "PC Automation",
       "status": "PASS",
-      "duration_ms": 521.0,
-      "details": "\ud83d\udfe1 System Status:\n\u2022 CPU: 63.7%\n\u2022 RAM: 88.7GB / 255.2GB (34.8%)\n\u2022 Disk (C:): 752.6GB free\n\u2022 System theek hai, tension nahi"
+      "duration_ms": 518.3,
+      "details": "\ud83d\udfe2 System Status:\n\u2022 CPU: 38.2%\n\u2022 RAM: 81.2GB / 255.2GB (31.8%)\n\u2022 Disk (C:): 746.6GB free\n\u2022 System theek hai, tension nahi"
     },
     {
       "id": 10,
       "name": "Neural TTS Synthesis",
       "category": "Voice & Audio",
       "status": "PASS",
-      "duration_ms": 1607.3,
+      "duration_ms": 1947.5,
       "details": "Engine: pyttsx3 | Model: None | Queue: 0"
     },
     {
@@ -91,15 +91,15 @@
       "name": "Audio Hardware Health",
       "category": "Voice & Audio",
       "status": "PASS",
-      "duration_ms": 49.8,
-      "details": "Inputs: 3 | Outputs: 9 | Mode: KEYBOARD"
+      "duration_ms": 75.1,
+      "details": "Inputs: 3 | Outputs: 12 | Mode: KEYBOARD"
     },
     {
       "id": 12,
       "name": "Auto Dropzone Watcher",
       "category": "File Engine",
       "status": "PASS",
-      "duration_ms": 1.2,
+      "duration_ms": 1.6,
       "details": "Dropzone: E:\\basit-ai-interview\\dropzone | Converted: E:\\basit-ai-interview\\dropzone\\converted"
     },
     {
@@ -107,15 +107,15 @@
       "name": "Executive PDF Studio",
       "category": "Reports & Docs",
       "status": "PASS",
-      "duration_ms": 854.6,
-      "details": "Generated PDF: Report_Subagent_20_Audit_20261010_172124.pdf (51.2 KB)"
+      "duration_ms": 1137.6,
+      "details": "Generated PDF: Report_Subagent_20_Audit_20261013_122116.pdf (51.2 KB)"
     },
     {
       "id": 14,
       "name": "SQLite Session Memory",
       "category": "Database & State",
       "status": "PASS",
-      "duration_ms": 98.2,
+      "duration_ms": 35.8,
       "details": "Stored interactions: 5 records active"
     },
     {
@@ -123,48 +123,48 @@
       "name": "Basit1 Fast Coder Engine",
       "category": "AI Engines",
       "status": "PASS",
-      "duration_ms": 48171.2,
-      "details": "Basit1 Code -> Basit1 generated code in 48.16s | Quality: A (85/100) | 4 files writte"
+      "duration_ms": 21580.4,
+      "details": "Basit1 Code -> Basit1 generated code in 21.57s | Quality: A (90/100) | 4 files writte"
     },
     {
       "id": 16,
       "name": "Basit2 Deep Research Engine",
       "category": "AI Engines",
       "status": "PASS",
-      "duration_ms": 22512.0,
-      "details": "Basit2 Research -> Basit2 synthesized research in 22.51s."
+      "duration_ms": 22063.6,
+      "details": "Basit2 Research -> Basit2 synthesized research in 22.06s."
     },
     {
       "id": 17,
       "name": "Basit3 OWASP Security Guard",
       "category": "AI Engines",
       "status": "PASS",
-      "duration_ms": 270.6,
-      "details": "Basit3 Security -> Security [WARNING]: 14 issues in 114 files"
+      "duration_ms": 581.4,
+      "details": "Basit3 Security -> Security [WARNING]: 14 issues in 125 files"
     },
     {
       "id": 18,
       "name": "Basit4 AI Hedge Fund Engine",
       "category": "AI Engines",
       "status": "PASS",
-      "duration_ms": 10853.3,
-      "details": "Basit4 HedgeFund -> Basit4 completed 6-persona hedge fund analysis in 10.85s."
+      "duration_ms": 15307.3,
+      "details": "Basit4 HedgeFund -> Basit4 completed 6-persona hedge fund analysis in 15.31s."
     },
     {
       "id": 19,
       "name": "BasitSwarm 100X Engine",
       "category": "AI Engines",
       "status": "PASS",
-      "duration_ms": 59529.9,
-      "details": "BasitSwarm -> BasitSwarm deployed 100 agents across 6 squadrons in 59.53s."
+      "duration_ms": 37958.1,
+      "details": "BasitSwarm -> BasitSwarm deployed 100 agents across 6 squadrons in 37.96s."
     },
     {
       "id": 20,
       "name": "Sovereign Master Coordinator",
       "category": "AI Engines",
       "status": "PASS",
-      "duration_ms": 30054.4,
-      "details": "Master Cycle Completed in 30.04s: 6 Engines reporting OK"
+      "duration_ms": 27286.7,
+      "details": "Master Cycle Completed in 27.27s: 6 Engines reporting OK"
     }
   ]
 }

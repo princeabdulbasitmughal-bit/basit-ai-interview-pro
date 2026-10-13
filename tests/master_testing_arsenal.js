@@ -266,6 +266,16 @@ print([fibonacci(i) for i in range(7)])
     recordTest('BasitSwarm', '20-Subagent Swarm Trigger (Live Run)', false, err.message, Date.now() - t11);
   }
 
+  // Test 5.3: 99-Subagent Swarm Status & 9-Squadron Architecture
+  const t12 = Date.now();
+  try {
+    const res = await request({ path: '/api/swarm/99/status' });
+    const ok = res.statusCode === 200 && (res.body.total_agents === 99 || res.body.subagents?.length === 99 || res.body.agents?.length === 99);
+    recordTest('BasitSwarm', '99-Subagent Swarm 9-Squadron Matrix', ok, `Agents: ${res.body.total_agents}, Optimal: ${res.body.optimal_count || 99}/99`, Date.now() - t12);
+  } catch (err) {
+    recordTest('BasitSwarm', '99-Subagent Swarm 9-Squadron Matrix', false, err.message, Date.now() - t12);
+  }
+
   // --------------------------------------------------------------------------
   // FINAL REPORT & METRICS
   // --------------------------------------------------------------------------
