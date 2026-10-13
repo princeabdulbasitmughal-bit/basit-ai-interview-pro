@@ -981,7 +981,7 @@ Job Requirements: ${jobDescription || 'Standard requirements'}${extractedSkills.
     try {
       const body = await parseJsonBody(req);
       const sessionId = (typeof body.sessionId === 'string' ? body.sessionId : '').trim();
-      const answerText = (typeof body.answerText === 'string' ? body.answerText : '').substring(0, 4000);
+      const answerText = (typeof body.answerText === 'string' ? body.answerText : (typeof body.message === 'string' ? body.message : '')).substring(0, 4000);
       const codeSnippet = (typeof body.codeSnippet === 'string' ? body.codeSnippet : '').substring(0, 10000);
       const whiteboardNotes = (typeof body.whiteboardNotes === 'string' ? body.whiteboardNotes : '').substring(0, 10000);
       const tabSwitches = typeof body.tabSwitches === 'number' ? Math.max(0, body.tabSwitches) : 0;
@@ -1090,10 +1090,14 @@ ${codeSnippet ? `<candidate_code>\n${codeSnippet}\n</candidate_code>\n` : ''}${w
         stageIndex: session.currentStageIndex
       });
 
+      const fullSpokenMessage = `${interviewerReply} ${nextQuestion}`;
+
       return sendJson(res, 200, {
         interviewerReply,
         nextQuestion,
-        fullSpokenMessage: `${interviewerReply} ${nextQuestion}`,
+        reply: interviewerReply,
+        message: fullSpokenMessage,
+        fullSpokenMessage,
         currentStageIndex: session.currentStageIndex,
         stageName: session.stages[session.currentStageIndex],
         isCompleted,
