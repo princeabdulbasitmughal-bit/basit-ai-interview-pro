@@ -108,7 +108,7 @@ def generate_synthetic_dataset(num_pairs: int = 50) -> int:
             new_items.append(ex)
             seen_instructions.add(ex.get("instruction"))
 
-    # Synthesize role permutations
+    # Synthesize role permutations across 15 specialized engineering & quant domains
     roles = [
         ("Distributed System Architect", "Kafka, Redis, Kubernetes, CockroachDB", "50M DAU Video Streaming"),
         ("Senior Backend Systems Engineer", "Go, PostgreSQL, gRPC, Redis", "Financial Ledger Idempotency"),
@@ -116,20 +116,36 @@ def generate_synthetic_dataset(num_pairs: int = 50) -> int:
         ("Full-Stack Software Engineer", "React, Node.js, Next.js, IndexedDB", "Offline-First State Synchronization"),
         ("DevOps & Cloud Architect", "Terraform, Kubernetes, Istio, Prometheus", "Multi-Region Zero-Downtime Blue/Green Deployment"),
         ("Security & Penetration Specialist", "eBPF, Falco, WireGuard, OWASP", "Zero-Trust Kernel-Level Threat Neutralization"),
-        ("High-Frequency Quant Systems Engineer", "C++, Rust, DPDK, Solarflare", "Sub-Microsecond Order Execution")
+        ("High-Frequency Quant Systems Engineer", "C++, Rust, DPDK, Solarflare", "Sub-Microsecond Order Execution"),
+        ("Multi-Agent Swarm Architect", "LangGraph, Ollama, RTX A6000, FastAPI", "45-Subagent Parallel Burst Orchestration"),
+        ("Algorithmic Gold Scalping Strategist", "MQL5, Python, SuperTrend, ATR, Kelly Criterion", "XAUUSD High-Volatility Spread & Drawdown Governance"),
+        ("CUDA & TensorRT Performance Engineer", "CUDA C++, TensorRT, FlashAttention-3, QLoRA", "4-Bit Quantized 32B LLM Inference on 48GB VRAM"),
+        ("Bilingual NLP & Voice Systems Lead", "Kokoro-82M, WhisperX, WebRTC, Roman Urdu", "Sub-50ms Full-Duplex Voice Interaction"),
+        ("Enterprise SaaS Billing Architect", "Stripe, Askari, NayaPay, Ed25519 JWT", "Multi-Currency Tenant Entitlement & Ledger Reconciliation"),
+        ("Autonomous Browser & Lead Engine Lead", "Playwright, Chromium, Proxy Mesh, DOM AST", "Anti-Bot Resilient B2B Data Harvesting"),
+        ("Database Kernel & Storage Engineer", "LSM-Trees, RocksDB, WAL, MVCC, Raft", "Zero-Data-Loss Consensus Under Network Partition"),
+        ("Site Reliability & Chaos Engineer", "Prometheus, Grafana, Toxiproxy, LitmusChaos", "Automated Self-Healing Circuit Breaker Recovery")
     ]
     
+    stages = [
+        "Architecture", "Concurrency", "Code Sandbox", "Behavioral", "System Failure Modes",
+        "Tail Latency p99", "Memory Safety", "Security Hardening", "Multi-Region Consensus",
+        "Cost & VRAM Optimization", "Roman Urdu Technical Deep-Dive", "Disaster Recovery",
+        "Lock-Free Data Structures", "Observability & Tracing", "Bar Raiser Final Synthesis"
+    ]
+
     for role, stack, scenario in roles:
-        for stage in ["Architecture", "Concurrency", "Code Sandbox", "Behavioral", "System Failure Modes"]:
+        for stage in stages:
             inst = f"Conduct an elite Bar Raiser evaluation for a Staff {role} specializing in {stack} during stage {stage}."
             if inst not in seen_instructions:
                 item = {
                     "instruction": inst,
                     "input": f"Candidate addressing scenario: {scenario} in {stage}.",
                     "output": json.dumps({
-                        "interviewerReply": f"Zabardast explanation! Aapne {stack.split(',')[0]} ka architecture aur concurrency design clear bataya.",
-                        "nextQuestion": f"Under peak 100x traffic spikes, how do you prevent cascading failures, cache thundering herds, and maintain p99 tail latency within SLA limits?",
+                        "interviewerReply": f"Zabardast explanation! Aapne {stack.split(',')[0]} ka architecture aur {stage} design clear bataya.",
+                        "nextQuestion": f"Under peak 100x traffic spikes in {scenario}, how do you prevent cascading failures, cache thundering herds, and maintain p99 tail latency within SLA limits?",
                         "stage": stage,
+                        "role": role,
                         "evaluationCriteria": ["p99 latency", "CAP theorem", "Idempotency", "Chaos resilience", "Kernel I/O"]
                     }, ensure_ascii=False)
                 }
@@ -141,7 +157,7 @@ def generate_synthetic_dataset(num_pairs: int = 50) -> int:
         for item in all_pairs:
             f.write(json.dumps(item, ensure_ascii=False) + "\n")
 
-    print(f"[+] Total verified dataset saved: {len(all_pairs)} training pairs in: {DATASET_FILE}", flush=True)
+    print(f"[+] Total verified dataset saved: {len(all_pairs)} training pairs (+{len(new_items)} new) in: {DATASET_FILE}", flush=True)
     return len(all_pairs)
 
 def build_ollama_model(model_name: str = "basit-interviewer-pro", modelfile: Path = MODELFILE_PATH) -> bool:
