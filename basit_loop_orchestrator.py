@@ -32,12 +32,13 @@ HISTORY_FILE = REPORTS_DIR / "basit_loop_audit_history.json"
 PORT = 8090
 HEALTH_URL = f"http://127.0.0.1:{PORT}/api/health"
 SWARM_SCRIPT = BASE_DIR / "modules" / "subagents_20_interview_swarm.py"
+SWARM_33_SCRIPT = BASE_DIR / "modules" / "subagents_33_interview_swarm.py"
 SWARM_99_SCRIPT = BASE_DIR / "modules" / "subagents_99_interview_swarm.py"
 SWARM_100_SCRIPT = BASE_DIR / "modules" / "subagents_100_interview_swarm.py"
 TEST_SCRIPT = BASE_DIR / "tests" / "master_testing_arsenal.js"
 TEST_99_SCRIPT = BASE_DIR / "tests" / "test_full_suite_99.py"
 DEEP_DEBUG_SCRIPT = BASE_DIR / "tests" / "deep_debugging_arsenal.js"
-LOOP_INTERVAL_SECONDS = 600  # 10 Minutes
+LOOP_INTERVAL_SECONDS = 540  # 9 Minutes (540s)
 
 def log(msg: str, level: str = "INFO"):
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -120,6 +121,32 @@ def run_100_subagent_swarm() -> dict:
     except Exception as e:
         log(f"100-Subagent Swarm runner exception: {e}", "ERROR")
     return {"status": "ERROR", "health_score": "0%", "total_agents": 100, "optimal_count": 0}
+
+def run_33_subagent_swarm() -> dict:
+    log("Launching 33-Subagent Ultra-Parallel Burst Swarm...", "SWARM")
+    t0 = time.perf_counter()
+    try:
+        proc = subprocess.run(
+            [sys.executable, str(SWARM_33_SCRIPT)],
+            cwd=str(BASE_DIR),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=30
+        )
+        duration_ms = round((time.perf_counter() - t0) * 1000, 1)
+        if proc.returncode == 0:
+            report_path = REPORTS_DIR / "subagents_33_interview_report.json"
+            if report_path.exists():
+                with open(report_path, "r", encoding="utf-8") as f:
+                    rep = json.load(f)
+                    log(f"33-Subagent Swarm Completed in {duration_ms}ms: {rep.get('optimal_count', 33)}/{rep.get('total_agents', 33)} Optimal ({rep.get('health_score', '100%')})", "SUCCESS")
+                    return rep
+        log(f"33-Subagent Swarm script exited with code {proc.returncode}: {proc.stderr[:200]}", "WARN")
+    except Exception as e:
+        log(f"33-Subagent Swarm runner exception: {e}", "ERROR")
+    return {"status": "ERROR", "health_score": "0%", "total_agents": 33, "optimal_count": 0}
 
 def run_99_subagent_swarm() -> dict:
     log("Launching 99-Subagent Ultra-Parallel Burst Swarm...", "SWARM")
@@ -245,7 +272,7 @@ def run_deep_debugging_arsenal() -> bool:
         log(f"Deep Debugging exception: {e}", "ERROR")
         return False
 
-def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_res: dict, swarm_99_res: dict = None) -> dict:
+def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_res: dict, swarm_99_res: dict = None, swarm_33_res: dict = None) -> dict:
     log("Executing autonomous self-improvement routines...", "LOOP")
     improvements = []
 
