@@ -9,7 +9,10 @@ LOG_FILE = os.path.join(BASE_DIR, "supervisor.log")
 def log(msg):
     ts = time.strftime("%Y-%m-%d %H:%M:%S")
     line = f"[{ts}] [Supervisor:8090] {msg}"
-    print(line, flush=True)
+    try:
+        print(line, flush=True)
+    except Exception:
+        pass
     try:
         with open(LOG_FILE, "a", encoding="utf-8") as f:
             f.write(line + "\n")
@@ -34,8 +37,11 @@ while True:
         log(f"Spawned PID: {proc.pid}")
 
         for line in proc.stdout:
-            sys.stdout.write(line)
-            sys.stdout.flush()
+            try:
+                sys.stdout.write(line)
+                sys.stdout.flush()
+            except Exception:
+                pass
 
         proc.wait()
         log(f"Node server exited with code {proc.returncode}. Restarting in 3 seconds...")
