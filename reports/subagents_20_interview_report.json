@@ -1,10 +1,10 @@
 {
   "title": "\ud83d\udc51 Basit AI Interview Pro \u2014 20-Subagent Swarm Verification Report",
-  "timestamp": "2026-10-25T01:42:49.435726",
+  "timestamp": "2026-10-25T01:52:35.238112",
   "total_agents": 20,
   "optimal_count": 20,
   "health_score": "100.0%",
-  "total_duration_ms": 4691.5,
+  "total_duration_ms": 5270.5,
   "subagents": [
     {
       "id": 1,
@@ -22,9 +22,9 @@
       "icon": "\ud83d\udca1",
       "category": "Knowledge Engine",
       "status": "OPTIMAL",
-      "latency_ms": 4687.8,
+      "latency_ms": 5266.9,
       "metric": "Instant Knowledge Retrieval",
-      "details": "Info Hub returned structured explanation in 4687.8ms."
+      "details": "Info Hub returned structured explanation in 5266.9ms."
     },
     {
       "id": 3,
@@ -52,9 +52,9 @@
       "icon": "\ud83d\udccb",
       "category": "Curriculum",
       "status": "OPTIMAL",
-      "latency_ms": 2063.3,
+      "latency_ms": 2055.3,
       "metric": "7 Roles | 3 Personas",
-      "details": "Full catalog parsed across Junior, Mid, Senior, and Staff levels in 2063.3ms."
+      "details": "Full catalog parsed across Junior, Mid, Senior, and Staff levels in 2055.3ms."
     },
     {
       "id": 6,
@@ -62,9 +62,9 @@
       "icon": "\ud83d\udcbb",
       "category": "Technical Assessment",
       "status": "OPTIMAL",
-      "latency_ms": 3560.2,
-      "metric": "Score: 85/100 | O(n)",
-      "details": "Multi-language code analyzer verified pass/fail assertions in 3560.2ms."
+      "latency_ms": 4735.5,
+      "metric": "Score: 88/100 | O(1) average lookup",
+      "details": "Multi-language code analyzer verified pass/fail assertions in 4735.5ms."
     },
     {
       "id": 7,
@@ -132,9 +132,9 @@
       "icon": "\ud83d\udcc1",
       "category": "Storage",
       "status": "OPTIMAL",
-      "latency_ms": 2070.4,
-      "metric": "1685 Historical Sessions Stored",
-      "details": "Persistent JSON storage verified in 2070.4ms."
+      "latency_ms": 2061.3,
+      "metric": "1687 Historical Sessions Stored",
+      "details": "Persistent JSON storage verified in 2061.3ms."
     },
     {
       "id": 14,
