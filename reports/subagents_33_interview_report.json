@@ -1,12 +1,12 @@
 {
   "title": "Basit AI Interview Pro \u2014 33-Subagent Ultra-Parallel Burst Swarm Report",
-  "timestamp": "2026-10-25T01:22:50.060212",
+  "timestamp": "2026-10-25T01:32:36.894609",
   "total_agents": 33,
   "optimal_count": 33,
   "warn_count": 0,
   "error_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 5.7,
+  "total_duration_ms": 7.4,
   "execution_concurrency": "33 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -276,7 +276,7 @@
           "squadron_name": "SRE, Security & Learning",
           "name": "CWE-22 Path Traversal Defense Auditor",
           "status": "OPTIMAL",
-          "latency_ms": 0.0,
+          "latency_ms": 0.02,
           "metric": "HTTP 403 on '/..' Traversal"
         },
         {
@@ -578,7 +578,7 @@
       "squadron_name": "SRE, Security & Learning",
       "name": "CWE-22 Path Traversal Defense Auditor",
       "status": "OPTIMAL",
-      "latency_ms": 0.0,
+      "latency_ms": 0.02,
       "metric": "HTTP 403 on '/..' Traversal"
     },
     {
