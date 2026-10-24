@@ -1,12 +1,12 @@
 {
   "title": "Basit AI Interview Pro \u2014 33-Subagent Ultra-Parallel Burst Swarm Report",
-  "timestamp": "2026-10-24T09:24:19.664374",
+  "timestamp": "2026-10-24T09:34:05.693931",
   "total_agents": 33,
   "optimal_count": 33,
   "warn_count": 0,
   "error_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 5.0,
+  "total_duration_ms": 4.1,
   "execution_concurrency": "33 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -46,7 +46,7 @@
           "squadron_name": "AI Reasoning & NLP",
           "name": "Temperature & Determinism Tuner",
           "status": "OPTIMAL",
-          "latency_ms": 0.15,
+          "latency_ms": 0.0,
           "metric": "Calibrated 0.5-0.65"
         },
         {
@@ -362,7 +362,7 @@
       "squadron_name": "AI Reasoning & NLP",
       "name": "Temperature & Determinism Tuner",
       "status": "OPTIMAL",
-      "latency_ms": 0.15,
+      "latency_ms": 0.0,
       "metric": "Calibrated 0.5-0.65"
     },
     {
