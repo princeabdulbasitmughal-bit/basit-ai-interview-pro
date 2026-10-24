@@ -1,6 +1,6 @@
 {
   "title": "Basit AI Interview Pro — 99-Subagent Ultra-Parallel Burst Swarm Report",
-  "timestamp": "2026-10-24T21:29:49.716254",
+  "timestamp": "2026-10-24T21:39:40.118330",
   "total_agents": 99,
   "optimal_count": 99,
   "warn_count": 0,
@@ -230,7 +230,7 @@
       "squadron": 2,
       "name": "Code Style & Idiomatic Cleanliness Scorer",
       "status": "OPTIMAL",
-      "latency_ms": 0.02,
+      "latency_ms": 0.0,
       "metric": "Readability Index: 92/100"
     },
     {
