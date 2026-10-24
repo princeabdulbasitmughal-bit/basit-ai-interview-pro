@@ -1,6 +1,6 @@
 {
   "title": "Basit AI Interview Pro — Master Testing Arsenal Report",
-  "timestamp": "2026-10-24T18:26:33.597Z",
+  "timestamp": "2026-10-24T18:36:26.054Z",
   "total": 13,
   "passed": 13,
   "failed": 0,
@@ -11,7 +11,7 @@
       "name": "Health Check & Helmet Headers",
       "passed": true,
       "details": "Status: 200, CSP: Present, XFO: DENY",
-      "durationMs": 50
+      "durationMs": 57
     },
     {
       "suite": "Basit3-Security",
@@ -25,70 +25,70 @@
       "name": "512KB Payload Ceiling Protection",
       "passed": true,
       "details": "Payload rejected with HTTP 413",
-      "durationMs": 4
+      "durationMs": 6
     },
     {
       "suite": "Basit1-Code",
       "name": "JavaScript Sandbox Execution",
       "passed": true,
       "details": "Output: blue is sky the",
-      "durationMs": 1657
+      "durationMs": 1356
     },
     {
       "suite": "Basit1-Code",
       "name": "Python Algorithmic Analysis",
       "passed": true,
-      "details": "Complexity: O(1) average lookup, Score: 88",
-      "durationMs": 2920
+      "details": "Complexity: O(n), Score: 95",
+      "durationMs": 1847
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "English Knowledge Hub Query",
       "passed": true,
       "details": "Length: 361 chars",
-      "durationMs": 2429
+      "durationMs": 5665
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "Roman Urdu Bilingual Query",
       "passed": true,
       "details": "Length: 573 chars",
-      "durationMs": 2379
+      "durationMs": 2700
     },
     {
       "suite": "Interview-Flow",
       "name": "Start Session (AI Track, Staff)",
-      "passed": "intv_1792866382887_a613f6",
-      "details": "Session ID: intv_1792866382887_a613f6 | Stack: Kubernetes, Redis, Vector DB / Qdrant",
-      "durationMs": 2353
+      "passed": "intv_1792866973740_b05911",
+      "details": "Session ID: intv_1792866973740_b05911 | Stack: Kubernetes, Redis, Vector DB / Qdrant",
+      "durationMs": 2343
     },
     {
       "suite": "Interview-Flow",
       "name": "Candidate Turn & Adaptive Reply",
-      "passed": "Nice, but can you elaborate on how Qdrant handles concurrency and race conditions in a distributed environment?",
-      "details": "Reply snippet: Nice, but can you elaborate on how Qdrant handles concurrency and race condition...",
-      "durationMs": 732
+      "passed": "Thank you for explaining your thought process clearly.",
+      "details": "Reply snippet: Thank you for explaining your thought process clearly....",
+      "durationMs": 2390
     },
     {
       "suite": "Interview-Flow",
       "name": "Comprehensive 5D Scorecard",
       "passed": true,
       "details": "Score: 89/100, Decision: Strong Hire",
-      "durationMs": 2473
+      "durationMs": 2470
     },
     {
       "suite": "BasitSwarm",
       "name": "Swarm Status Inspection",
       "passed": true,
       "details": "Active Subagents: 20",
-      "durationMs": 4
+      "durationMs": 5
     },
     {
       "suite": "BasitSwarm",
       "name": "20-Subagent Swarm Trigger (Live Run)",
       "passed": true,
-      "details": "Health: 100.0%, Agents: 20/20 Optimal in 4782.8ms",
-      "durationMs": 5147
+      "details": "Health: 100.0%, Agents: 20/20 Optimal in 4743.6ms",
+      "durationMs": 5103
     },
     {
       "suite": "BasitSwarm",
