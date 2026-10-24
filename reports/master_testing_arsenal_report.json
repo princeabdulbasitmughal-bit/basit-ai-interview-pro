@@ -1,6 +1,6 @@
 {
   "title": "Basit AI Interview Pro — Master Testing Arsenal Report",
-  "timestamp": "2026-10-24T17:08:57.114Z",
+  "timestamp": "2026-10-24T17:18:36.914Z",
   "total": 13,
   "passed": 13,
   "failed": 0,
@@ -11,91 +11,91 @@
       "name": "Health Check & Helmet Headers",
       "passed": true,
       "details": "Status: 200, CSP: Present, XFO: DENY",
-      "durationMs": 82
+      "durationMs": 44
     },
     {
       "suite": "Basit3-Security",
       "name": "CWE-22 Path Traversal Defense",
       "passed": true,
       "details": "HTTP 403 (Access Safely Blocked)",
-      "durationMs": 3
+      "durationMs": 1
     },
     {
       "suite": "Basit3-Security",
       "name": "512KB Payload Ceiling Protection",
       "passed": true,
       "details": "Payload rejected with HTTP 413",
-      "durationMs": 10
+      "durationMs": 12
     },
     {
       "suite": "Basit1-Code",
       "name": "JavaScript Sandbox Execution",
       "passed": true,
       "details": "Output: blue is sky the",
-      "durationMs": 1372
+      "durationMs": 692
     },
     {
       "suite": "Basit1-Code",
       "name": "Python Algorithmic Analysis",
       "passed": true,
       "details": "Complexity: O(n), Score: 95",
-      "durationMs": 2101
+      "durationMs": 1055
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "English Knowledge Hub Query",
       "passed": true,
       "details": "Length: 361 chars",
-      "durationMs": 2673
+      "durationMs": 2711
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "Roman Urdu Bilingual Query",
       "passed": true,
       "details": "Length: 573 chars",
-      "durationMs": 2364
+      "durationMs": 2389
     },
     {
       "suite": "Interview-Flow",
       "name": "Start Session (AI Track, Staff)",
-      "passed": "intv_1792861724865_7e30ee",
-      "details": "Session ID: intv_1792861724865_7e30ee | Stack: Kubernetes, Redis, Vector DB / Qdrant",
-      "durationMs": 2348
+      "passed": "intv_1792862304925_99231c",
+      "details": "Session ID: intv_1792862304925_99231c | Stack: Kubernetes, Redis, Vector DB / Qdrant",
+      "durationMs": 2383
     },
     {
       "suite": "Interview-Flow",
       "name": "Candidate Turn & Adaptive Reply",
-      "passed": "Thank you for explaining your thought process clearly.",
-      "details": "Reply snippet: Thank you for explaining your thought process clearly....",
-      "durationMs": 2374
+      "passed": "Haan, aapne Qdrant cluster ka use kaha gaya for distributed embeddings retrieval with HNSW indexing and quantization to achieve sub-5ms latency.",
+      "details": "Reply snippet: Haan, aapne Qdrant cluster ka use kaha gaya for distributed embeddings retrieval...",
+      "durationMs": 1912
     },
     {
       "suite": "Interview-Flow",
       "name": "Comprehensive 5D Scorecard",
       "passed": true,
       "details": "Score: 89/100, Decision: Strong Hire",
-      "durationMs": 2435
+      "durationMs": 2730
     },
     {
       "suite": "BasitSwarm",
       "name": "Swarm Status Inspection",
       "passed": true,
       "details": "Active Subagents: 20",
-      "durationMs": 4
+      "durationMs": 3
     },
     {
       "suite": "BasitSwarm",
       "name": "20-Subagent Swarm Trigger (Live Run)",
       "passed": true,
-      "details": "Health: 100.0%, Agents: 20/20 Optimal in 4683ms",
-      "durationMs": 5086
+      "details": "Health: 100.0%, Agents: 20/20 Optimal in 4721.5ms",
+      "durationMs": 4958
     },
     {
       "suite": "BasitSwarm",
       "name": "99-Subagent Swarm 9-Squadron Matrix",
       "passed": true,
       "details": "Agents: 99, Optimal: 99/99",
-      "durationMs": 2
+      "durationMs": 3
     }
   ]
 }
