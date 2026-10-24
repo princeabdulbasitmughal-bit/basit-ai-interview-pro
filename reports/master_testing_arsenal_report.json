@@ -1,6 +1,6 @@
 {
   "title": "Basit AI Interview Pro — Master Testing Arsenal Report",
-  "timestamp": "2026-10-24T17:47:37.973Z",
+  "timestamp": "2026-10-24T17:57:20.888Z",
   "total": 13,
   "passed": 13,
   "failed": 0,
@@ -11,7 +11,7 @@
       "name": "Health Check & Helmet Headers",
       "passed": true,
       "details": "Status: 200, CSP: Present, XFO: DENY",
-      "durationMs": 73
+      "durationMs": 59
     },
     {
       "suite": "Basit3-Security",
@@ -31,64 +31,64 @@
       "suite": "Basit1-Code",
       "name": "JavaScript Sandbox Execution",
       "passed": true,
-      "details": "Output: blue is the sky",
-      "durationMs": 1661
+      "details": "Output: blue is sky the",
+      "durationMs": 1373
     },
     {
       "suite": "Basit1-Code",
       "name": "Python Algorithmic Analysis",
       "passed": true,
-      "details": "Complexity: O(1) average lookup, Score: 88",
-      "durationMs": 2860
+      "details": "Complexity: O(n), Score: 95",
+      "durationMs": 1941
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "English Knowledge Hub Query",
       "passed": true,
       "details": "Length: 361 chars",
-      "durationMs": 2360
+      "durationMs": 2691
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "Roman Urdu Bilingual Query",
       "passed": true,
-      "details": "Length: 133 chars",
-      "durationMs": 1304
+      "details": "Length: 573 chars",
+      "durationMs": 2376
     },
     {
       "suite": "Interview-Flow",
       "name": "Start Session (AI Track, Staff)",
-      "passed": "intv_1792864046672_f94245",
-      "details": "Session ID: intv_1792864046672_f94245 | Stack: Kubernetes, Redis, Vector DB / Qdrant",
-      "durationMs": 2414
+      "passed": "intv_1792864628533_0ed906",
+      "details": "Session ID: intv_1792864628533_0ed906 | Stack: Kubernetes, Redis, Vector DB / Qdrant",
+      "durationMs": 2364
     },
     {
       "suite": "Interview-Flow",
       "name": "Candidate Turn & Adaptive Reply",
-      "passed": "Haan bhai, aap ne Qdrant cluster ka use kaha hai distributed embeddings retrieval ke liye. Aap Qdrant ki HNSW indexing aur quantization se latency <5ms karne mein kitna zyada fayda de rahi hain?",
-      "details": "Reply snippet: Haan bhai, aap ne Qdrant cluster ka use kaha hai distributed embeddings retrieva...",
-      "durationMs": 1380
+      "passed": "Thank you for explaining your thought process clearly.",
+      "details": "Reply snippet: Thank you for explaining your thought process clearly....",
+      "durationMs": 2404
     },
     {
       "suite": "Interview-Flow",
       "name": "Comprehensive 5D Scorecard",
       "passed": true,
       "details": "Score: 89/100, Decision: Strong Hire",
-      "durationMs": 2456
+      "durationMs": 2459
     },
     {
       "suite": "BasitSwarm",
       "name": "Swarm Status Inspection",
       "passed": true,
       "details": "Active Subagents: 20",
-      "durationMs": 5
+      "durationMs": 4
     },
     {
       "suite": "BasitSwarm",
       "name": "20-Subagent Swarm Trigger (Live Run)",
       "passed": true,
-      "details": "Health: 100.0%, Agents: 20/20 Optimal in 4725.6ms",
-      "durationMs": 5043
+      "details": "Health: 100.0%, Agents: 20/20 Optimal in 4728.3ms",
+      "durationMs": 5122
     },
     {
       "suite": "BasitSwarm",
