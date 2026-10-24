@@ -1,11 +1,11 @@
 {
   "title": "Basit AI Interview Pro — 99-Subagent Ultra-Parallel Burst Swarm Report",
-  "timestamp": "2026-10-24T14:28:30.994417",
+  "timestamp": "2026-10-24T14:38:16.664782",
   "total_agents": 99,
   "optimal_count": 99,
   "warn_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 10.8,
+  "total_duration_ms": 10.4,
   "execution_concurrency": "50 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -582,7 +582,7 @@
       "squadron": 6,
       "name": "Speed-Mock Drill Question Selector",
       "status": "OPTIMAL",
-      "latency_ms": 0.0,
+      "latency_ms": 0.02,
       "metric": "Rapid-Fire Probing Active"
     },
     {
