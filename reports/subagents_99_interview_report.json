@@ -1,11 +1,11 @@
 {
   "title": "Basit AI Interview Pro — 99-Subagent Ultra-Parallel Burst Swarm Report",
-  "timestamp": "2026-10-24T16:25:38.226888",
+  "timestamp": "2026-10-24T16:26:06.715226",
   "total_agents": 99,
   "optimal_count": 99,
   "warn_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 13.5,
+  "total_duration_ms": 12.8,
   "execution_concurrency": "50 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -158,7 +158,7 @@
       "squadron": 1,
       "name": "Sovereign Token Budget Optimizer",
       "status": "OPTIMAL",
-      "latency_ms": 0.03,
+      "latency_ms": 0.0,
       "metric": "Zero Token Waste Verified"
     },
     {
@@ -246,7 +246,7 @@
       "squadron": 2,
       "name": "Live Coding Challenge Dispatcher",
       "status": "OPTIMAL",
-      "latency_ms": 0.0,
+      "latency_ms": 0.02,
       "metric": "7 Problems Dynamic Binding"
     },
     {
@@ -798,7 +798,7 @@
       "squadron": 9,
       "name": "High-Signal Architectural Pair Curating Agent",
       "status": "OPTIMAL",
-      "latency_ms": 0.03,
+      "latency_ms": 0.0,
       "metric": "Zero Low-Signal Noise"
     },
     {
