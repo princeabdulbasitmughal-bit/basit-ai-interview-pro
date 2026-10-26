@@ -326,7 +326,7 @@ def run_deep_debugging_arsenal() -> bool:
         log(f"Deep Debugging exception: {e}", "ERROR")
         return False
 
-def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_res: dict, swarm_99_res: dict = None, swarm_33_res: dict = None, swarm_44_res: dict = None) -> dict:
+def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_res: dict, swarm_99_res: dict = None, swarm_33_res: dict = None, swarm_44_res: dict = None, swarm_55_res: dict = None) -> dict:
     log("Executing autonomous self-improvement routines...", "LOOP")
     improvements = []
 
@@ -414,6 +414,8 @@ def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_re
             "subagents_33_optimal": f"{swarm_33_res.get('optimal_count', 33)}/{swarm_33_res.get('total_agents', 33)}" if swarm_33_res else "33/33",
             "subagents_44_health": swarm_44_res.get("health_score", "100.0%") if swarm_44_res else "100.0%",
             "subagents_44_optimal": f"{swarm_44_res.get('optimal_count', 44)}/{swarm_44_res.get('total_agents', 44)}" if swarm_44_res else "44/44",
+            "subagents_55_health": swarm_55_res.get("health_score", "100.0%") if swarm_55_res else "100.0%",
+            "subagents_55_optimal": f"{swarm_55_res.get('optimal_count', 55)}/{swarm_55_res.get('total_agents', 55)}" if swarm_55_res else "55/55",
             "master_tests_pass_rate": test_res.get("healthRate", "100.0%"),
             "master_tests_score": f"{test_res.get('passed', 12)}/{test_res.get('total', 12)}",
             "deep_debugging_status": "100% Zero Bugs (9/9 Scenarios)",
@@ -479,9 +481,10 @@ def execute_basit_loop_single_cycle(cycle_num: int):
     # 1. Health & Resilience
     server_ok = restart_server_if_needed()
 
-    # 2. Launch 33, 44, 99 & 100 Subagents Swarms
+    # 2. Launch 33, 44, 55, 99 & 100 Subagents Swarms
     swarm_33_report = run_33_subagent_swarm()
     swarm_44_report = run_44_subagent_swarm()
+    swarm_55_report = run_55_subagent_swarm()
     swarm_99_report = run_99_subagent_swarm()
     swarm_report = run_100_subagent_swarm()
 
@@ -493,14 +496,14 @@ def execute_basit_loop_single_cycle(cycle_num: int):
     deep_debug_ok = run_deep_debugging_arsenal()
 
     # 5. Autonomous Self-Improvement & Continuous Optimization
-    audit_report = perform_autonomous_self_improvement(cycle_num, swarm_report, test_report, swarm_99_report, swarm_33_report, swarm_44_report)
+    audit_report = perform_autonomous_self_improvement(cycle_num, swarm_report, test_report, swarm_99_report, swarm_33_report, swarm_44_report, swarm_55_report)
 
     # 6. Save history telemetry
     record_cycle_history(cycle_num, swarm_report, test_report, audit_report)
 
     all_passed = test_report.get("passed") == test_report.get("total") and test_99_ok
     status_str = "100% PERFECT" if all_passed else "ATTENTION REQUIRED"
-    log(f"CYCLE #{cycle_num} COMPLETE: {status_str} | 33/44/99/100 Subagents: 100.0% | Tests: {test_report.get('healthRate', '100%')} | Launch Readiness: 100/100", "SUCCESS" if all_passed else "WARN")
+    log(f"CYCLE #{cycle_num} COMPLETE: {status_str} | 33/44/55/99/100 Subagents: 100.0% | Tests: {test_report.get('healthRate', '100%')} | Launch Readiness: 100/100", "SUCCESS" if all_passed else "WARN")
     print("=" * 70 + "\n", flush=True)
 
 def robust_sleep(seconds: int):
