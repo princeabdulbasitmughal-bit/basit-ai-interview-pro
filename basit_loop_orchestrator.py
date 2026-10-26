@@ -34,6 +34,7 @@ HEALTH_URL = f"http://127.0.0.1:{PORT}/api/health"
 SWARM_SCRIPT = BASE_DIR / "modules" / "subagents_20_interview_swarm.py"
 SWARM_33_SCRIPT = BASE_DIR / "modules" / "subagents_33_interview_swarm.py"
 SWARM_44_SCRIPT = BASE_DIR / "modules" / "subagents_44_interview_swarm.py"
+SWARM_55_SCRIPT = BASE_DIR / "modules" / "subagents_55_interview_swarm.py"
 SWARM_99_SCRIPT = BASE_DIR / "modules" / "subagents_99_interview_swarm.py"
 SWARM_100_SCRIPT = BASE_DIR / "modules" / "subagents_100_interview_swarm.py"
 TEST_SCRIPT = BASE_DIR / "tests" / "master_testing_arsenal.js"
@@ -174,6 +175,32 @@ def run_44_subagent_swarm() -> dict:
     except Exception as e:
         log(f"44-Subagent Swarm runner exception: {e}", "ERROR")
     return {"status": "ERROR", "health_score": "0%", "total_agents": 44, "optimal_count": 0}
+
+def run_55_subagent_swarm() -> dict:
+    log("Launching 55-Subagent Ultra-Parallel Sovereign Swarm...", "SWARM")
+    t0 = time.perf_counter()
+    try:
+        proc = subprocess.run(
+            [sys.executable, str(SWARM_55_SCRIPT)],
+            cwd=str(BASE_DIR),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=30
+        )
+        duration_ms = round((time.perf_counter() - t0) * 1000, 1)
+        if proc.returncode == 0:
+            report_path = REPORTS_DIR / "subagents_55_interview_report.json"
+            if report_path.exists():
+                with open(report_path, "r", encoding="utf-8") as f:
+                    rep = json.load(f)
+                    log(f"55-Subagent Swarm Completed in {duration_ms}ms: {rep.get('optimal_count', 55)}/{rep.get('total_agents', 55)} Optimal ({rep.get('health_score', '100%')})", "SUCCESS")
+                    return rep
+        log(f"55-Subagent Swarm script exited with code {proc.returncode}: {proc.stderr[:200]}", "WARN")
+    except Exception as e:
+        log(f"55-Subagent Swarm runner exception: {e}", "ERROR")
+    return {"status": "ERROR", "health_score": "0%", "total_agents": 55, "optimal_count": 0}
 
 def run_99_subagent_swarm() -> dict:
     log("Launching 99-Subagent Ultra-Parallel Burst Swarm...", "SWARM")
