@@ -1,12 +1,12 @@
 {
   "title": "Basit AI Interview Pro \u2014 55-Subagent Ultra-Parallel Swarm Report",
-  "timestamp": "2026-10-26T14:03:14.298699",
+  "timestamp": "2026-10-26T14:13:08.070805",
   "total_agents": 55,
   "optimal_count": 55,
   "warn_count": 0,
   "error_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 15.15,
+  "total_duration_ms": 9.41,
   "execution_concurrency": "55 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -382,7 +382,7 @@
           "squadron_name": "Security & Penetration",
           "name": "Helmet Security Headers & Strict CSP Auditor",
           "status": "OPTIMAL",
-          "latency_ms": 0.01,
+          "latency_ms": 0.0,
           "metric": "CSP, XFO=DENY, nosniff OK"
         },
         {
