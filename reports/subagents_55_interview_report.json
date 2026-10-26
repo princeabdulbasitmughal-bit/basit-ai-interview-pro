@@ -1,12 +1,12 @@
 {
   "title": "Basit AI Interview Pro \u2014 55-Subagent Ultra-Parallel Swarm Report",
-  "timestamp": "2026-10-26T18:48:29.840275",
+  "timestamp": "2026-10-26T18:58:17.313036",
   "total_agents": 55,
   "optimal_count": 55,
   "warn_count": 0,
   "error_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 10.85,
+  "total_duration_ms": 11.17,
   "execution_concurrency": "55 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -46,7 +46,7 @@
           "squadron_name": "Cloud AI & Inference",
           "name": "Dynamic Temperature & Determinism Tuner",
           "status": "OPTIMAL",
-          "latency_ms": 0.05,
+          "latency_ms": 0.0,
           "metric": "Calibrated 0.5-0.65"
         },
         {
@@ -197,7 +197,7 @@
           "squadron_name": "Code Sandbox & Roles",
           "name": "DevOps & Cloud SRE Assessor",
           "status": "OPTIMAL",
-          "latency_ms": 0.0,
+          "latency_ms": 0.01,
           "metric": "Kubernetes & Multi-Cloud"
         },
         {
