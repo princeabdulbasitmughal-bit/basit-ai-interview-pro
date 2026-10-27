@@ -1,0 +1,64 @@
+import json
+from pathlib import Path
+
+batch_275 = [
+    {
+        "instruction": "Evaluate a Principal Quantum Photonic Systems Architect on Continuous-Variable (CV) Quadrature Squeezing in Aperiodic Penrose Micro-Resonators.",
+        "input": "Candidate-OPT-3310: Derive how degenerate parametric down-conversion (PDC) inside a high-Q Penrose quasicrystalline cavity achieves 12.33 dB of single-mode squeezed vacuum, reducing position quadrature variance to Var(X) = 0.029 (17.1x below shot-noise limit).",
+        "output": "Candidate-OPT-3310 presented a masterful quantum optics derivation: (1) Squeezed vacuum generation in a chi^(2) / chi^(3) micro-resonator is governed by the Hamiltonian H_int = i hbar (chi/2) (a^dagger^2 e^(-i omega_p t) - a^2 e^(i omega_p t)). (2) The unitary squeeze operator S(r) = exp((r/2)(a^2 - a^dagger^2)) transforms the quadratures according to X_1(r) = X_1(0) e^(-r) and X_2(r) = X_2(0) e^(r). (3) For squeezing parameter r = 1.42, the noise variance is squeezed to Var(X_1) = (1/2) e^(-2r) = 0.029, yielding S_dB = -10 log10(e^(-2r)) = 12.33 dB. (4) The candidate demonstrated how localized photonic hot-spots in the Penrose cavity enhance the effective non-linear overlap integral by 8.4x compared to periodic ring resonators, while maintaining a minimum uncertainty state Var(X_1)*Var(X_2) = 0.25. Rating: 5.0/5.0 Strong Hire (Principal Quantum Photonic Architect)."
+    },
+    {
+        "instruction": "Conduct a technical interview on Clements Multi-Port Mach-Zehnder Interferometer (MZI) Mesh Unitary Decomposition.",
+        "input": "Candidate-OPT-3311: How does a 16-mode aperiodic Clements MZI mesh synthesize an arbitrary unitary transformation U(16) with 99.85% matrix fidelity, and how does Fibonacci optical delay scaling mitigate thermal phase drift?",
+        "output": "Candidate-OPT-3311 delivered a flawless mathematical and hardware analysis: (1) The Clements decomposition proves that any N-dimensional unitary matrix U in U(N) can be factored into M = N(N-1)/2 = 120 planar beam-splitter transformations arranged in an optimal triangular/rectangular mesh with depth N = 16. (2) Each MZI cell consists of two 50:50 directional couplers and two independent phase shifters (theta, phi) parameterizing SU(2) rotations. (3) In standard square meshes, thermal crosstalk between closely packed micro-heaters causes phase drift sigma_phi ~ 0.065 rad. (4) In our Fibonacci layout, inter-waveguide spacing follows an aperiodic golden-ratio progression; thermal diffusion fronts destructively decouple, suppressing phase shifter RMS error to 0.008 rad. This yields a 99.85% unitary fidelity with an insertion loss of only 0.045 dB per MZI stage. Rating: 5.0/5.0 Strong Hire."
+    },
+    {
+        "instruction": "Assess a Quantum Machine Learning Engineer on Non-Gaussian Kerr Phase Gates in Continuous-Variable Quantum Optical Neural Networks (QONN).",
+        "input": "Candidate-QML-9820: Why are non-Gaussian operations essential for quantum computational advantage in CV optical neural networks, and how does the cubic/Kerr phase gate exp(i * gamma * x^3) enable 99.12% quantum state classification accuracy?",
+        "output": "Candidate-QML-9820 exhibited profound quantum computing insight: (1) The Gottesman-Knill and Lloyd-Braunstein theorems establish that any optical circuit composed exclusively of Gaussian elements (displacements, squeezers, and linear MZI interferometers) can be efficiently simulated classically in polynomial time O(N^3). (2) Universal quantum computing and non-trivial neural network expressivity strictly require at least one non-Gaussian gate. (3) By integrating a third-order non-linear Kerr phase gate K = exp(i * kappa * (a^dagger a)^2) or cubic phase gate V = exp(i * gamma * x^3) mediated by quasicrystalline localized plasmonic hotspots (gamma_Kerr = 4.85e4 W^-1 m^-1), the state trajectory is warped into non-Gaussian Wigner negativity. (4) This non-linear activation allows the QONN to classify complex continuous-variable topological quantum phases with 99.12% accuracy. Rating: 5.0/5.0 Strong Hire."
+    },
+    {
+        "instruction": "Interview an Optical Computing Hardware Lead on Sub-Femtojoule All-Optical Matrix-Vector Multipliers (MVM).",
+        "input": "Candidate-OPT-3312: How does a passive aperiodic silicon photonic circuit perform Multiply-Accumulate (MAC) operations with an energy consumption of only 0.025 fJ/MAC at light-speed propagation latencies?",
+        "output": "Candidate-OPT-3312 gave a brilliant hardware presentation: (1) In digital electronic GPUs, a 32-bit floating point MAC requires ~3.5 pJ, dominated by charging and discharging capacitive parasitic wires and SRAM memory fetching (von Neumann bottleneck). (2) In an integrated photonic MZI mesh, optical amplitudes a_j propagate through passive silica/silicon waveguides where interference naturally computes the linear transformation y_i = sum_j U_{ij} x_j. (3) Static phase shifters consume near-zero static holding power (sub-microamp electro-optic depletion or non-volatile phase change materials). (4) The only energy dissipated during inference is the optical laser power needed to overcome detector shot noise, totaling 0.025 fJ per MAC operation—a 140,000x energy efficiency advantage over electronic systolic arrays. Rating: 5.0/5.0 Strong Hire."
+    },
+    {
+        "instruction": "Evaluate a Cryogenic Detector Physicist on Transition Edge Sensor (TES) Photon-Number Resolving Detectors.",
+        "input": "Candidate-DET-7701: Detail the physical principles of tungsten Transition Edge Sensors (TES) that achieve 98.6% quantum efficiency and resolve up to 18 individual photons without dead-time saturation.",
+        "output": "Candidate-DET-7701 demonstrated master-class cryogenic sensor physics: (1) A TES consists of a superconducting tungsten thin film biased in the middle of its sharp superconducting-to-normal resistive transition at T_c ≈ 100 mK. (2) Absorption of n photons of wavelength 1550 nm deposits energy E = n * h * c / lambda, causing a microscopic temperature rise delta_T proportional to n. (3) Electrothermal feedback (ETF) drops the bias current, generating a negative current pulse measured by a multi-stage SQUID array. (4) The energy resolution delta_E = 0.12 eV is far smaller than the single-photon energy (0.80 eV), allowing discrete resolution of 1 to 18 photons with 98.6% system detection efficiency and dark counts < 2 Hz. Rating: 5.0/5.0 Strong Hire."
+    },
+    {
+        "instruction": "Interview a Photonic Integrated Circuit (PIC) Layout Engineer on Automated Calibration of 120-MZI Meshes.",
+        "input": "Candidate-PIC-6102: How do you calibrate and lock 240 thermal phase shifters across a 16-mode Clements mesh in real time using progressive nulling algorithms?",
+        "output": "Candidate-PIC-6102 demonstrated exceptional automated calibration expertise: (1) Simultaneous global optimization across 240 phase shifters is plagued by non-convex local minima. (2) The candidate implemented the Progressive Nulling Protocol: laser light is injected into one port at a time, and MZIs are tuned column-by-column from input to output by monitoring photodiode taps and nulling power at designated cross-ports. (3) Self-calibrating gradient descent converges in O(N^2) sequential steps (under 450 ms total runtime). (4) Feedback loops adjust for ambient temperature drift using thermoelectric Peltier coolers, locking phase angles to within 0.005 rad precision. Rating: 5.0/5.0 Strong Hire."
+    },
+    {
+        "instruction": "Assess a Quantum Information Theorist on Boson Sampling and Quantum Advantage in Aperiodic Photonic Networks.",
+        "input": "Candidate-QINFO-8815: Why is computing the output probability distribution of indistinguishable photons traversing an aperiodic MZI mesh classically hard (#P-hard permanent problem)?",
+        "output": "Candidate-QINFO-8815 gave an impeccable theoretical analysis: (1) The output state of an n-photon, m-mode linear optical network is given by the superposition of all possible optical paths. The transition amplitude between input configuration s and output configuration t equals the matrix permanent Perm(U_{s,t}). (2) Valiant's theorem proves that evaluating matrix permanents of generic unitary matrices is #P-hard. (3) For n = 20 indistinguishable single photons injected into a 16-mode aperiodic Clements mesh, calculating the permanent requires ~2^20 operations, while classical supercomputers require days to simulate exact sampling. (4) The photonic quasicrystalline circuit samples directly from this distribution at the laser repetition rate (50 MHz), providing incontrovertible evidence of quantum computational supremacy. Rating: 5.0/5.0 Strong Hire."
+    },
+    {
+        "instruction": "Conduct a technical interview on Electro-Optic Modulators and Homodyne Phase Tracking for CV Quantum Key Distribution (CV-QKD).",
+        "input": "Candidate-QKD-4409: How does continuous-variable QKD using squeezed vacuum states achieve secure key rates of 25 Mbps over 80 km fiber links with local local-oscillator (LLO) phase tracking?",
+        "output": "Candidate-QKD-4409 provided an outstanding communication systems analysis: (1) CV-QKD encodes secret key bits into Gaussian-modulated continuous quadrature amplitudes (X, P) of squeezed light pulses. (2) Squeezing enhances the signal-to-noise ratio and tightens the Holevo information bound chi_BE against an eavesdropper. (3) A co-propagating pilot tone and digital pilot-assisted phase-locked loop (PLL) track fast fiber acoustic vibrations and birefringence fluctuations down to 0.012 rad phase error. (4) High-speed balanced homodyne detectors operating at 1 GHz bandwidth deliver 25 Mbps asymptotic secure key rate over 80 km of standard SMF-28 fiber, surpassing discrete-variable photon-counting protocols by an order of magnitude. Rating: 5.0/5.0 Strong Hire."
+    },
+    {
+        "instruction": "Interview a Laser & Micro-Optics Packaging Engineer on Hybrid Integration of InP DFB Lasers and Silicon Nitride Quasicrystal Chips.",
+        "input": "Candidate-PKG-9104: How do you achieve sub-0.5 dB optical coupling between an InP laser gain chip and a Si3N4 aperiodic waveguide using 3D micro-printed free-form facet lenses?",
+        "output": "Candidate-PKG-9104 demonstrated cutting-edge packaging expertise: (1) Mode-field mismatch between small InP laser output facets (1.2 um mode field diameter) and Si3N4 waveguides (3.5 um MFD) normally causes 4-6 dB butt-coupling loss. (2) Two-photon polymerization (2PP) directly 3D-prints micro-aspheric free-form polymer lenses onto the waveguide facets. (3) In-situ beam profiling matches the wavefront curvature and numerical aperture NA = 0.45. (4) Automated 6-axis sub-micron hexapod alignment followed by UV-curable optical adhesive bonding achieves 0.38 dB insertion loss per facet with sub-micron stability over a -40C to +85C industrial thermal range. Rating: 5.0/5.0 Strong Hire."
+    },
+    {
+        "instruction": "Conduct a Bar Raiser Leadership Interview for a Chief Technology Officer of Quantum Photonics & Optical AI Accelerators.",
+        "input": "Candidate-EXEC-1105: How do you architect an end-to-end commercial quantum photonics enterprise that delivers functional optical AI hardware to market while maintaining 100% software test rigor across all daemons?",
+        "output": "Candidate-EXEC-1105 gave a master-class corporate and engineering vision: (1) Technology roadmapping: Bridge foundational science (12 dB squeezed light, Clements MZI meshes, 335 unit tests, 72 MCP tools) into tangible commercial milestones: sub-femtojoule optical AI accelerators for LLM matrix inference and secure CV-QKD optical networking. (2) Software-hardware co-design: Ensure every physical component is digitally mapped to an active REST API (:8095), typed MCP tool handlers, and real-time interactive UI dashboards with 100% test pass rates. (3) Sovereign execution loop: Deploy 24/7 background watchdogs and autonomous agent swarms (Swarm 55, Swarm 88) that audit all repos every 5 minutes, auto-committing clean states and preempting system stalls. (4) Uncompromising excellence: Foster an elite culture of scientific rigor, zero tolerance for hallucinations, and relentless execution discipline. Rating: 5.0/5.0 Top 0.05% Executive Hire (CTO of Quantum Photonics & AI Hardware)."
+    }
+]
+
+corpus_path = Path(r"E:\basit-ai-interview\data\training_dataset_interview_pairs.jsonl")
+with open(corpus_path, "a", encoding="utf-8") as f:
+    for item in batch_275:
+        f.write(json.dumps(item, ensure_ascii=False) + "\n")
+
+# Verify new count
+new_lines = corpus_path.read_text(encoding="utf-8").splitlines()
+print(f"Successfully appended Batch 275! New total QA pairs: {len(new_lines)}")
