@@ -1,6 +1,6 @@
 {
   "title": "Basit AI Interview Pro — Master Testing Arsenal Report",
-  "timestamp": "2026-10-27T13:36:14.300Z",
+  "timestamp": "2026-10-27T13:46:10.327Z",
   "total": 13,
   "passed": 13,
   "failed": 0,
@@ -11,7 +11,7 @@
       "name": "Health Check & Helmet Headers",
       "passed": true,
       "details": "Status: 200, CSP: Present, XFO: DENY",
-      "durationMs": 50
+      "durationMs": 68
     },
     {
       "suite": "Basit3-Security",
@@ -25,56 +25,56 @@
       "name": "512KB Payload Ceiling Protection",
       "passed": true,
       "details": "Payload rejected with HTTP 413",
-      "durationMs": 6
+      "durationMs": 5
     },
     {
       "suite": "Basit1-Code",
       "name": "JavaScript Sandbox Execution",
       "passed": true,
       "details": "Output: ✓ Test Case 1: Passed ✓ Test Case 2: Passed ✓ Edge Case (Empty / Boundary): Handled",
-      "durationMs": 2573
+      "durationMs": 5882
     },
     {
       "suite": "Basit1-Code",
       "name": "Python Algorithmic Analysis",
       "passed": true,
       "details": "Complexity: O(1) average lookup, Score: 88",
-      "durationMs": 2545
+      "durationMs": 2825
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "English Knowledge Hub Query",
       "passed": true,
       "details": "Length: 361 chars",
-      "durationMs": 2385
+      "durationMs": 2407
     },
     {
       "suite": "Basit2-Voice-Info",
       "name": "Roman Urdu Bilingual Query",
       "passed": true,
       "details": "Length: 573 chars",
-      "durationMs": 2417
+      "durationMs": 2419
     },
     {
       "suite": "Interview-Flow",
       "name": "Start Session (AI Track, Staff)",
-      "passed": "intv_1793108162023_d1a5a3",
-      "details": "Session ID: intv_1793108162023_d1a5a3 | Stack: Kubernetes, Redis, Vector DB / Qdrant",
-      "durationMs": 2366
+      "passed": "intv_1793108757988_c5a396",
+      "details": "Session ID: intv_1793108757988_c5a396 | Stack: Kubernetes, Redis, Vector DB / Qdrant",
+      "durationMs": 2406
     },
     {
       "suite": "Interview-Flow",
       "name": "Candidate Turn & Adaptive Reply",
       "passed": "Thank you for explaining your thought process clearly.",
       "details": "Reply snippet: Thank you for explaining your thought process clearly....",
-      "durationMs": 2363
+      "durationMs": 2414
     },
     {
       "suite": "Interview-Flow",
       "name": "Comprehensive 5D Scorecard",
       "passed": true,
       "details": "Score: 89/100, Decision: Strong Hire",
-      "durationMs": 2461
+      "durationMs": 2483
     },
     {
       "suite": "BasitSwarm",
@@ -87,8 +87,8 @@
       "suite": "BasitSwarm",
       "name": "20-Subagent Swarm Trigger (Live Run)",
       "passed": true,
-      "details": "Health: 100.0%, Agents: 20/20 Optimal in 4774.7ms",
-      "durationMs": 5083
+      "details": "Health: 100.0%, Agents: 20/20 Optimal in 4707.2ms",
+      "durationMs": 5028
     },
     {
       "suite": "BasitSwarm",
