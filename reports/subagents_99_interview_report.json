@@ -1,11 +1,11 @@
 {
   "title": "Basit AI Interview Pro — 99-Subagent Ultra-Parallel Burst Swarm Report",
-  "timestamp": "2026-10-28T01:19:26.675029",
+  "timestamp": "2026-10-28T01:29:13.412382",
   "total_agents": 99,
   "optimal_count": 99,
   "warn_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 14.6,
+  "total_duration_ms": 10.2,
   "execution_concurrency": "50 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -710,7 +710,7 @@
       "squadron": 8,
       "name": "Helmet Security Headers Inspector",
       "status": "OPTIMAL",
-      "latency_ms": 0.0,
+      "latency_ms": 0.03,
       "metric": "CSP, XFO=DENY, nosniff OK"
     },
     {

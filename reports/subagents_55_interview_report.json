@@ -1,12 +1,12 @@
 {
   "title": "Basit AI Interview Pro \u2014 55-Subagent Ultra-Parallel Swarm Report",
-  "timestamp": "2026-10-28T01:18:58.469261",
+  "timestamp": "2026-10-28T01:28:44.557094",
   "total_agents": 55,
   "optimal_count": 55,
   "warn_count": 0,
   "error_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 8.57,
+  "total_duration_ms": 11.9,
   "execution_concurrency": "55 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -373,7 +373,7 @@
           "squadron_name": "Security & Penetration",
           "name": "512KB Payload Bomb Defense Barrier",
           "status": "OPTIMAL",
-          "latency_ms": 0.0,
+          "latency_ms": 0.01,
           "metric": "HTTP 413 on >512KB Payload"
         },
         {
