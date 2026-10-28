@@ -1,10 +1,10 @@
 {
   "title": "\ud83d\udc51 Basit AI Interview Pro \u2014 20-Subagent Swarm Verification Report",
-  "timestamp": "2026-10-28T19:49:47.101316",
+  "timestamp": "2026-10-28T19:59:33.808562",
   "total_agents": 20,
   "optimal_count": 20,
   "health_score": "100.0%",
-  "total_duration_ms": 5242.2,
+  "total_duration_ms": 5240.5,
   "subagents": [
     {
       "id": 1,
@@ -12,9 +12,9 @@
       "icon": "\ud83e\udde0",
       "category": "AI Infrastructure",
       "status": "OPTIMAL",
-      "latency_ms": 2061.2,
+      "latency_ms": 2080.4,
       "metric": "Local GPU Qwen 7B/32B + Groq LPU + Gemini 2.5",
-      "details": "AI Engine online with local GPU Ollama + cloud fallback (2061.2ms)."
+      "details": "AI Engine online with local GPU Ollama + cloud fallback (2080.4ms)."
     },
     {
       "id": 2,
@@ -22,9 +22,9 @@
       "icon": "\ud83d\udca1",
       "category": "Knowledge Engine",
       "status": "OPTIMAL",
-      "latency_ms": 4704.4,
+      "latency_ms": 4738.7,
       "metric": "Instant Knowledge Retrieval",
-      "details": "Info Hub returned structured explanation in 4704.4ms."
+      "details": "Info Hub returned structured explanation in 4738.7ms."
     },
     {
       "id": 3,
@@ -52,9 +52,9 @@
       "icon": "\ud83d\udccb",
       "category": "Curriculum",
       "status": "OPTIMAL",
-      "latency_ms": 2075.3,
+      "latency_ms": 2075.9,
       "metric": "7 Roles | 3 Personas",
-      "details": "Full catalog parsed across Junior, Mid, Senior, and Staff levels in 2075.3ms."
+      "details": "Full catalog parsed across Junior, Mid, Senior, and Staff levels in 2075.9ms."
     },
     {
       "id": 6,
@@ -62,9 +62,9 @@
       "icon": "\ud83d\udcbb",
       "category": "Technical Assessment",
       "status": "OPTIMAL",
-      "latency_ms": 5232.5,
+      "latency_ms": 5232.4,
       "metric": "Score: 88/100 | O(1) average lookup",
-      "details": "Multi-language code analyzer verified pass/fail assertions in 5232.5ms."
+      "details": "Multi-language code analyzer verified pass/fail assertions in 5232.4ms."
     },
     {
       "id": 7,
@@ -132,9 +132,9 @@
       "icon": "\ud83d\udcc1",
       "category": "Storage",
       "status": "OPTIMAL",
-      "latency_ms": 2072.6,
-      "metric": "2540 Historical Sessions Stored",
-      "details": "Persistent JSON storage verified in 2072.6ms."
+      "latency_ms": 2072.4,
+      "metric": "2542 Historical Sessions Stored",
+      "details": "Persistent JSON storage verified in 2072.4ms."
     },
     {
       "id": 14,
