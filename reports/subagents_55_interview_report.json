@@ -1,12 +1,12 @@
 {
   "title": "Basit AI Interview Pro \u2014 55-Subagent Ultra-Parallel Swarm Report",
-  "timestamp": "2026-10-28T07:52:16.423090",
+  "timestamp": "2026-10-28T08:02:02.370258",
   "total_agents": 55,
   "optimal_count": 55,
   "warn_count": 0,
   "error_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 7.39,
+  "total_duration_ms": 11.4,
   "execution_concurrency": "55 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -55,7 +55,7 @@
           "squadron_name": "Cloud AI & Inference",
           "name": "JSON Schema Enforcer & Output Sanitizer",
           "status": "OPTIMAL",
-          "latency_ms": 0.0,
+          "latency_ms": 0.01,
           "metric": "Strict JSON Guaranteed"
         },
         {
