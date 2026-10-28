@@ -1,12 +1,12 @@
 {
   "title": "Basit AI Interview Pro \u2014 55-Subagent Ultra-Parallel Swarm Report",
-  "timestamp": "2026-10-28T23:05:50.191746",
+  "timestamp": "2026-10-28T23:15:43.183478",
   "total_agents": 55,
   "optimal_count": 55,
   "warn_count": 0,
   "error_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 9.7,
+  "total_duration_ms": 8.93,
   "execution_concurrency": "55 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -19,7 +19,7 @@
           "squadron_name": "Cloud AI & Inference",
           "name": "Qwen 32B GPU Cloud Inference Anchor",
           "status": "OPTIMAL",
-          "latency_ms": 0.05,
+          "latency_ms": 0.0,
           "metric": "Local RTX A6000 Active"
         },
         {
