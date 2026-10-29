@@ -1,6 +1,6 @@
 {
   "title": "Basit AI Interview Pro \u2014 33-Subagent Ultra-Parallel Burst Swarm Report",
-  "timestamp": "2026-10-29T16:37:49.328951",
+  "timestamp": "2026-10-29T16:47:35.706374",
   "total_agents": 33,
   "optimal_count": 33,
   "warn_count": 0,
@@ -55,7 +55,7 @@
           "squadron_name": "AI Reasoning & NLP",
           "name": "JSON Schema Enforcer & Sanitizer",
           "status": "OPTIMAL",
-          "latency_ms": 0.02,
+          "latency_ms": 0.0,
           "metric": "Strict JSON Guaranteed"
         },
         {
@@ -371,7 +371,7 @@
       "squadron_name": "AI Reasoning & NLP",
       "name": "JSON Schema Enforcer & Sanitizer",
       "status": "OPTIMAL",
-      "latency_ms": 0.02,
+      "latency_ms": 0.0,
       "metric": "Strict JSON Guaranteed"
     },
     {
