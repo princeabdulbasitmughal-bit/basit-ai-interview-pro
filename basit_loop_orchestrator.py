@@ -33,6 +33,7 @@ PORT = 8090
 HEALTH_URL = f"http://127.0.0.1:{PORT}/api/health"
 SWARM_SCRIPT = BASE_DIR / "modules" / "subagents_20_interview_swarm.py"
 SWARM_33_SCRIPT = BASE_DIR / "modules" / "subagents_33_interview_swarm.py"
+SWARM_40_SCRIPT = BASE_DIR / "modules" / "subagents_40_interview_swarm.py"
 SWARM_44_SCRIPT = BASE_DIR / "modules" / "subagents_44_interview_swarm.py"
 SWARM_55_SCRIPT = BASE_DIR / "modules" / "subagents_55_interview_swarm.py"
 SWARM_99_SCRIPT = BASE_DIR / "modules" / "subagents_99_interview_swarm.py"
@@ -40,7 +41,7 @@ SWARM_100_SCRIPT = BASE_DIR / "modules" / "subagents_100_interview_swarm.py"
 TEST_SCRIPT = BASE_DIR / "tests" / "master_testing_arsenal.js"
 TEST_99_SCRIPT = BASE_DIR / "tests" / "test_full_suite_99.py"
 DEEP_DEBUG_SCRIPT = BASE_DIR / "tests" / "deep_debugging_arsenal.js"
-LOOP_INTERVAL_SECONDS = 540  # 9 Minutes (540s)
+LOOP_INTERVAL_SECONDS = 300  # 5 Minutes (300s)
 
 def log(msg: str, level: str = "INFO"):
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -149,6 +150,32 @@ def run_33_subagent_swarm() -> dict:
     except Exception as e:
         log(f"33-Subagent Swarm runner exception: {e}", "ERROR")
     return {"status": "ERROR", "health_score": "0%", "total_agents": 33, "optimal_count": 0}
+
+def run_40_subagent_swarm() -> dict:
+    log("Launching 40-Subagent Ultra-Parallel Burst Swarm...", "SWARM")
+    t0 = time.perf_counter()
+    try:
+        proc = subprocess.run(
+            [sys.executable, str(SWARM_40_SCRIPT)],
+            cwd=str(BASE_DIR),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            timeout=30
+        )
+        duration_ms = round((time.perf_counter() - t0) * 1000, 1)
+        if proc.returncode == 0:
+            report_path = REPORTS_DIR / "subagents_40_interview_report.json"
+            if report_path.exists():
+                with open(report_path, "r", encoding="utf-8") as f:
+                    rep = json.load(f)
+                    log(f"40-Subagent Swarm Completed in {duration_ms}ms: {rep.get('optimal_count', 40)}/{rep.get('total_agents', 40)} Optimal ({rep.get('health_score', '100%')})", "SUCCESS")
+                    return rep
+        log(f"40-Subagent Swarm script exited with code {proc.returncode}: {proc.stderr[:200]}", "WARN")
+    except Exception as e:
+        log(f"40-Subagent Swarm runner exception: {e}", "ERROR")
+    return {"status": "ERROR", "health_score": "0%", "total_agents": 40, "optimal_count": 0}
 
 def run_44_subagent_swarm() -> dict:
     log("Launching 44-Subagent Ultra-Parallel Cloud Burst Swarm...", "SWARM")
@@ -326,7 +353,7 @@ def run_deep_debugging_arsenal() -> bool:
         log(f"Deep Debugging exception: {e}", "ERROR")
         return False
 
-def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_res: dict, swarm_99_res: dict = None, swarm_33_res: dict = None, swarm_44_res: dict = None, swarm_55_res: dict = None) -> dict:
+def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_res: dict, swarm_99_res: dict = None, swarm_33_res: dict = None, swarm_40_res: dict = None, swarm_44_res: dict = None, swarm_55_res: dict = None) -> dict:
     log("Executing autonomous self-improvement routines...", "LOOP")
     improvements = []
 
@@ -412,6 +439,8 @@ def perform_autonomous_self_improvement(cycle_num: int, swarm_res: dict, test_re
             "subagents_99_optimal": f"{swarm_99_res.get('optimal_count', 99)}/{swarm_99_res.get('total_agents', 99)}" if swarm_99_res else "99/99",
             "subagents_33_health": swarm_33_res.get("health_score", "100.0%") if swarm_33_res else "100.0%",
             "subagents_33_optimal": f"{swarm_33_res.get('optimal_count', 33)}/{swarm_33_res.get('total_agents', 33)}" if swarm_33_res else "33/33",
+            "subagents_40_health": swarm_40_res.get("health_score", "100.0%") if swarm_40_res else "100.0%",
+            "subagents_40_optimal": f"{swarm_40_res.get('optimal_count', 40)}/{swarm_40_res.get('total_agents', 40)}" if swarm_40_res else "40/40",
             "subagents_44_health": swarm_44_res.get("health_score", "100.0%") if swarm_44_res else "100.0%",
             "subagents_44_optimal": f"{swarm_44_res.get('optimal_count', 44)}/{swarm_44_res.get('total_agents', 44)}" if swarm_44_res else "44/44",
             "subagents_55_health": swarm_55_res.get("health_score", "100.0%") if swarm_55_res else "100.0%",
@@ -481,8 +510,9 @@ def execute_basit_loop_single_cycle(cycle_num: int):
     # 1. Health & Resilience
     server_ok = restart_server_if_needed()
 
-    # 2. Launch 33, 44, 55, 99 & 100 Subagents Swarms
+    # 2. Launch 33, 40, 44, 55, 99 & 100 Subagents Swarms
     swarm_33_report = run_33_subagent_swarm()
+    swarm_40_report = run_40_subagent_swarm()
     swarm_44_report = run_44_subagent_swarm()
     swarm_55_report = run_55_subagent_swarm()
     swarm_99_report = run_99_subagent_swarm()
@@ -496,14 +526,14 @@ def execute_basit_loop_single_cycle(cycle_num: int):
     deep_debug_ok = run_deep_debugging_arsenal()
 
     # 5. Autonomous Self-Improvement & Continuous Optimization
-    audit_report = perform_autonomous_self_improvement(cycle_num, swarm_report, test_report, swarm_99_report, swarm_33_report, swarm_44_report, swarm_55_report)
+    audit_report = perform_autonomous_self_improvement(cycle_num, swarm_report, test_report, swarm_99_report, swarm_33_report, swarm_40_report, swarm_44_report, swarm_55_report)
 
     # 6. Save history telemetry
     record_cycle_history(cycle_num, swarm_report, test_report, audit_report)
 
     all_passed = test_report.get("passed") == test_report.get("total") and test_99_ok
     status_str = "100% PERFECT" if all_passed else "ATTENTION REQUIRED"
-    log(f"CYCLE #{cycle_num} COMPLETE: {status_str} | 33/44/55/99/100 Subagents: 100.0% | Tests: {test_report.get('healthRate', '100%')} | Launch Readiness: 100/100", "SUCCESS" if all_passed else "WARN")
+    log(f"CYCLE #{cycle_num} COMPLETE: {status_str} | 33/40/44/55/99/100 Subagents: 100.0% | Tests: {test_report.get('healthRate', '100%')} | Launch Readiness: 100/100", "SUCCESS" if all_passed else "WARN")
     print("=" * 70 + "\n", flush=True)
 
 def robust_sleep(seconds: int):

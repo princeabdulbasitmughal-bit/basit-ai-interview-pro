@@ -805,17 +805,18 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
   }
 
   // --------------------------------------------------------------------------
-  // API ROUTE: Subagent Swarm Status & Trigger (Supports 20, 30, 33, 44, 55, 99 & 100 Subagents)
+  // API ROUTE: Subagent Swarm Status & Trigger (Supports 20, 30, 33, 40, 44, 55, 99 & 100 Subagents)
   // --------------------------------------------------------------------------
-  if ((pathname === '/api/swarm/status' || pathname === '/api/swarm/30/status' || pathname === '/api/swarm/33/status' || pathname === '/api/swarm/44/status' || pathname === '/api/swarm/55/status' || pathname === '/api/swarm/99/status' || pathname === '/api/swarm/100/status') && method === 'GET') {
+  if ((pathname === '/api/swarm/status' || pathname === '/api/swarm/30/status' || pathname === '/api/swarm/33/status' || pathname === '/api/swarm/40/status' || pathname === '/api/swarm/44/status' || pathname === '/api/swarm/55/status' || pathname === '/api/swarm/99/status' || pathname === '/api/swarm/100/status') && method === 'GET') {
     const countParam = parsedUrl.searchParams.get('count');
     const is55 = pathname.includes('/55') || countParam === '55';
     const is44 = pathname.includes('/44') || countParam === '44';
+    const is40 = pathname.includes('/40') || countParam === '40';
     const is33 = pathname.includes('/33') || countParam === '33';
     const is30 = pathname.includes('/30') || countParam === '30';
     const is99 = pathname.includes('/99') || countParam === '99';
     const is100 = pathname.includes('/100') || countParam === '100';
-    const reportName = is100 ? 'subagents_100_interview_report.json' : (is99 ? 'subagents_99_interview_report.json' : (is55 ? 'subagents_55_interview_report.json' : (is44 ? 'subagents_44_interview_report.json' : (is33 ? 'subagents_33_interview_report.json' : (is30 ? 'subagents_30_interview_report.json' : 'subagents_20_interview_report.json')))));
+    const reportName = is100 ? 'subagents_100_interview_report.json' : (is99 ? 'subagents_99_interview_report.json' : (is55 ? 'subagents_55_interview_report.json' : (is44 ? 'subagents_44_interview_report.json' : (is40 ? 'subagents_40_interview_report.json' : (is33 ? 'subagents_33_interview_report.json' : (is30 ? 'subagents_30_interview_report.json' : 'subagents_20_interview_report.json'))))));
     const reportPath = path.join(REPORTS_DIR, reportName);
     if (fs.existsSync(reportPath)) {
       try {
@@ -823,7 +824,7 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
         return sendJson(res, 200, rep);
       } catch (e) {}
     }
-    const agentCount = is100 ? 100 : (is99 ? 99 : (is55 ? 55 : (is44 ? 44 : (is33 ? 33 : (is30 ? 30 : 20)))));
+    const agentCount = is100 ? 100 : (is99 ? 99 : (is55 ? 55 : (is44 ? 44 : (is40 ? 40 : (is33 ? 33 : (is30 ? 30 : 20))))));
     return sendJson(res, 200, {
       title: `${agentCount}-Subagent Swarm Ready`,
       status: "STANDBY",
@@ -833,7 +834,7 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
     });
   }
 
-  if ((pathname === '/api/swarm/trigger' || pathname === '/api/swarm/30/trigger' || pathname === '/api/swarm/33/trigger' || pathname === '/api/swarm/44/trigger' || pathname === '/api/swarm/55/trigger' || pathname === '/api/swarm/99/trigger' || pathname === '/api/swarm/100/trigger') && method === 'POST') {
+  if ((pathname === '/api/swarm/trigger' || pathname === '/api/swarm/30/trigger' || pathname === '/api/swarm/33/trigger' || pathname === '/api/swarm/40/trigger' || pathname === '/api/swarm/44/trigger' || pathname === '/api/swarm/55/trigger' || pathname === '/api/swarm/99/trigger' || pathname === '/api/swarm/100/trigger') && method === 'POST') {
     if (isSwarmRunning && Date.now() - swarmStartTime < 45000) {
       return sendError(res, 429, 'A subagent swarm inspection is already in progress. Please wait.');
     }
@@ -842,12 +843,13 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
     const countParam = parsedUrl.searchParams.get('count');
     const is55 = pathname.includes('/55') || countParam === '55';
     const is44 = pathname.includes('/44') || countParam === '44';
+    const is40 = pathname.includes('/40') || countParam === '40';
     const is33 = pathname.includes('/33') || countParam === '33';
     const is30 = pathname.includes('/30') || countParam === '30';
     const is99 = pathname.includes('/99') || countParam === '99';
     const is100 = pathname.includes('/100') || countParam === '100';
-    const scriptName = is100 ? 'subagents_100_interview_swarm.py' : (is99 ? 'subagents_99_interview_swarm.py' : (is55 ? 'subagents_55_interview_swarm.py' : (is44 ? 'subagents_44_interview_swarm.py' : (is33 ? 'subagents_33_interview_swarm.py' : (is30 ? 'subagents_30_interview_swarm.py' : 'subagents_20_interview_swarm.py')))));
-    const reportName = is100 ? 'subagents_100_interview_report.json' : (is99 ? 'subagents_99_interview_report.json' : (is55 ? 'subagents_55_interview_report.json' : (is44 ? 'subagents_44_interview_report.json' : (is33 ? 'subagents_33_interview_report.json' : (is30 ? 'subagents_30_interview_report.json' : 'subagents_20_interview_report.json')))));
+    const scriptName = is100 ? 'subagents_100_interview_swarm.py' : (is99 ? 'subagents_99_interview_swarm.py' : (is55 ? 'subagents_55_interview_swarm.py' : (is44 ? 'subagents_44_interview_swarm.py' : (is40 ? 'subagents_40_interview_swarm.py' : (is33 ? 'subagents_33_interview_swarm.py' : (is30 ? 'subagents_30_interview_swarm.py' : 'subagents_20_interview_swarm.py'))))));
+    const reportName = is100 ? 'subagents_100_interview_report.json' : (is99 ? 'subagents_99_interview_report.json' : (is55 ? 'subagents_55_interview_report.json' : (is44 ? 'subagents_44_interview_report.json' : (is40 ? 'subagents_40_interview_report.json' : (is33 ? 'subagents_33_interview_report.json' : (is30 ? 'subagents_30_interview_report.json' : 'subagents_20_interview_report.json'))))));
     const swarmScript = path.join(BASE_DIR, 'modules', scriptName);
 
     execFile('python', [swarmScript], { timeout: 45000, windowsHide: true }, (err, stdout, stderr) => {
@@ -859,7 +861,7 @@ Bilingual: If asked in Roman Urdu or Urdu, respond in natural Roman Urdu + techn
           return sendJson(res, 200, rep);
         } catch (e) {}
       }
-      const agentCount = is100 ? 100 : (is99 ? 99 : (is55 ? 55 : (is44 ? 44 : (is33 ? 33 : (is30 ? 30 : 20)))));
+      const agentCount = is100 ? 100 : (is99 ? 99 : (is55 ? 55 : (is44 ? 44 : (is40 ? 40 : (is33 ? 33 : (is30 ? 30 : 20))))));
       return sendJson(res, 200, {
         title: `${agentCount}-Subagent Swarm Executed`,
         status: err ? "DEGRADED" : "OPTIMAL",
