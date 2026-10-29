@@ -1,11 +1,11 @@
 {
   "title": "Basit AI Interview Pro — 100-Subagent Ultra-Parallel Burst Swarm Report",
-  "timestamp": "2026-10-30T01:38:25.826046",
+  "timestamp": "2026-10-30T01:48:14.759878",
   "total_agents": 100,
   "optimal_count": 100,
   "warn_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 11227.5,
+  "total_duration_ms": 11180.2,
   "execution_concurrency": "50 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -86,9 +86,9 @@
       "name": "Multi-Model AI Router",
       "icon": "🧠",
       "status": "OPTIMAL",
-      "latency_ms": 2188.7,
+      "latency_ms": 2157.8,
       "metric": "Local GPU Qwen 32B + Groq LPU + Gemini 2.5",
-      "details": "Multi-model routing active with sub-millisecond dispatch (2188.7ms)."
+      "details": "Multi-model routing active with sub-millisecond dispatch (2157.8ms)."
     },
     {
       "id": 2,
@@ -96,9 +96,9 @@
       "name": "Universal Knowledge & Info Hub",
       "icon": "💡",
       "status": "OPTIMAL",
-      "latency_ms": 11222.7,
+      "latency_ms": 11174.4,
       "metric": "661 chars returned",
-      "details": "Instant technical knowledge retrieval verified (11222.7ms)."
+      "details": "Instant technical knowledge retrieval verified (11174.4ms)."
     },
     {
       "id": 3,
@@ -106,7 +106,7 @@
       "name": "Sovereign Qwen-32B Local VRAM Sentinel",
       "icon": "⚡",
       "status": "OPTIMAL",
-      "latency_ms": 2190.3,
+      "latency_ms": 2155.7,
       "metric": "2 sovereign models registered",
       "details": "Models available: basit-interviewer-pro:latest, basit-interviewer-pro-32b:latest."
     },
@@ -186,9 +186,9 @@
       "name": "Node.js VM Sandbox Isolation Validator",
       "icon": "📦",
       "status": "OPTIMAL",
-      "latency_ms": 11204.0,
-      "metric": "Score: 88/100",
-      "details": "Node.js VM execution verified (11204.0ms)."
+      "latency_ms": 3663.7,
+      "metric": "Score: 100/100",
+      "details": "Node.js VM execution verified (3663.7ms)."
     },
     {
       "id": 12,
@@ -196,9 +196,9 @@
       "name": "Python Algorithmic Complexity Analyzer",
       "icon": "🐍",
       "status": "OPTIMAL",
-      "latency_ms": 3651.4,
-      "metric": "Complexity: O(n)",
-      "details": "AST analyzer detected O(n) with score 90."
+      "latency_ms": 11171.4,
+      "metric": "Complexity: O(1) average lookup",
+      "details": "AST analyzer detected O(1) average lookup with score 88."
     },
     {
       "id": 13,
@@ -286,7 +286,7 @@
       "name": "Full Stack Architect Role Catalog Inspector",
       "icon": "🏛️",
       "status": "OPTIMAL",
-      "latency_ms": 2184.7,
+      "latency_ms": 2151.9,
       "metric": "7 roles available",
       "details": "Role catalog returned 7 roles with complete track data."
     },
@@ -386,9 +386,9 @@
       "name": "Session Lifecycle Manager (/api/interview/start)",
       "icon": "🚀",
       "status": "OPTIMAL",
-      "latency_ms": 11200.9,
-      "metric": "Session created: intv_1793306296786_8a657c",
-      "details": "Session initialization passed with custom tech stack (11200.9ms)."
+      "latency_ms": 11169.4,
+      "metric": "Session created: intv_1793306885738_c6bc7a",
+      "details": "Session initialization passed with custom tech stack (11169.4ms)."
     },
     {
       "id": 32,
@@ -586,9 +586,9 @@
       "name": "CWE-22 Path Traversal Attack Shield",
       "icon": "🛡️",
       "status": "OPTIMAL",
-      "latency_ms": 2181.7,
+      "latency_ms": 2149.9,
       "metric": "Blocked with HTTP 403",
-      "details": "Path traversal safely rejected (2181.7ms)."
+      "details": "Path traversal safely rejected (2149.9ms)."
     },
     {
       "id": 52,
@@ -917,8 +917,8 @@
       "icon": "🧠",
       "status": "OPTIMAL",
       "latency_ms": 0.0,
-      "metric": "3523 high-signal pairs recorded",
-      "details": "Training dataset intact with 3523 verified technical exemplars."
+      "metric": "3524 high-signal pairs recorded",
+      "details": "Training dataset intact with 3524 verified technical exemplars."
     },
     {
       "id": 85,
@@ -956,9 +956,9 @@
       "name": "System Telemetry & Metrics Endpoint Validator",
       "icon": "📊",
       "status": "OPTIMAL",
-      "latency_ms": 2179.7,
-      "metric": "RSS: 73MB, Status: ready",
-      "details": "Production telemetry healthy (2179.7ms)."
+      "latency_ms": 2142.4,
+      "metric": "RSS: 74MB, Status: ready",
+      "details": "Production telemetry healthy (2142.4ms)."
     },
     {
       "id": 89,
@@ -1056,8 +1056,8 @@
       "name": "High-Concurrency 20-Burst Stress Tester",
       "icon": "🔥",
       "status": "OPTIMAL",
-      "latency_ms": 2033.8,
-      "metric": "20/20 burst completed in 2033.8ms",
+      "latency_ms": 2031.5,
+      "metric": "20/20 burst completed in 2031.5ms",
       "details": "Sub-5ms per request average latency under simultaneous load."
     },
     {
