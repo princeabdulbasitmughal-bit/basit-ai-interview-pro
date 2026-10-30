@@ -1,12 +1,12 @@
 {
   "title": "Basit AI Interview Pro \u2014 55-Subagent Ultra-Parallel Swarm Report",
-  "timestamp": "2026-10-30T10:03:23.851194",
+  "timestamp": "2026-10-30T10:13:11.672424",
   "total_agents": 55,
   "optimal_count": 55,
   "warn_count": 0,
   "error_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 5.94,
+  "total_duration_ms": 7.06,
   "execution_concurrency": "55 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -231,7 +231,7 @@
           "squadron_name": "Cloud Infra & SRE",
           "name": "Cloud TCP Socket Sentinel (Port 8090)",
           "status": "OPTIMAL",
-          "latency_ms": 0.02,
+          "latency_ms": 0.0,
           "metric": "Socket Healthy & Listening"
         },
         {
