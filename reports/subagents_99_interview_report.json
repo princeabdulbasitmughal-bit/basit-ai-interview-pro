@@ -1,11 +1,11 @@
 {
   "title": "Basit AI Interview Pro — 99-Subagent Ultra-Parallel Burst Swarm Report",
-  "timestamp": "2026-10-30T09:04:50.062294",
+  "timestamp": "2026-10-30T09:14:36.777966",
   "total_agents": 99,
   "optimal_count": 99,
   "warn_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 8.6,
+  "total_duration_ms": 7.0,
   "execution_concurrency": "50 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -510,7 +510,7 @@
       "squadron": 5,
       "name": "Voice Session Resilience Watchdog",
       "status": "OPTIMAL",
-      "latency_ms": 0.09,
+      "latency_ms": 0.0,
       "metric": "Automatic Speech Recovery OK"
     },
     {
