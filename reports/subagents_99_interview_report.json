@@ -1,11 +1,11 @@
 {
   "title": "Basit AI Interview Pro — 99-Subagent Ultra-Parallel Burst Swarm Report",
-  "timestamp": "2026-10-30T16:47:39.701407",
+  "timestamp": "2026-10-30T16:57:30.439617",
   "total_agents": 99,
   "optimal_count": 99,
   "warn_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 11.0,
+  "total_duration_ms": 8.7,
   "execution_concurrency": "50 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
@@ -358,7 +358,7 @@
       "squadron": 4,
       "name": "Keystroke Dynamics & Typing Rhythm Analyzer",
       "status": "OPTIMAL",
-      "latency_ms": 0.0,
+      "latency_ms": 0.02,
       "metric": "Organic Typing Rhythm OK"
     },
     {
