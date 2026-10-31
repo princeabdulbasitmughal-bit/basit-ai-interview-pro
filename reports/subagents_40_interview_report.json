@@ -1,12 +1,12 @@
 {
   "title": "Basit AI Interview Pro \u2014 40-Subagent Ultra-Parallel Swarm Report",
-  "timestamp": "2026-10-31T09:39:54.094642",
+  "timestamp": "2026-10-31T09:41:32.118242",
   "total_agents": 40,
   "optimal_count": 40,
   "warn_count": 0,
   "error_count": 0,
   "health_score": "100.0%",
-  "total_duration_ms": 5.22,
+  "total_duration_ms": 7.7,
   "execution_concurrency": "40 Worker Threads (Zero-Hang Non-Blocking)",
   "squadrons": [
     {
