@@ -41,7 +41,7 @@ SWARM_100_SCRIPT = BASE_DIR / "modules" / "subagents_100_interview_swarm.py"
 TEST_SCRIPT = BASE_DIR / "tests" / "master_testing_arsenal.js"
 TEST_99_SCRIPT = BASE_DIR / "tests" / "test_full_suite_99.py"
 DEEP_DEBUG_SCRIPT = BASE_DIR / "tests" / "deep_debugging_arsenal.js"
-LOOP_INTERVAL_SECONDS = 300  # 5 Minutes (300s)
+LOOP_INTERVAL_SECONDS = 240  # 4 Minutes (240s)
 
 def log(msg: str, level: str = "INFO"):
     ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
